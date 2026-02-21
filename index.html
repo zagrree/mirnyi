@@ -1,0 +1,528 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buyer Service — Байер под заказ</title>
+  <meta name="description" content="Байер-сервис под заказ: расчет стоимости и заявка. Доставка в Кыргызстан." />
+
+  <!-- CSS подключим потом -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__text">Ice Buyer</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="nav-toggle__icon" aria-hidden="true">☰</span>
+      </button>
+
+      <nav class="nav" aria-label="Навигация">
+        <a class="nav__link" href="#how">Как работаем</a>
+        <a class="nav__link" href="#calc">Калькулятор</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+        <a class="nav__link" href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--ghost" href="#calc">Рассчитать</a>
+        <a class="btn btn--primary" href="#calc">Оставить заявку</a>
+      </div>
+    </div>
+
+  </header>
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+
+<main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-label="Первый экран">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="badge">⚡ Под заказ • 🇰🇬 Кыргызстан • 📦 7–21 дней</p>
+
+          <h1 class="hero__title">Байер-сервис под заказ: считаем итог и оформляем заявку</h1>
+
+          <p class="hero__text">
+            Ты кидаешь ссылку, размер и детали — мы считаем цену в сомах (курс, доставка, комиссия) и берём заказ в работу.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#calc">Посчитать стоимость</a>
+            <a class="btn btn--ghost" href="#how">Как это работает</a>
+          </div>
+
+          <ul class="hero__stats" aria-label="Преимущества">
+            <li class="stat">
+              <b class="stat__value">3–10%</b>
+              <span class="stat__label">комиссия</span>
+            </li>
+            <li class="stat">
+              <b class="stat__value">1 мин</b>
+              <span class="stat__label">на заявку</span>
+            </li>
+            <li class="stat">
+              <b class="stat__value">0 сом</b>
+              <span class="stat__label">для расчёта</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="hero__preview" aria-label="Карточка примера расчёта">
+          <h2 class="card-title">Пример расчёта</h2>
+          <p class="card-text">Товар: 120$ • Курс: 89 • Доставка: 900 сом • Комиссия: 10%</p>
+
+          <div class="card-total">
+            <span class="card-total__label">Итого к оплате</span>
+            <b class="card-total__value">12 708 сом</b>
+          </div>
+
+          <p class="card-note">*Пример. Точный итог зависит от курса/веса/типа доставки.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how" aria-label="Как мы работаем">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Как мы работаем</h2>
+          <p class="section-subtitle">4 шага — и заказ в работе</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <b class="step__num">1</b>
+            <h3 class="step__title">Ссылка + параметры</h3>
+            <p class="step__text">Кидаешь ссылку, размер, цвет и комментарий.</p>
+          </li>
+          <li class="step">
+            <b class="step__num">2</b>
+            <h3 class="step__title">Расчёт в сомах</h3>
+            <p class="step__text">Курс + доставка + комиссия — всё прозрачно.</p>
+          </li>
+          <li class="step">
+            <b class="step__num">3</b>
+            <h3 class="step__title">Подтверждение</h3>
+            <p class="step__text">Менеджер фиксирует детали и цену, дальше оплата.</p>
+          </li>
+          <li class="step">
+            <b class="step__num">4</b>
+            <h3 class="step__title">Доставка</h3>
+            <p class="step__text">Отслеживание, фото-отчёт и выдача.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+<section class="partners" id="partners" aria-label="С кем мы работаем">
+  <div class="container">
+    <header class="section-head">
+      <h2 class="section-title">С кем мы работаем</h2>
+      <p class="section-subtitle">
+        Выбирай товар на сайте/у бренда — копируй ссылку и вставляй в калькулятор. Если твоего бренда нет — всё равно отправляй, найдём.
+      </p>
+    </header>
+
+    <div class="partners__hint">
+      <span class="partners__dot" aria-hidden="true"></span>
+      <span><b>Откуда брать ссылку?</b> Открываешь официальный сайт/магазин → находишь товар → копируешь URL из адресной строки.</span>
+    </div>
+
+    <div class="partners__scroller" role="list" aria-label="Сайты и бренды">
+  <a class="partner" href="https://www.zara.com/" target="_blank" rel="noopener">
+  <img src="images/zara-brand-logo-black-symbol-clothes-design-icon-abstract-illustration-free-vector.jpg" alt="Zara logo" class="partner__img">
+</a>
+
+  <a class="partner" href="https://www.boss.com/" target="_blank" rel="noopener">
+  <img src="images/i.webp" alt="Prada logo" class="partner__img">
+</a> 
+
+
+<a class="partner" href="https://www.prada.com/" target="_blank" rel="noopener">
+  <img src="images/7215873958.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+ <a class="partner" href="https://www.nike.com/" target="_blank" rel="noopener">
+  <img src="images/i (1).webp" alt="Prada logo" class="partner__img">
+</a> 
+
+
+  <a class="partner" href="https://www.coach.com/" target="_blank" rel="noopener">
+  <img src="images/8be89da87c031dbce14da667424274a8.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+  <a class="partner" href="https://www.adidas.com/" target="_blank" rel="noopener">
+  <img src="images/aa60515e9d55dfc442de263d6137a7a2.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+
+   <a class="partner" href="https://www.newbalance.com/" target="_blank" rel="noopener">
+  <img src="images/cjs1uo4jvf2hdh3esg2g.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+
+ <a class="partner" href="https://www.michaelkors.com/" target="_blank" rel="noopener">
+  <img src="images/michael_kors_1729154829.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+
+   <a class="partner" href="https://www.gucci.com/" target="_blank" rel="noopener">
+  <img src="images/gucci-logo-gucci-icon-with-typeface-on-white-background-free-vector.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+
+   <a class="partner" href="https://www.louisvuitton.com/" target="_blank" rel="noopener">
+  <img src="images/7126034549.jpg" alt="Prada logo" class="partner__img">
+</a> 
+
+</div>
+  </div>
+</section>
+    <!-- CALCULATOR + FORM -->
+    <section class="calc" id="calc" aria-label="Калькулятор">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Калькулятор и заявка</h2>
+          <p class="section-subtitle">Сначала считаем, потом отправляем (Sheets подключим в следующем шаге)</p>
+        </header>
+
+        <div class="calc__layout">
+          <form class="form" id="orderForm"
+      action="https://formspree.io/f/meelrkjz"
+      method="POST">
+      <input type="hidden" name="_subject" value="Новая заявка — Buyer Service">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+          <fieldset class="form__group">
+  <legend class="form__legend">Данные товара</legend>
+
+  <div class="field">
+    <label class="field__label" for="link">Ссылка на товар</label>
+    <input class="field__input" id="link" name="link" placeholder="https://..." required />
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label class="field__label" for="itemPrice">Цена товара</label>
+      <input class="field__input" id="itemPrice" name="itemPrice" type="number" step="0.01" placeholder="199.50" required />
+    </div>
+
+    <div class="field">
+      <label class="field__label" for="currency">Валюта</label>
+      <select class="field__input" id="currency" name="currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CNY">CNY</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="variant">Размер / цвет</label>
+    <input class="field__input" id="variant" name="variant" placeholder="42 / black" />
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="comment">Комментарий</label>
+    <textarea class="field__input field__textarea" id="comment" name="comment" placeholder="Уточнения по товару..."></textarea>
+  </div>
+</fieldset>
+
+             
+
+            <fieldset class="form__group">
+              <legend class="form__legend">Контакты</legend>
+
+              <div class="row">
+                <div class="field">
+                  <label class="field__label" for="name">Имя</label>
+                  <input class="field__input" id="name" name="name" placeholder="Омар" required />
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="phone">WhatsApp / телефон</label>
+                  <input class="field__input" id="phone" name="phone" placeholder="+996 ..." required />
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit">Отправить заявку</button>
+            </div>
+
+            <p class="form__status" id="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="summary" aria-label="Результат расчёта">
+            <h3 class="summary__title">Итог расчёта</h3>
+
+            <dl class="summary__list">
+              <div class="summary__row">
+                <dt>Товар (сом)</dt>
+                <dd id="baseSom">0</dd>
+              </div>
+              <div class="summary__row">
+                <dt>Комиссия</dt>
+                <dd id="commissionSom">0</dd>
+              </div>
+              <div class="summary__row">
+                <dt>Доставка</dt>
+                <dd id="deliverySom">0</dd>
+              </div>
+            </dl>
+
+            <div class="summary__total">
+              <span>Итого к оплате</span>
+              <b id="totalSom">0</b>
+            </div>
+
+            <p class="summary__note">Дальше подключим отправку в Google Sheets + номер заявки.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-label="Частые вопросы">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-subtitle">Закрываем типовые вопросы</p>
+        </header>
+
+        <div class="faq__grid">
+          <details class="faq__item">
+            <summary>Почему итог может меняться?</summary>
+            <p>Курс, вес/объём, тип доставки и комиссии площадок могут чуть двигать итог.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Какая комиссия?</summary>
+            <p>Можно фикс (например 10%) или ступени (чем дороже — тем ниже).</p>
+          </details>
+          <details class="faq__item">
+            <summary>Сколько по срокам?</summary>
+            <p>Обычно 7–21 день. Срочная доставка — отдельно.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Что нужно для старта?</summary>
+            <p>Ссылка, размер/цвет и WhatsApp — этого достаточно.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="contacts" id="contacts" aria-label="Контакты">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="section-title">Контакты</h2>
+          <p class="section-subtitle">Поставишь реальные ссылки</p>
+        </header>
+
+        <div class="contacts__actions">
+          <a class="btn btn--primary" href="#" rel="noopener">WhatsApp</a>
+          <a class="btn btn--ghost" href="#" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand"><b>BUYER SERVICE</b> © <span id="year"></span></p>
+      <nav class="footer__nav" aria-label="Навигация в футере">
+        <a href="#how">Как работаем</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JS (минимум: расчёт + год; меню подключим позже) -->
+<script>
+  // =========================
+  // SETTINGS
+  // =========================
+  const DEFAULTS = {
+    commissionPct: 10,
+    deliverySom: 900,
+    rates: {
+      USD: 89,
+      EUR: 96,
+      CNY: 12.5
+    }
+  };
+
+  // =========================
+  // Helpers
+  // =========================
+  function num(v){
+    const n = Number(v);
+    return Number.isFinite(n) ? n : 0;
+  }
+
+  function fmt(x){
+    const s = (Math.round(x * 100) / 100).toFixed(2);
+    const parts = s.split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return parts.join(".");
+  }
+
+  // =========================
+  // Init elements
+  // =========================
+  const form = document.getElementById("orderForm");
+  const statusEl = document.getElementById("status");
+
+  const baseSomEl = document.getElementById("baseSom");
+  const commissionSomEl = document.getElementById("commissionSom");
+  const deliverySomEl = document.getElementById("deliverySom");
+  const totalSomEl = document.getElementById("totalSom");
+
+  // Если формы нет — дальше не идём
+  if (!form) {
+    console.error("Form #orderForm not found");
+  }
+
+  // =========================
+  // Hidden fields creator
+  // =========================
+  function ensureHidden(name){
+    if (!form) return null;
+
+    let el = form.querySelector(`input[name="${name}"]`);
+    if (!el) {
+      el = document.createElement("input");
+      el.type = "hidden";
+      el.name = name;
+      form.appendChild(el);
+    }
+    return el;
+  }
+
+  const h_rate = ensureHidden("rate_som");
+  const h_delivery = ensureHidden("delivery_som");
+  const h_commissionPct = ensureHidden("commission_pct");
+  const h_baseSom = ensureHidden("base_som");
+  const h_commissionSom = ensureHidden("commission_som");
+  const h_totalSom = ensureHidden("total_som");
+
+  // =========================
+  // Calculator
+  // =========================
+  function calc(){
+    if (!form) return;
+
+    const itemPrice = num(form.itemPrice?.value);
+    const currency = form.currency?.value || "USD";
+
+    const rate = DEFAULTS.rates[currency] ?? 0;
+    const delivery = DEFAULTS.deliverySom;
+    const commissionPct = DEFAULTS.commissionPct;
+
+    const baseSom = itemPrice * rate;
+    const commissionSom = baseSom * (commissionPct / 100);
+    const totalSom = baseSom + delivery + commissionSom;
+
+    if (baseSomEl) baseSomEl.textContent = fmt(baseSom) + " сом";
+    if (commissionSomEl) commissionSomEl.textContent = fmt(commissionSom) + " сом";
+    if (deliverySomEl) deliverySomEl.textContent = fmt(delivery) + " сом";
+    if (totalSomEl) totalSomEl.textContent = fmt(totalSom) + " сом";
+
+    if (h_rate) h_rate.value = rate;
+    if (h_delivery) h_delivery.value = delivery;
+    if (h_commissionPct) h_commissionPct.value = commissionPct;
+    if (h_baseSom) h_baseSom.value = fmt(baseSom);
+    if (h_commissionSom) h_commissionSom.value = fmt(commissionSom);
+    if (h_totalSom) h_totalSom.value = fmt(totalSom);
+  }
+
+  // пересчёт при вводе
+  if (form) form.addEventListener("input", calc);
+
+  // =========================
+  // Submit (Formspree)
+  // =========================
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      calc();
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!res.ok) throw new Error("Formspree error");
+
+        if (statusEl)
+          statusEl.textContent = "✅ Заявка отправлена! Мы свяжемся с вами.";
+
+        form.reset();
+        calc();
+
+      } catch (err) {
+        console.error(err);
+        if (statusEl)
+          statusEl.textContent = "❌ Ошибка отправки. Проверь Formspree.";
+      }
+    });
+  }
+
+  // =========================
+  // Burger menu
+  // =========================
+  const header = document.querySelector(".header");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  const overlay = document.getElementById("overlay");
+
+  function openMenu(){
+    if (!header || !toggle) return;
+    header.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu(){
+    if (!header || !toggle) return;
+    header.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      header.classList.contains("is-open") ? closeMenu() : openMenu();
+    });
+  }
+
+  if (overlay) overlay.addEventListener("click", closeMenu);
+
+  if (nav) {
+    nav.addEventListener("click", (e) => {
+      if (e.target.closest("a")) closeMenu();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) closeMenu();
+  });
+
+  calc();
+</script>
+</body>
+</html>
