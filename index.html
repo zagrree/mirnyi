@@ -1,529 +1,745 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Buyer Service — Байер под заказ</title>
-  <meta name="description" content="Байер-сервис под заказ: расчет стоимости и заявка. Доставка в Кыргызстан." />
-
-  <!-- CSS подключим потом -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atlant Dental Clinic — Премиальная Стоматология</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
-
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#top">
-        <span class="brand__logo" aria-hidden="true"></span>
-        <span class="brand__text">Ice Buyer</span>
-      </a>
 
-      <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-        <span class="nav-toggle__icon" aria-hidden="true">☰</span>
-      </button>
-
-      <nav class="nav" aria-label="Навигация">
-        <a class="nav__link" href="#how">Как работаем</a>
-        <a class="nav__link" href="#calc">Калькулятор</a>
-        <a class="nav__link" href="#faq">FAQ</a>
-        <a class="nav__link" href="#contacts">Контакты</a>
-      </nav>
-
-      <div class="header__actions">
-        <a class="btn btn--ghost" href="#calc">Рассчитать</a>
-        <a class="btn btn--primary" href="#calc">Оставить заявку</a>
-      </div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">
+      <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+      <span class="logo-text">Atlant Dental</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Главная</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#doctors">Врачи</a></li>
+      <li><a href="#testimonials">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <a href="#appointment" class="btn-nav">Записаться</a>
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
     </div>
+  </div>
+</nav>
 
-  </header>
-<div class="overlay" id="overlay" aria-hidden="true"></div>
-
-<main id="top">
-    <!-- HERO -->
-    <section class="hero" aria-label="Первый экран">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="badge">⚡ Под заказ • 🇰🇬 Кыргызстан • 📦 7–21 дней</p>
-
-          <h1 class="hero__title">Байер-сервис под заказ: считаем итог и оформляем заявку</h1>
-
-          <p class="hero__text">
-            Ты кидаешь ссылку, размер и детали — мы считаем цену в сомах (курс, доставка, комиссия) и берём заказ в работу.
-          </p>
-
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#calc">Посчитать стоимость</a>
-            <a class="btn btn--ghost" href="#how">Как это работает</a>
-          </div>
-
-          <ul class="hero__stats" aria-label="Преимущества">
-            <li class="stat">
-              <b class="stat__value">3–10%</b>
-              <span class="stat__label">комиссия</span>
-            </li>
-            <li class="stat">
-              <b class="stat__value">1 мин</b>
-              <span class="stat__label">на заявку</span>
-            </li>
-            <li class="stat">
-              <b class="stat__value">0 сом</b>
-              <span class="stat__label">для расчёта</span>
-            </li>
-          </ul>
-        </div>
-
-        <aside class="hero__preview" aria-label="Карточка примера расчёта">
-          <h2 class="card-title">Пример расчёта</h2>
-          <p class="card-text">Товар: 120$ • Курс: 89 • Доставка: 900 сом • Комиссия: 10%</p>
-
-          <div class="card-total">
-            <span class="card-total__label">Итого к оплате</span>
-            <b class="card-total__value">12 708 сом</b>
-          </div>
-
-          <p class="card-note">*Пример. Точный итог зависит от курса/веса/типа доставки.</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="how" id="how" aria-label="Как мы работаем">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="section-title">Как мы работаем</h2>
-          <p class="section-subtitle">4 шага — и заказ в работе</p>
-        </header>
-
-        <ol class="steps">
-          <li class="step">
-            <b class="step__num">1</b>
-            <h3 class="step__title">Ссылка + параметры</h3>
-            <p class="step__text">Кидаешь ссылку, размер, цвет и комментарий.</p>
-          </li>
-          <li class="step">
-            <b class="step__num">2</b>
-            <h3 class="step__title">Расчёт в сомах</h3>
-            <p class="step__text">Курс + доставка + комиссия — всё прозрачно.</p>
-          </li>
-          <li class="step">
-            <b class="step__num">3</b>
-            <h3 class="step__title">Подтверждение</h3>
-            <p class="step__text">Менеджер фиксирует детали и цену, дальше оплата.</p>
-          </li>
-          <li class="step">
-            <b class="step__num">4</b>
-            <h3 class="step__title">Доставка</h3>
-            <p class="step__text">Отслеживание, фото-отчёт и выдача.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-<section class="partners" id="partners" aria-label="С кем мы работаем">
-  <div class="container">
-    <header class="section-head">
-      <h2 class="section-title">С кем мы работаем</h2>
-      <p class="section-subtitle">
-        Выбирай товар на сайте/у бренда — копируй ссылку и вставляй в калькулятор. Если твоего бренда нет — всё равно отправляй, найдём.
-      </p>
-    </header>
-
-    <div class="partners__hint">
-      <span class="partners__dot" aria-hidden="true"></span>
-      <span><b>Откуда брать ссылку?</b> Открываешь официальный сайт/магазин → находишь товар → копируешь URL из адресной строки.</span>
-    </div>
-
-    <div class="partners__scroller" role="list" aria-label="Сайты и бренды">
-  <a class="partner" href="https://www.zara.com/" target="_blank" rel="noopener">
-  <img src="images/zara-brand-logo-black-symbol-clothes-design-icon-abstract-illustration-free-vector.jpg" alt="Zara logo" class="partner__img">
-</a>
-
-  <a class="partner" href="https://www.boss.com/" target="_blank" rel="noopener">
-  <img src="images/i.webp" alt="Prada logo" class="partner__img">
-</a> 
-
-
-<a class="partner" href="https://www.prada.com/" target="_blank" rel="noopener">
-  <img src="images/7215873958.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
- <a class="partner" href="https://www.nike.com/" target="_blank" rel="noopener">
-  <img src="images/i (1).webp" alt="Prada logo" class="partner__img">
-</a> 
-
-
-  <a class="partner" href="https://www.coach.com/" target="_blank" rel="noopener">
-  <img src="images/8be89da87c031dbce14da667424274a8.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
-  <a class="partner" href="https://www.adidas.com/" target="_blank" rel="noopener">
-  <img src="images/aa60515e9d55dfc442de263d6137a7a2.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
-
-   <a class="partner" href="https://www.newbalance.com/" target="_blank" rel="noopener">
-  <img src="images/cjs1uo4jvf2hdh3esg2g.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
-
- <a class="partner" href="https://www.michaelkors.com/" target="_blank" rel="noopener">
-  <img src="images/michael_kors_1729154829.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
-
-   <a class="partner" href="https://www.gucci.com/" target="_blank" rel="noopener">
-  <img src="images/gucci-logo-gucci-icon-with-typeface-on-white-background-free-vector.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
-
-   <a class="partner" href="https://www.louisvuitton.com/" target="_blank" rel="noopener">
-  <img src="images/7126034549.jpg" alt="Prada logo" class="partner__img">
-</a> 
-
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="#hero" class="mob-link">Главная</a>
+  <a href="#services" class="mob-link">Услуги</a>
+  <a href="#doctors" class="mob-link">Врачи</a>
+  <a href="#testimonials" class="mob-link">Отзывы</a>
+  <a href="#contacts" class="mob-link">Контакты</a>
+  <a href="#appointment" class="mob-link" style="color:var(--accent)">Записаться</a>
 </div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-circle"></i>
+        Принимаем пациентов Пн–Сб
+      </div>
+      <h1 class="hero-title">
+        Современная стоматология<br>
+        с заботой о <em>вашей улыбке</em>
+      </h1>
+      <p class="hero-sub">
+        Лечим зубы безболезненно с использованием новейшего оборудования. Индивидуальный подход к каждому пациенту.
+      </p>
+      <div class="hero-btns">
+        <a href="#appointment" class="btn-primary">
+          <i class="fas fa-calendar-check"></i>
+          Записаться на приём
+        </a>
+        <a href="#services" class="btn-outline">
+          <i class="fas fa-arrow-down"></i>
+          Наши услуги
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Лет опыта</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5000+</div>
+          <div class="stat-label">Пациентов</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Специалистов</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <div class="hero-img-placeholder">
+          <i class="fas fa-tooth dental-icon-hero"></i>
+          <span class="hero-img-label">Atlant Dental Clinic</span>
+        </div>
+      </div>
+      <div class="hero-float-card card-1 float-pulse">
+        <div class="float-icon green"><i class="fas fa-check"></i></div>
+        <div class="float-card-text">
+          <strong>Безболезненное лечение</strong>
+          <span>Современная анестезия</span>
+        </div>
+      </div>
+      <div class="hero-float-card card-2 float-pulse-2">
+        <div class="float-icon blue"><i class="fas fa-star"></i></div>
+        <div class="float-card-text">
+          <strong>Рейтинг 4.5 / 5</strong>
+          <span>199+ отзывов на 2ГИС</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-    <!-- CALCULATOR + FORM -->
-    <section class="calc" id="calc" aria-label="Калькулятор">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="section-title">Калькулятор и заявка</h2>
-          <p class="section-subtitle">Сначала считаем, потом отправляем (Sheets подключим в следующем шаге)</p>
-        </header>
 
-        <div class="calc__layout">
-          <form class="form" id="orderForm"
-      action="https://formspree.io/f/meelrkjz"
-      method="POST">
-      <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="_subject" value="Новая заявка — Buyer Service">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="false">
-          <fieldset class="form__group">
-  <legend class="form__legend">Данные товара</legend>
-
-  <div class="field">
-    <label class="field__label" for="link">Ссылка на товар</label>
-    <input class="field__input" id="link" name="link" placeholder="https://..." required />
-  </div>
-
-  <div class="row">
-    <div class="field">
-      <label class="field__label" for="itemPrice">Цена товара</label>
-      <input class="field__input" id="itemPrice" name="itemPrice" type="number" step="0.01" placeholder="199.50" required />
+<!-- ADVANTAGES -->
+<section id="advantages">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Почему мы</div>
+      <h2 class="section-title reveal reveal-delay-1">Наши преимущества</h2>
+      <p class="section-sub reveal reveal-delay-2">Мы создаём атмосферу доверия и комфорта для каждого пациента</p>
     </div>
-
-    <div class="field">
-      <label class="field__label" for="currency">Валюта</label>
-      <select class="field__input" id="currency" name="currency">
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="CNY">CNY</option>
-      </select>
+    <div class="adv-grid">
+      <div class="adv-card reveal reveal-delay-1">
+        <div class="adv-icon"><i class="fas fa-microscope"></i></div>
+        <div class="adv-title">Современное оборудование</div>
+        <div class="adv-desc">Цифровой рентген, 3D-томограф, лазерная стоматология и новейшие материалы мировых производителей.</div>
+      </div>
+      <div class="adv-card reveal reveal-delay-2">
+        <div class="adv-icon"><i class="fas fa-user-md"></i></div>
+        <div class="adv-title">Опытные врачи</div>
+        <div class="adv-desc">Команда из 18 квалифицированных специалистов с регулярным повышением квалификации в Европе.</div>
+      </div>
+      <div class="adv-card reveal reveal-delay-3">
+        <div class="adv-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <div class="adv-title">Безболезненное лечение</div>
+        <div class="adv-desc">Компьютерная анестезия, предварительное обезболивание. Вы не почувствуете дискомфорта.</div>
+      </div>
+      <div class="adv-card reveal reveal-delay-1">
+        <div class="adv-icon"><i class="fas fa-user-circle"></i></div>
+        <div class="adv-title">Индивидуальный подход</div>
+        <div class="adv-desc">Подробная диагностика и персональный план лечения для каждого пациента с учётом особенностей.</div>
+      </div>
+      <div class="adv-card reveal reveal-delay-2">
+        <div class="adv-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="adv-title">Гарантия качества</div>
+        <div class="adv-desc">Официальная гарантия на все виды работ. Бесплатные контрольные осмотры в течение года.</div>
+      </div>
+      <div class="adv-card reveal reveal-delay-3">
+        <div class="adv-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="adv-title">Удобная запись</div>
+        <div class="adv-desc">Онлайн-запись 24/7, подтверждение через WhatsApp. Принимаем в удобное для вас время.</div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="field">
-    <label class="field__label" for="variant">Размер / цвет</label>
-    <input class="field__input" id="variant" name="variant" placeholder="42 / black" />
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Что мы делаем</div>
+      <h2 class="section-title reveal reveal-delay-1">Наши услуги</h2>
+      <p class="section-sub reveal reveal-delay-2">Полный спектр стоматологических услуг в одном месте</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1" onclick="window.location='implants.html'" style="cursor:pointer">
+        <div class="service-icon"><i class="fas fa-tooth"></i></div>
+        <div class="service-name">Имплантация</div>
+        <div class="service-desc">Установка имплантатов премиальных брендов. Восстанавливаем зубы на срок до 20+ лет.</div>
+        <a href="implants.html" class="btn-service">Подробнее <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2" onclick="window.location='braces.html'" style="cursor:pointer">
+        <div class="service-icon"><i class="fas fa-teeth"></i></div>
+        <div class="service-name">Брекеты</div>
+        <div class="service-desc">Металлические, керамические и сапфировые брекеты. Выравниваем прикус эффективно.</div>
+        <a href="braces.html" class="btn-service">Подробнее <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon"><i class="fas fa-briefcase-medical"></i></div>
+        <div class="service-name">Лечение зубов</div>
+        <div class="service-desc">Лечение кариеса, пульпита, периодонтита. Безболезненно под современной анестезией.</div>
+        <a href="#appointment" class="btn-service">Подробнее <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><i class="fas fa-soap"></i></div>
+        <div class="service-name">Чистка зубов</div>
+        <div class="service-desc">Профессиональная ультразвуковая чистка и Air Flow. Убираем налёт и камень.</div>
+        <a href="#appointment" class="btn-service">Подробнее <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <div class="service-name">Виниры</div>
+        <div class="service-desc">Керамические и композитные виниры. Голливудская улыбка за 2–3 визита.</div>
+        <a href="#appointment" class="btn-service">Подробнее <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon"><i class="fas fa-magic"></i></div>
+        <div class="service-name">Отбеливание</div>
+        <div class="service-desc">Zoom-отбеливание и домашние системы. Осветляем зубы на 6–12 тонов.</div>
+        <a href="#appointment" class="btn-service">Подробнее <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="field">
-    <label class="field__label" for="comment">Комментарий</label>
-    <textarea class="field__input field__textarea" id="comment" name="comment" placeholder="Уточнения по товару..."></textarea>
+<!-- DOCTORS -->
+<section id="doctors">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Наша команда</div>
+      <h2 class="section-title reveal reveal-delay-1">Врачи клиники</h2>
+      <p class="section-sub reveal reveal-delay-2">Квалифицированные специалисты с многолетним опытом</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doctor-card reveal reveal-delay-1">
+        <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
+        <div class="doctor-info">
+          <div class="doctor-name">Нурбек Таалайбекович</div>
+          <div class="doctor-spec">Хирург-имплантолог</div>
+          <div class="doctor-exp"><i class="fas fa-clock"></i> Стаж 12 лет</div>
+          <div class="doctor-desc">Специалист по дентальной имплантации и хирургии полости рта. Работает с ведущими брендами имплантов.</div>
+        </div>
+      </div>
+      <div class="doctor-card reveal reveal-delay-2">
+        <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
+        <div class="doctor-info">
+          <div class="doctor-name">Сулайманов Айдин</div>
+          <div class="doctor-spec">Ортодонт</div>
+          <div class="doctor-exp"><i class="fas fa-clock"></i> Стаж 8 лет</div>
+          <div class="doctor-desc">Эксперт по брекет-системам и элайнерам. Исправление прикуса у детей и взрослых.</div>
+        </div>
+      </div>
+      <div class="doctor-card reveal reveal-delay-3">
+        <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
+        <div class="doctor-info">
+          <div class="doctor-name">Тыналиева Гульжан</div>
+          <div class="doctor-spec">Терапевт-стоматолог</div>
+          <div class="doctor-exp"><i class="fas fa-clock"></i> Стаж 27 лет</div>
+          <div class="doctor-desc">Опытный терапевт с многолетней практикой. Лечение кариеса, реставрации и профилактика.</div>
+        </div>
+      </div>
+      <div class="doctor-card reveal reveal-delay-4">
+        <div class="doctor-photo"><i class="fas fa-user-md"></i></div>
+        <div class="doctor-info">
+          <div class="doctor-name">Асылбеков Бекзат</div>
+          <div class="doctor-spec">Ортопед. Виниры и коронки</div>
+          <div class="doctor-exp"><i class="fas fa-clock"></i> Стаж 10 лет</div>
+          <div class="doctor-desc">Специалист по эстетическому протезированию. Виниры, коронки и мостовидные конструкции.</div>
+        </div>
+      </div>
+    </div>
   </div>
-</fieldset>
+</section>
 
-             
-
-            <fieldset class="form__group">
-              <legend class="form__legend">Контакты</legend>
-
-              <div class="row">
-                <div class="field">
-                  <label class="field__label" for="name">Имя</label>
-                  <input class="field__input" id="name" name="name" placeholder="Омар" required />
-                </div>
-
-                <div class="field">
-                  <label class="field__label" for="phone">WhatsApp / телефон</label>
-                  <input class="field__input" id="phone" name="phone" placeholder="+996 ..." required />
-                </div>
-              </div>
-            </fieldset>
-
-            <div class="form__actions">
-              <button class="btn btn--primary" type="submit">Отправить заявку</button>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Отзывы</div>
+      <h2 class="section-title reveal reveal-delay-1">Что говорят пациенты</h2>
+      <p class="section-sub reveal reveal-delay-2">Более 199 отзывов на 2ГИС — пациенты доверяют нам</p>
+    </div>
+    <div class="slider-wrap reveal">
+      <div class="slider-track" id="sliderTrack">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">«Наконец-то нашла стоматологию, где не страшно! Всё прошло абсолютно безболезненно. Доктор Иванов — профессионал высочайшего уровня. Уже рекомендую всем знакомым.»</p>
+          <div class="review-author">
+            <div class="author-ava">А</div>
+            <div>
+              <div class="author-name">Анна Михайлова</div>
+              <div class="author-date">Март 2025</div>
             </div>
-
-            <p class="form__status" id="status" aria-live="polite"></p>
-          </form>
-
-          <aside class="summary" aria-label="Результат расчёта">
-            <h3 class="summary__title">Итог расчёта</h3>
-
-            <dl class="summary__list">
-              <div class="summary__row">
-                <dt>Товар (сом)</dt>
-                <dd id="baseSom">0</dd>
-              </div>
-              <div class="summary__row">
-                <dt>Комиссия</dt>
-                <dd id="commissionSom">0</dd>
-              </div>
-              <div class="summary__row">
-                <dt>Доставка</dt>
-                <dd id="deliverySom">0</dd>
-              </div>
-            </dl>
-
-            <div class="summary__total">
-              <span>Итого к оплате</span>
-              <b id="totalSom">0</b>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">«Поставили имплант — всё прошло идеально. Запись через WhatsApp очень удобная, ответили мгновенно. Клиника чистая, современная, персонал очень вежливый.»</p>
+          <div class="review-author">
+            <div class="author-ava">С</div>
+            <div>
+              <div class="author-name">Сергей Волков</div>
+              <div class="author-date">Апрель 2025</div>
             </div>
-
-            <p class="summary__note">Дальше подключим отправку в Google Sheets + номер заявки.</p>
-          </aside>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">«Делала виниры у Петровой О.С. — результат превзошёл все ожидания. Улыбка стала совершенно другой. Спасибо за внимательный подход и профессионализм!»</p>
+          <div class="review-author">
+            <div class="author-ava">М</div>
+            <div>
+              <div class="author-name">Мария Соколова</div>
+              <div class="author-date">Май 2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="review-text">«Брал брекеты для дочери. Очень грамотный ортодонт, всё объяснила и показала. Цены справедливые, качество на высоте. Продолжаем лечение с удовольствием.»</p>
+          <div class="review-author">
+            <div class="author-ava">К</div>
+            <div>
+              <div class="author-name">Константин Лебедев</div>
+              <div class="author-date">Февраль 2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">«Пришла на отбеливание Zoom. Результат — зубы стали на 8 тонов светлее! Врач всё объяснила заранее, никакого дискомфорта. Буду рекомендовать!»</p>
+          <div class="review-author">
+            <div class="author-ava">Е</div>
+            <div>
+              <div class="author-name">Екатерина Новикова</div>
+              <div class="author-date">Апрель 2025</div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq" aria-label="Частые вопросы">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="section-title">FAQ</h2>
-          <p class="section-subtitle">Закрываем типовые вопросы</p>
-        </header>
-
-        <div class="faq__grid">
-          <details class="faq__item">
-            <summary>Почему итог может меняться?</summary>
-            <p>Курс, вес/объём, тип доставки и комиссии площадок могут чуть двигать итог.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Какая комиссия?</summary>
-            <p>Можно фикс (например 10%) или ступени (чем дороже — тем ниже).</p>
-          </details>
-          <details class="faq__item">
-            <summary>Сколько по срокам?</summary>
-            <p>Обычно 7–21 день. Срочная доставка — отдельно.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Что нужно для старта?</summary>
-            <p>Ссылка, размер/цвет и WhatsApp — этого достаточно.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTS -->
-    <section class="contacts" id="contacts" aria-label="Контакты">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="section-title">Контакты</h2>
-          <p class="section-subtitle">Поставишь реальные ссылки</p>
-        </header>
-
-        <div class="contacts__actions">
-          <a class="btn btn--primary" href="#" rel="noopener">WhatsApp</a>
-          <a class="btn btn--ghost" href="#" rel="noopener">Instagram</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__brand"><b>BUYER SERVICE</b> © <span id="year"></span></p>
-      <nav class="footer__nav" aria-label="Навигация в футере">
-        <a href="#how">Как работаем</a>
-        <a href="#calc">Калькулятор</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
     </div>
-  </footer>
+    <div class="slider-controls">
+      <button class="slider-btn" id="sliderPrev"><i class="fas fa-arrow-left"></i></button>
+      <button class="slider-btn" id="sliderNext"><i class="fas fa-arrow-right"></i></button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </div>
+</section>
 
-  <!-- JS (минимум: расчёт + год; меню подключим позже) -->
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="container">
+    <div class="appt-wrap">
+      <div class="appt-left">
+        <div class="section-label reveal">Запись</div>
+        <h2 class="section-title reveal reveal-delay-1">Запишитесь<br>на приём</h2>
+        <p class="section-sub reveal reveal-delay-2">Оставьте заявку, и мы свяжемся с вами через WhatsApp для подтверждения времени.</p>
+        <div class="appt-info-cards">
+          <div class="appt-info-card reveal reveal-delay-1">
+            <div class="appt-info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="appt-info-text">
+              <strong>Подтверждение в WhatsApp</strong>
+              <span>Администратор свяжется в течение 15 минут</span>
+            </div>
+          </div>
+          <div class="appt-info-card reveal reveal-delay-2">
+            <div class="appt-info-icon"><i class="fas fa-clock"></i></div>
+            <div class="appt-info-text">
+              <strong>Приём Пн–Сб</strong>
+              <span>Пн–Сб: 9:00–18:00 · Воскресенье — выходной</span>
+            </div>
+          </div>
+          <div class="appt-info-card reveal reveal-delay-3">
+            <div class="appt-info-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="appt-info-text">
+              <strong>Бесплатная консультация</strong>
+              <span>Первичный осмотр и план лечения — бесплатно</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="appt-form reveal reveal-delay-2">
+        <div class="form-title">Заявка на приём</div>
+        <div class="form-sub">Заполните форму — мы напишем вам в WhatsApp</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ваше имя *</label>
+            <input type="text" id="f-name" placeholder="Алибек Иванов" required/>
+          </div>
+          <div class="form-group">
+            <label>Телефон (WhatsApp) *</label>
+            <input type="tel" id="f-phone" placeholder="+7 (999) 000-00-00" required/>
+          </div>
+          <div class="form-group">
+            <label>Предпочтительная дата</label>
+            <input type="date" id="f-date"/>
+          </div>
+          <div class="form-group">
+            <label>Удобное время</label>
+            <select id="f-time">
+              <option value="">Выберите время</option>
+              <option>09:00 – 11:00</option>
+              <option>11:00 – 13:00</option>
+              <option>13:00 – 15:00</option>
+              <option>15:00 – 17:00</option>
+              <option>17:00 – 19:00</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Услуга</label>
+            <select id="f-service">
+              <option value="">Выберите услугу</option>
+              <option>Имплантация</option>
+              <option>Брекеты</option>
+              <option>Лечение зубов</option>
+              <option>Чистка зубов</option>
+              <option>Виниры</option>
+              <option>Отбеливание</option>
+              <option>Консультация</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Опишите проблему</label>
+            <textarea id="f-problem" placeholder="Расскажите о вашей ситуации или вопросе..."></textarea>
+          </div>
+        </div>
+        <button class="btn-submit" id="submitBtn">
+          <i class="fab fa-whatsapp"></i>
+          Отправить заявку в WhatsApp
+        </button>
+        <div class="form-note">
+          <i class="fas fa-lock" style="font-size:11px; color:var(--gray-400)"></i>
+          Ваши данные в безопасности и не передаются третьим лицам
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">Где мы</div>
+      <h2 class="section-title reveal reveal-delay-1">Контакты</h2>
+    </div>
+    <div class="contacts-wrap">
+      <div>
+        <div class="contact-items">
+          <div class="contact-item reveal reveal-delay-1">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-text">
+              <strong>Адрес</strong>
+              <span>7-й микрорайон, 37/1, Бишкек</span>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-2">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-text">
+              <strong>Телефон</strong>
+              <span>0 (550) 22-80-30</span>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-3">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-text">
+              <strong>WhatsApp</strong>
+              <span>0 (550) 22-80-30</span>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-4">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              <span>atlant.kg@mail.ru</span>
+            </div>
+          </div>
+        </div>
+        <div class="work-hours reveal reveal-delay-2">
+          <div class="work-title"><i class="fas fa-clock"></i> График работы</div>
+          <div class="work-row"><span class="day">Понедельник – Пятница</span><span class="time">09:00 – 18:00</span></div>
+          <div class="work-row"><span class="day">Суббота</span><span class="time">09:00 – 18:00</span></div>
+          <div class="work-row"><span class="day">Воскресенье</span><span class="badge-closed">Выходной</span></div>
+        </div>
+      </div>
+      <div class="map-wrap reveal reveal-delay-2">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Вставьте iframe Google Maps здесь</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+          <span class="logo-text" style="color:white">Atlant Dental</span>
+        </a>
+        <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <ul class="footer-links">
+          <li><a href="#services">Имплантация</a></li>
+          <li><a href="#services">Брекеты</a></li>
+          <li><a href="#services">Лечение зубов</a></li>
+          <li><a href="#services">Виниры</a></li>
+          <li><a href="#services">Отбеливание</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Клиника</div>
+        <ul class="footer-links">
+          <li><a href="#advantages">О нас</a></li>
+          <li><a href="#doctors">Врачи</a></li>
+          <li><a href="#testimonials">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#appointment">Запись</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <ul class="footer-links">
+          <li><a href="tel:+996550228030">0 (550) 22-80-30</a></li>
+          <li><a href="https://wa.me/996550228030" target="_blank">WhatsApp</a></li>
+          <li><a href="#">7-й микрорайон, 37/1</a></li>
+          <li><a href="#">Пн–Сб: 9:00–18:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Atlant Dental. Все права защищены.</span>
+      <span>Лицензия № ЛО-77-01-000000</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- NOTIFICATION -->
+<div id="notif">
+  <div class="notif-icon"><i class="fas fa-check"></i></div>
+  <div class="notif-text">
+    <strong>Заявка отправлена!</strong>
+    <span>Администратор свяжется с вами в WhatsApp</span>
+  </div>
+</div>
+ 
 <script>
-  // =========================
-  // SETTINGS
-  // =========================
-  const DEFAULTS = {
-    commissionPct: 10,
-    deliverySom: 900,
-    rates: {
-      USD: 89,
-      EUR: 96,
-      CNY: 12.5
-    }
-  };
-
-  // =========================
-  // Helpers
-  // =========================
-  function num(v){
-    const n = Number(v);
-    return Number.isFinite(n) ? n : 0;
-  }
-
-  function fmt(x){
-    const s = (Math.round(x * 100) / 100).toFixed(2);
-    const parts = s.split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    return parts.join(".");
-  }
-
-  // =========================
-  // Init elements
-  // =========================
-  const form = document.getElementById("orderForm");
-  const statusEl = document.getElementById("status");
-
-  const baseSomEl = document.getElementById("baseSom");
-  const commissionSomEl = document.getElementById("commissionSom");
-  const deliverySomEl = document.getElementById("deliverySom");
-  const totalSomEl = document.getElementById("totalSom");
-
-  // Если формы нет — дальше не идём
-  if (!form) {
-    console.error("Form #orderForm not found");
-  }
-
-  // =========================
-  // Hidden fields creator
-  // =========================
-  function ensureHidden(name){
-    if (!form) return null;
-
-    let el = form.querySelector(`input[name="${name}"]`);
-    if (!el) {
-      el = document.createElement("input");
-      el.type = "hidden";
-      el.name = name;
-      form.appendChild(el);
-    }
-    return el;
-  }
-
-  const h_rate = ensureHidden("rate_som");
-  const h_delivery = ensureHidden("delivery_som");
-  const h_commissionPct = ensureHidden("commission_pct");
-  const h_baseSom = ensureHidden("base_som");
-  const h_commissionSom = ensureHidden("commission_som");
-  const h_totalSom = ensureHidden("total_som");
-
-  // =========================
-  // Calculator
-  // =========================
-  function calc(){
-    if (!form) return;
-
-    const itemPrice = num(form.itemPrice?.value);
-    const currency = form.currency?.value || "USD";
-
-    const rate = DEFAULTS.rates[currency] ?? 0;
-    const delivery = DEFAULTS.deliverySom;
-    const commissionPct = DEFAULTS.commissionPct;
-
-    const baseSom = itemPrice * rate;
-    const commissionSom = baseSom * (commissionPct / 100);
-    const totalSom = baseSom + delivery + commissionSom;
-
-    if (baseSomEl) baseSomEl.textContent = fmt(baseSom) + " сом";
-    if (commissionSomEl) commissionSomEl.textContent = fmt(commissionSom) + " сом";
-    if (deliverySomEl) deliverySomEl.textContent = fmt(delivery) + " сом";
-    if (totalSomEl) totalSomEl.textContent = fmt(totalSom) + " сом";
-
-    if (h_rate) h_rate.value = rate;
-    if (h_delivery) h_delivery.value = delivery;
-    if (h_commissionPct) h_commissionPct.value = commissionPct;
-    if (h_baseSom) h_baseSom.value = fmt(baseSom);
-    if (h_commissionSom) h_commissionSom.value = fmt(commissionSom);
-    if (h_totalSom) h_totalSom.value = fmt(totalSom);
-  }
-
-  // пересчёт при вводе
-  if (form) form.addEventListener("input", calc);
-
-  // =========================
-  // Submit (Formspree)
-  // =========================
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      calc();
-
-      try {
-        const formData = new FormData(form);
-
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: { "Accept": "application/json" }
-        });
-
-        if (!res.ok) throw new Error("Formspree error");
-
-        if (statusEl)
-          statusEl.textContent = "✅ Заявка отправлена! Мы свяжемся с вами.";
-
-        form.reset();
-        calc();
-
-      } catch (err) {
-        console.error(err);
-        if (statusEl)
-          statusEl.textContent = "❌ Ошибка отправки. Проверь Formspree.";
+  // ═══════════════════════════════════════════
+  // НАСТРОЙКИ — заменить на свои ключи
+  // ═══════════════════════════════════════════
+  const GREENAPI_ID_INSTANCE    = '7107636880';    // из green-api.com
+  const GREENAPI_API_TOKEN      = 'a76deecfae3547878a61dc43da59d52a9f3ab6520d324810b9';       // из green-api.com
+  const ADMIN_PHONE             = '996221100809';         // номер администратора (без + и пробелов)
+  // Cloudflare Worker URL — оставить пустым если не используешь Worker
+  const WORKER_URL              = '';                     // пример: 'https://atlant-form.workers.dev'
+  // ═══════════════════════════════════════════
+ 
+  // ─── NAVBAR ───
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+ 
+  // ─── BURGER ───
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+  closeMenu.addEventListener('click', () => {
+    burger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+  });
+  document.querySelectorAll('.mob-link').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+ 
+  // ─── REVEAL ON SCROLL ───
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
       }
     });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+ 
+  // ─── SLIDER ───
+  const track = document.getElementById('sliderTrack');
+  const sliderWrap = track.parentElement;
+  const dotsContainer = document.getElementById('sliderDots');
+  let current = 0;
+  const cards = track.querySelectorAll('.review-card');
+  const getVisible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+  const total = () => Math.ceil(cards.length / getVisible());
+ 
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total(); i++) {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
   }
-
-  // =========================
-  // Burger menu
-  // =========================
-  const header = document.querySelector(".header");
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav");
-  const overlay = document.getElementById("overlay");
-
-  function openMenu(){
-    if (!header || !toggle) return;
-    header.classList.add("is-open");
-    toggle.setAttribute("aria-expanded", "true");
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, total() - 1));
+    const vis = getVisible();
+    const gap = 24;
+    const wrapW = sliderWrap.offsetWidth;
+    const cardW = (wrapW - gap * (vis - 1)) / vis;
+    const offset = current * vis * (cardW + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+    buildDots();
   }
-
-  function closeMenu(){
-    if (!header || !toggle) return;
-    header.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
+  document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
+  buildDots();
+  window.addEventListener('resize', () => { current = 0; goTo(0); });
+  setInterval(() => goTo(current < total() - 1 ? current + 1 : 0), 5000);
+ 
+  // ─── HELPERS ───
+  function showError(msg) {
+    const box = document.getElementById('form-error');
+    document.getElementById('form-error-text').textContent = msg;
+    box.style.display = 'block';
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      header.classList.contains("is-open") ? closeMenu() : openMenu();
-    });
+  function hideError() {
+    document.getElementById('form-error').style.display = 'none';
   }
-
-  if (overlay) overlay.addEventListener("click", closeMenu);
-
-  if (nav) {
-    nav.addEventListener("click", (e) => {
-      if (e.target.closest("a")) closeMenu();
-    });
+  function setBtnLoading(loading) {
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = loading;
+    btn.innerHTML = loading
+      ? '<i class="fas fa-spinner fa-spin"></i> Отправляем...'
+      : '<i class="fab fa-whatsapp"></i> Отправить заявку в WhatsApp';
   }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
+  function showSuccess() {
+    const notif = document.getElementById('notif');
+    notif.classList.add('show');
+    setTimeout(() => notif.classList.remove('show'), 4000);
+    ['f-name','f-phone','f-date','f-time','f-service','f-problem']
+      .forEach(id => document.getElementById(id).value = '');
+    if (window.turnstile) turnstile.reset();
+  }
+ 
+  // ─── FORM SUBMIT ───
+  document.getElementById('submitBtn').addEventListener('click', async () => {
+    hideError();
+ 
+    const name    = document.getElementById('f-name').value.trim();
+    const phone   = document.getElementById('f-phone').value.trim();
+    const date    = document.getElementById('f-date').value;
+    const time    = document.getElementById('f-time').value;
+    const service = document.getElementById('f-service').value;
+    const problem = document.getElementById('f-problem').value.trim();
+ 
+    // Валидация
+    if (!name) { showError('Пожалуйста, введите ваше имя.'); return; }
+    if (!phone) { showError('Пожалуйста, введите номер телефона.'); return; }
+ 
+    // Проверка Turnstile
+    const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!turnstileToken) {
+      showError('Подождите — идёт проверка безопасности. Попробуйте снова через секунду.');
+      return;
+    }
+ 
+    // Формируем сообщение для WhatsApp
+    const message = [
+      '🦷 *Новая заявка с сайта Atlant Dental*',
+      '',
+      `👤 *Имя:* ${name}`,
+      `📞 *Телефон:* ${phone}`,
+      date    ? `📅 *Дата:* ${date}`       : '',
+      time    ? `🕐 *Время:* ${time}`       : '',
+      service ? `🏥 *Услуга:* ${service}`   : '',
+      problem ? `📝 *Проблема:* ${problem}` : '',
+      '',
+      '📍 _Сайт: atlant.kg_'
+    ].filter(Boolean).join('\n');
+ 
+    setBtnLoading(true);
+ 
+    try {
+      let success = false;
+ 
+      if (WORKER_URL) {
+        // ── Вариант A: через Cloudflare Worker (токен скрыт, проверка Turnstile на сервере) ──
+        const res = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            turnstileToken,
+            chatId: `${ADMIN_PHONE}@c.us`,
+            message,
+            idInstance:       GREENAPI_ID_INSTANCE,
+            apiTokenInstance: GREENAPI_API_TOKEN
+          })
+        });
+        const data = await res.json();
+        success = !!data.idMessage;
+ 
+      } else {
+        // ── Вариант B: прямой вызов Green API (без Worker) ──
+        const url = `https://api.green-api.com/waInstance${GREENAPI_ID_INSTANCE}/sendMessage/${GREENAPI_API_TOKEN}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chatId: `${ADMIN_PHONE}@c.us`,
+            message
+          })
+        });
+        const data = await res.json();
+        success = !!data.idMessage;
+      }
+ 
+      if (success) {
+        showSuccess();
+      } else {
+        showError('Не удалось отправить заявку. Позвоните нам: 0 (550) 22-80-30');
+      }
+ 
+    } catch (err) {
+      console.error(err);
+      showError('Ошибка соединения. Позвоните нам: 0 (550) 22-80-30');
+    } finally {
+      setBtnLoading(false);
+    }
   });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) closeMenu();
-  });
-
-  calc();
 </script>
 </body>
 </html>
