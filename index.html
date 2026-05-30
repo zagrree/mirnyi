@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 </head>
 <body>
 
@@ -313,7 +313,7 @@
           </div>
         </div>
         <!-- Cloudflare Turnstile -->
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAADYmjLUYZd4hv1Ch" data-theme="light" data-language="ru" style="margin:16px 0;"></div>
+        <div id="turnstile-widget" style="margin:16px 0;"></div>
         <!-- Блок ошибки -->
         <div id="form-error" style="display:none;color:#e53e3e;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#fff5f5;border-radius:8px;border:1px solid #fed7d7;">
           <i class="fas fa-exclamation-circle"></i> <span id="form-error-text"></span>
@@ -562,5 +562,13 @@
       setBtnLoading(false);
     }
   });
+  // ─── TURNSTILE ───
+window.onloadTurnstileCallback = function() {
+  turnstile.render('#turnstile-widget', {
+    sitekey: '0x4AAAAAADYmjLUYZd4hv1Ch',
+    theme: 'light',
+    language: 'ru',
+  });
+};
 </script>
 </body>
