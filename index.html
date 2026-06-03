@@ -1,3 +1,5 @@
+
+raw
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,10 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 </head>
 <body>
-
+ 
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
@@ -31,7 +32,7 @@
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
-
+ 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
@@ -42,7 +43,7 @@
   <a href="#contacts" class="mob-link">Контакты</a>
   <a href="#appointment" class="mob-link" style="color:var(--accent)">Записаться</a>
 </div>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-blob hero-blob-1"></div>
@@ -81,7 +82,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ADVANTAGES -->
 <section id="advantages">
   <div class="container">
@@ -100,7 +101,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
@@ -149,7 +150,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- DOCTORS -->
 <section id="doctors">
   <div class="container">
@@ -198,7 +199,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="container">
@@ -243,7 +244,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- APPOINTMENT -->
 <section id="appointment">
   <div class="container">
@@ -312,8 +313,6 @@
             <textarea id="f-problem" placeholder="Расскажите о вашей ситуации или вопросе..."></textarea>
           </div>
         </div>
-        <!-- Cloudflare Turnstile -->
-        <div id="turnstile-widget" style="margin:16px 0;"></div>
         <!-- Блок ошибки -->
         <div id="form-error" style="display:none;color:#e53e3e;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#fff5f5;border-radius:8px;border:1px solid #fed7d7;">
           <i class="fas fa-exclamation-circle"></i> <span id="form-error-text"></span>
@@ -329,7 +328,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACTS -->
 <section id="contacts">
   <div class="container">
@@ -371,7 +370,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -423,7 +422,7 @@
     </div>
   </div>
 </footer>
-
+ 
 <!-- NOTIFICATION -->
 <div id="notif">
   <div class="notif-icon"><i class="fas fa-check"></i></div>
@@ -432,7 +431,7 @@
     <span>Администратор свяжется с вами в WhatsApp</span>
   </div>
 </div>
-
+ 
 <script>
   // ═══════════════════════════════════════════
   // НАСТРОЙКИ
@@ -440,24 +439,24 @@
   const GREENAPI_ID_INSTANCE = '7107636880';
   const GREENAPI_API_TOKEN   = 'a76deecfae3547878a61dc43da59d52a9f3ab6520d324810b9';
   const ADMIN_PHONE          = '996221100809';
-  const WORKER_URL           = 'https://atlant-form.crycrazydiamond.workers.dev'; // вставь URL Worker когда создашь
+  const WORKER_URL           = 'https://atlant-form.crycrazydiamond.workers.dev';
   // ═══════════════════════════════════════════
-
+ 
   // ─── NAVBAR ───
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
-
+ 
   // ─── BURGER ───
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
   document.getElementById('closeMenu').addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); });
   burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
-
+ 
   // ─── REVEAL ───
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+ 
   // ─── SLIDER ───
   const track = document.getElementById('sliderTrack');
   const sliderWrap = track.parentElement;
@@ -487,7 +486,7 @@
   buildDots();
   window.addEventListener('resize', () => { current = 0; goTo(0); });
   setInterval(() => goTo(current < total() - 1 ? current + 1 : 0), 5000);
-
+ 
   // ─── HELPERS ───
   function showError(msg) {
     const box = document.getElementById('form-error');
@@ -506,9 +505,8 @@
     notif.classList.add('show');
     setTimeout(() => notif.classList.remove('show'), 4000);
     ['f-name','f-phone','f-date','f-time','f-service','f-problem'].forEach(id => document.getElementById(id).value = '');
-    if (window.turnstile) turnstile.reset();
   }
-
+ 
   // ─── FORM SUBMIT ───
   document.getElementById('submitBtn').addEventListener('click', async () => {
     hideError();
@@ -518,13 +516,10 @@
     const time    = document.getElementById('f-time').value;
     const service = document.getElementById('f-service').value;
     const problem = document.getElementById('f-problem').value.trim();
-
+ 
     if (!name)  { showError('Пожалуйста, введите ваше имя.'); return; }
     if (!phone) { showError('Пожалуйста, введите номер телефона.'); return; }
-
-    const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
-    if (!turnstileToken) { showError('Подождите — идёт проверка безопасности. Попробуйте снова.'); return; }
-
+ 
     const message = [
       '🦷 *Новая заявка с сайта Atlant Dental*', '',
       `👤 *Имя:* ${name}`,
@@ -535,7 +530,7 @@
       problem ? `📝 *Проблема:* ${problem}` : '',
       '', '📍 _Сайт: atlant.kg_'
     ].filter(Boolean).join('\n');
-
+ 
     setBtnLoading(true);
     try {
       let success = false;
@@ -543,7 +538,7 @@
         const res = await fetch(WORKER_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ turnstileToken, chatId: `${ADMIN_PHONE}@c.us`, message, idInstance: GREENAPI_ID_INSTANCE, apiTokenInstance: GREENAPI_API_TOKEN })
+          body: JSON.stringify({ chatId: `${ADMIN_PHONE}@c.us`, message, idInstance: GREENAPI_ID_INSTANCE, apiTokenInstance: GREENAPI_API_TOKEN })
         });
         success = !!(await res.json()).idMessage;
       } else {
@@ -562,13 +557,6 @@
       setBtnLoading(false);
     }
   });
-  // ─── TURNSTILE ───
-window.onloadTurnstileCallback = function() {
-  turnstile.render('#turnstile-widget', {
-    sitekey: '0x4AAAAAADYmjLUYZd4hv1Ch',
-    theme: 'light',
-    language: 'ru',
-  });
-};
 </script>
 </body>
+</html>
