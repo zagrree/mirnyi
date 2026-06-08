@@ -1026,3 +1026,105 @@ footer { background: var(--dark); color: rgba(255,255,255,0.55); padding: 64px 0
   .sp-cards, .sp-who-grid { grid-template-columns: 1fr; }
   .impl-steps { flex-direction: column; }
 }
+
+/* ═══════════════════════════════════════════
+   SERVICE SUBPAGES — EXTRA COMPONENTS
+═══════════════════════════════════════════ */
+
+/* ── Hero backgrounds ── */
+.impl-sp-hero { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 55%, #0e3d24 100%); }
+.brc-sp-hero  { background: linear-gradient(135deg, #0c1a2e 0%, #0d2d4e 55%, #0a3d6e 100%); }
+
+/* ── Step arrow ── */
+.impl-step-arrow { display:flex; align-items:center; color:var(--gray-300); font-size:18px; flex-shrink:0; padding-top:28px; }
+@media (max-width:768px) { .impl-step-arrow { display:none; } }
+
+/* ── About section (implants/braces) ── */
+.sp-about-section { padding:80px 0; background:white; }
+.sp-about-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.sp-about-list { display:flex; flex-direction:column; gap:18px; margin-top:28px; }
+.sp-about-item { display:flex; align-items:flex-start; gap:16px; }
+.sp-about-icon { width:44px; height:44px; border-radius:var(--radius); background:var(--green-50); color:var(--primary-dark); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; transition:var(--transition); }
+.sp-about-item:hover .sp-about-icon { background:var(--primary); color:white; }
+.sp-about-item strong { display:block; font-size:14px; font-weight:700; color:var(--gray-800); margin-bottom:3px; }
+.sp-about-item span { font-size:13px; color:var(--gray-500); line-height:1.6; }
+.sp-compare { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:24px; }
+.sp-compare-card { border-radius:var(--radius-lg); padding:18px 20px; }
+.sp-compare-good { background:var(--green-50); border:1px solid var(--green-200); }
+.sp-compare-bad  { background:var(--gray-50); border:1px solid var(--gray-200); }
+.sp-compare-head { display:flex; align-items:center; gap:7px; font-size:13px; font-weight:700; margin-bottom:10px; }
+.sp-compare-good .sp-compare-head { color:var(--primary-dark); }
+.sp-compare-bad  .sp-compare-head { color:var(--gray-500); }
+.sp-compare-card ul { list-style:none; display:flex; flex-direction:column; gap:6px; }
+.sp-compare-card li { font-size:12px; color:var(--gray-600); padding-left:4px; }
+
+/* ── Pricing section ── */
+.sp-pricing { padding:80px 0; background:var(--gray-50); }
+.sp-price-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px; }
+.sp-price-card { background:white; border:1px solid var(--gray-200); border-radius:var(--radius-xl); padding:32px 28px; transition:var(--transition); position:relative; }
+.sp-price-card:hover { border-color:var(--green-300); box-shadow:var(--shadow-md); transform:translateY(-4px); }
+.sp-price-card--featured { border-color:var(--primary); box-shadow:var(--shadow-green); }
+.sp-price-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--primary); color:white; font-size:11px; font-weight:700; padding:4px 14px; border-radius:50px; white-space:nowrap; }
+.sp-price-brand { font-size:12px; font-weight:700; color:var(--primary-dark); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px; }
+.sp-price-val { font-family:var(--font-head); font-size:32px; font-weight:600; color:var(--gray-900); line-height:1; margin-bottom:4px; }
+.sp-price-sub { font-size:12px; color:var(--gray-400); margin-bottom:20px; }
+.sp-price-list { list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:24px; }
+.sp-price-list li { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--gray-600); }
+.sp-price-list li i { color:var(--primary); font-size:12px; flex-shrink:0; }
+.sp-installment { display:flex; align-items:center; gap:16px; background:var(--green-50); border:1px solid var(--green-200); border-radius:var(--radius-lg); padding:18px 24px; margin-top:20px; }
+.sp-installment-icon { width:44px; height:44px; border-radius:var(--radius); background:var(--primary); color:white; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.sp-installment strong { display:block; font-size:14px; font-weight:700; color:var(--gray-800); margin-bottom:2px; }
+.sp-installment span { font-size:13px; color:var(--gray-500); }
+
+/* ── Price table ── */
+.sp-price-table { border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--gray-200); margin-top:32px; }
+.sp-price-row { display:flex; align-items:center; justify-content:space-between; padding:14px 24px; border-bottom:1px solid var(--gray-100); font-size:14px; background:white; transition:background 0.2s; }
+.sp-price-row:hover { background:var(--green-50); }
+.sp-price-row:last-child { border-bottom:none; }
+.sp-price-row-head { background:var(--gray-800) !important; color:white; font-weight:700; font-size:12px; letter-spacing:0.5px; text-transform:uppercase; }
+.sp-price-item-name { display:flex; align-items:center; gap:10px; color:var(--gray-700); }
+.sp-price-item-name i { color:var(--primary); width:16px; text-align:center; }
+.sp-price-amount { font-weight:700; color:var(--primary-dark); white-space:nowrap; }
+.sp-price-free { color:var(--primary) !important; font-weight:700; }
+
+/* ── Types grid (braces) ── */
+.sp-type-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px; }
+.sp-type-card { background:white; border:1px solid var(--gray-200); border-radius:var(--radius-xl); padding:28px 24px; transition:var(--transition); }
+.sp-type-card:hover { border-color:var(--green-300); box-shadow:var(--shadow-md); transform:translateY(-4px); }
+.sp-type-card--featured { border-color:var(--primary); box-shadow:var(--shadow-green); }
+.sp-type-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.sp-type-icon { width:48px; height:48px; border-radius:var(--radius); background:var(--green-50); color:var(--primary-dark); display:flex; align-items:center; justify-content:center; font-size:20px; transition:var(--transition); }
+.sp-type-card:hover .sp-type-icon, .sp-type-card--featured .sp-type-icon { background:var(--primary); color:white; }
+.sp-type-badge { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:3px 10px; border-radius:50px; background:var(--green-50); color:var(--primary-dark); }
+.sp-type-card--featured .sp-type-badge { background:var(--primary); color:white; }
+.sp-type-name { font-size:18px; font-weight:700; color:var(--gray-800); margin-bottom:10px; }
+.sp-type-desc { font-size:13px; color:var(--gray-500); line-height:1.65; margin-bottom:18px; }
+.sp-type-pros { display:flex; flex-direction:column; gap:7px; margin-bottom:20px; }
+.sp-type-pro { display:flex; align-items:center; gap:7px; font-size:13px; color:var(--gray-600); }
+.sp-type-pro.con { color:var(--gray-400); }
+.sp-type-pro i.fa-check { color:var(--primary); }
+.sp-type-pro i.fa-times { color:var(--gray-300); }
+.sp-type-price { font-family:var(--font-head); font-size:22px; font-weight:600; color:var(--primary-dark); padding-top:16px; border-top:1px solid var(--gray-100); }
+.sp-type-price span { font-size:13px; font-weight:400; color:var(--gray-400); font-family:var(--font-body); }
+
+/* ── CTA section inner layout ── */
+.sp-cta-inner { text-align:center; max-width:640px; margin:0 auto; }
+.sp-cta-inner h2 { font-family:var(--font-head); font-size:clamp(28px,4vw,40px); font-weight:600; color:white; margin-bottom:12px; }
+.sp-cta-inner p { font-size:16px; color:rgba(255,255,255,0.6); margin-bottom:24px; line-height:1.7; }
+.sp-cta-badges { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin:16px 0 28px; }
+.sp-cta-badges span { display:flex; align-items:center; gap:7px; font-size:13px; color:rgba(255,255,255,0.7); }
+.sp-cta-badges span i { color:var(--primary-light); }
+.sp-cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+/* ── Subpage responsive ── */
+@media (max-width:1100px) {
+  .sp-about-grid { grid-template-columns:1fr; gap:40px; }
+  .sp-price-grid  { grid-template-columns:1fr 1fr; }
+  .sp-type-grid   { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:768px) {
+  .sp-price-grid  { grid-template-columns:1fr; }
+  .sp-type-grid   { grid-template-columns:1fr; }
+  .sp-compare     { grid-template-columns:1fr; }
+  .sp-installment { flex-direction:column; text-align:center; }
+}

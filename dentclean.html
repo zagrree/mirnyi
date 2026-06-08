@@ -5,36 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Чистка зубов — Atlant Dental Clinic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
+<!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="logo">
       <div class="logo-icon"><i class="fas fa-tooth"></i></div>
-      <span class="logo-text">Atlant Dental</span>
+      <div class="logo-text-wrap">
+        <span class="logo-main">ATLANT DENTAL</span>
+        <span class="logo-sub">CLINIC</span>
+      </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Главная</a></li>
       <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="index.html#consultation">Консультация</a></li>
+      <li><a href="index.html#sedation">Седация</a></li>
       <li><a href="index.html#doctors">Врачи</a></li>
       <li><a href="index.html#contacts">Контакты</a></li>
     </ul>
-    <a href="index.html#appointment" class="btn-nav">Записаться</a>
+    <div class="nav-right">
+      <div class="nav-hours"><i class="fas fa-clock"></i> 09:00–19:00 · Без выходных</div>
+      <a href="index.html#appointment" class="btn-nav">Записаться</a>
+    </div>
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
-  <a href="index.html" class="mob-link">Главная</a>
   <a href="index.html#services" class="mob-link">Услуги</a>
+  <a href="index.html#consultation" class="mob-link">Консультация</a>
+  <a href="index.html#sedation" class="mob-link">Седация</a>
   <a href="index.html#doctors" class="mob-link">Врачи</a>
   <a href="index.html#contacts" class="mob-link">Контакты</a>
-  <a href="index.html#appointment" class="mob-link" style="color:var(--accent)">Записаться</a>
+  <a href="index.html#appointment" class="mob-link mob-cta">Записаться на приём</a>
+  <div class="mob-hours"><i class="fas fa-clock"></i> Работаем ежедневно 09:00 – 19:00</div>
 </div>
 
 <!-- HERO -->
@@ -43,10 +54,10 @@
     <a href="index.html#services" class="sp-back"><i class="fas fa-arrow-left"></i> Все услуги</a>
     <div class="sp-hero-badge"><i class="fas fa-circle"></i> За 60 минут</div>
     <h1 class="sp-hero-title">Профессиональная<br><em>чистка зубов</em></h1>
-    <p class="sp-hero-sub">Ультразвук + Air Flow — убираем камень, налёт и потемнения. Зубы снова белые и здоровые.</p>
+    <p class="sp-hero-sub">Ультразвук + Air Flow — убираем камень, налёт и потемнения. Зубы снова белые и здоровые за один визит.</p>
     <div class="sp-hero-btns">
-      <a href="index.html#appointment" class="btn-primary"><i class="fas fa-calendar-check"></i> Записаться</a>
-      <a href="tel:+996550228030" class="btn-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
+      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться</a>
+      <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
     </div>
     <div class="sp-hero-stats">
       <div class="sp-stat"><div class="sp-stat-num">60 мин</div><div class="sp-stat-lbl">Длительность</div></div>
@@ -62,6 +73,7 @@
     <div class="section-head">
       <div class="section-label reveal">Что включает</div>
       <h2 class="section-title reveal reveal-delay-1">Виды чистки</h2>
+      <p class="section-sub reveal reveal-delay-2">Профессиональная чистка — основа здоровья полости рта</p>
     </div>
     <div class="sp-cards reveal reveal-delay-1">
       <div class="sp-card">
@@ -95,30 +107,33 @@
 <!-- ПРОЦЕСС -->
 <section class="impl-process">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head centered">
       <div class="section-label reveal">Как проходит</div>
       <h2 class="section-title reveal reveal-delay-1">Процесс чистки</h2>
     </div>
     <div class="impl-steps">
       <div class="impl-step reveal reveal-delay-1">
-        <div class="step-num">1</div>
+        <div class="step-num">01</div>
         <div class="step-title">Осмотр</div>
         <div class="step-desc">Оцениваем состояние зубов и дёсен, выбираем подходящий метод чистки.</div>
       </div>
+      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="impl-step reveal reveal-delay-2">
-        <div class="step-num">2</div>
+        <div class="step-num">02</div>
         <div class="step-title">Ультразвук</div>
         <div class="step-desc">Удаляем зубной камень и твёрдые отложения выше и ниже линии дёсен.</div>
       </div>
+      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="impl-step reveal reveal-delay-3">
-        <div class="step-num">3</div>
+        <div class="step-num">03</div>
         <div class="step-title">Air Flow</div>
-        <div class="step-desc">Убираем пигментный налёт струёй соды — зубы светлеют на 1–2 тона.</div>
+        <div class="step-desc">Убираем пигментный налёт — зубы светлеют на 1–2 тона.</div>
       </div>
+      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="impl-step reveal reveal-delay-4">
-        <div class="step-num">4</div>
+        <div class="step-num">04</div>
         <div class="step-title">Полировка и защита</div>
-        <div class="step-desc">Полируем поверхность зубов пастой, наносим фторлак для защиты эмали.</div>
+        <div class="step-desc">Полируем пастой, наносим фторлак для защиты эмали.</div>
       </div>
     </div>
   </div>
@@ -127,22 +142,26 @@
 <!-- FAQ -->
 <section class="impl-faq-section">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head centered">
       <div class="section-label reveal">FAQ</div>
       <h2 class="section-title reveal reveal-delay-1">Частые вопросы</h2>
     </div>
-    <div class="impl-faq-list reveal reveal-delay-1">
-      <div class="impl-faq-item">
-        <div class="impl-faq-q">Больно ли делать чистку? <i class="fas fa-chevron-down"></i></div>
+    <div class="impl-faq-list">
+      <div class="impl-faq-item reveal reveal-delay-1">
+        <button class="impl-faq-q">Больно ли делать чистку? <i class="fas fa-plus"></i></button>
         <div class="impl-faq-a">Чистка безболезненна для большинства пациентов. При чувствительных дёснах наносим гель-анестетик.</div>
       </div>
-      <div class="impl-faq-item">
-        <div class="impl-faq-q">Как часто нужна профессиональная чистка? <i class="fas fa-chevron-down"></i></div>
+      <div class="impl-faq-item reveal reveal-delay-2">
+        <button class="impl-faq-q">Как часто нужна профессиональная чистка? <i class="fas fa-plus"></i></button>
         <div class="impl-faq-a">Рекомендуем 1–2 раза в год. При брекетах или склонности к камню — каждые 3–4 месяца.</div>
       </div>
-      <div class="impl-faq-item">
-        <div class="impl-faq-q">Чистка отбеливает зубы? <i class="fas fa-chevron-down"></i></div>
+      <div class="impl-faq-item reveal reveal-delay-3">
+        <button class="impl-faq-q">Чистка отбеливает зубы? <i class="fas fa-plus"></i></button>
         <div class="impl-faq-a">Air Flow убирает пигментный налёт и осветляет зубы на 1–2 тона. Для более сильного эффекта — процедура отбеливания Zoom.</div>
+      </div>
+      <div class="impl-faq-item reveal reveal-delay-1">
+        <button class="impl-faq-q">Можно ли делать чистку с брекетами? <i class="fas fa-plus"></i></button>
+        <div class="impl-faq-a">Да, и даже нужно — рекомендуем раз в 3–4 месяца при ношении брекетов, так как очищать зубы самостоятельно сложнее.</div>
       </div>
     </div>
   </div>
@@ -150,29 +169,44 @@
 
 <!-- CTA -->
 <section class="impl-cta">
-  <div class="impl-cta-inner">
-    <h2 class="impl-cta-title">Здоровые зубы начинаются с чистки</h2>
-    <p class="impl-cta-sub">Запишитесь на профессиональную чистку — 60 минут и результат налицо</p>
-    <a href="index.html#appointment" class="btn-primary"><i class="fas fa-calendar-check"></i> Записаться</a>
+  <div class="container">
+    <div class="sp-cta-inner reveal">
+      <div class="section-label label-light" style="justify-content:center;">60 минут</div>
+      <h2>Здоровые зубы начинаются с чистки</h2>
+      <p>Запишитесь на профессиональную чистку — результат заметен сразу после процедуры.</p>
+      <div class="sp-cta-badges">
+        <span><i class="fas fa-check"></i> Без боли</span>
+        <span><i class="fas fa-check"></i> Результат за 60 минут</span>
+        <span><i class="fas fa-check"></i> Ответ за 15 минут</span>
+      </div>
+      <div class="sp-cta-btns">
+        <a href="index.html#appointment" class="btn-green"><i class="fab fa-whatsapp"></i> Записаться в WhatsApp</a>
+        <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
+      </div>
+    </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
+  <div class="footer-inner container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="logo">
+        <a href="index.html" class="logo logo-white">
           <div class="logo-icon"><i class="fas fa-tooth"></i></div>
-          <span class="logo-text" style="color:white">Atlant Dental</span>
+          <div class="logo-text-wrap">
+            <span class="logo-main">ATLANT DENTAL</span>
+            <span class="logo-sub">CLINIC</span>
+          </div>
         </a>
         <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
+        <div class="footer-hours"><i class="fas fa-clock"></i> Ежедневно 09:00 – 19:00</div>
         <div class="footer-socials">
           <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
         </div>
       </div>
-      <div>
+      <div class="footer-col">
         <div class="footer-col-title">Услуги</div>
         <ul class="footer-links">
           <li><a href="implants.html">Имплантация</a></li>
@@ -182,12 +216,23 @@
           <li><a href="veneers.html">Виниры</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
+        <div class="footer-col-title">Клиника</div>
+        <ul class="footer-links">
+          <li><a href="index.html#advantages">О нас</a></li>
+          <li><a href="index.html#doctors">Врачи</a></li>
+          <li><a href="index.html#testimonials">Отзывы</a></li>
+          <li><a href="index.html#contacts">Контакты</a></li>
+          <li><a href="index.html#appointment">Запись</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <div class="footer-col-title">Контакты</div>
         <ul class="footer-links">
           <li><a href="tel:+996550228030">0 (550) 22-80-30</a></li>
-          <li><a href="#">7-й микрорайон, 37/1, Бишкек</a></li>
-          <li><a href="#">Пн–Сб: 9:00–18:00</a></li>
+          <li><a href="https://wa.me/996550228030" target="_blank">WhatsApp</a></li>
+          <li><a href="#">7-й микрорайон, 37/1</a></li>
+          <li><a href="#">Ежедневно 09:00–19:00</a></li>
         </ul>
       </div>
     </div>
@@ -196,18 +241,25 @@
     </div>
   </div>
 </footer>
-
 <script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  document.getElementById('closeMenu').addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); });
+  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  document.getElementById('closeMenu').addEventListener('click', closeMobile);
   burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
-  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  document.querySelectorAll('.impl-faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  document.querySelectorAll('.impl-faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.impl-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 </script>
 </body>
 </html>

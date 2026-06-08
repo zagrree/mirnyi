@@ -1,187 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Брекеты — Atlant Dental Clinic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="logo">
       <div class="logo-icon"><i class="fas fa-tooth"></i></div>
-      <span class="logo-text">Atlant Dental</span>
+      <div class="logo-text-wrap">
+        <span class="logo-main">ATLANT DENTAL</span>
+        <span class="logo-sub">CLINIC</span>
+      </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Главная</a></li>
       <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="index.html#consultation">Консультация</a></li>
+      <li><a href="index.html#sedation">Седация</a></li>
       <li><a href="index.html#doctors">Врачи</a></li>
-      <li><a href="index.html#testimonials">Отзывы</a></li>
       <li><a href="index.html#contacts">Контакты</a></li>
     </ul>
-    <a href="index.html#appointment" class="btn-nav">Записаться</a>
-    <div class="burger" id="burger">
-      <span></span><span></span><span></span>
+    <div class="nav-right">
+      <div class="nav-hours"><i class="fas fa-clock"></i> 09:00–19:00 · Без выходных</div>
+      <a href="index.html#appointment" class="btn-nav">Записаться</a>
     </div>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
-  <a href="index.html" class="mob-link">Главная</a>
   <a href="index.html#services" class="mob-link">Услуги</a>
+  <a href="index.html#consultation" class="mob-link">Консультация</a>
+  <a href="index.html#sedation" class="mob-link">Седация</a>
   <a href="index.html#doctors" class="mob-link">Врачи</a>
-  <a href="index.html#testimonials" class="mob-link">Отзывы</a>
   <a href="index.html#contacts" class="mob-link">Контакты</a>
-  <a href="index.html#appointment" class="mob-link" style="color:var(--accent)">Записаться</a>
+  <a href="index.html#appointment" class="mob-link mob-cta">Записаться на приём</a>
+  <div class="mob-hours"><i class="fas fa-clock"></i> Работаем ежедневно 09:00 – 19:00</div>
 </div>
 
 <!-- HERO -->
-<section class="brc-hero">
-  <div class="hero-blob hero-blob-1"></div>
-  <div class="hero-blob hero-blob-2"></div>
-  <div class="container">
-    <div class="brc-hero-inner">
-      <div class="brc-hero-content">
-        <a href="index.html#services" class="impl-breadcrumb">
-          <i class="fas fa-arrow-left"></i> Все услуги
-        </a>
-        <div class="hero-badge" style="margin-top: 20px;">
-          <i class="fas fa-circle"></i>
-          Ортодонт с опытом 11+ лет
-        </div>
-        <h1 class="hero-title">
-          Брекеты для<br>
-          <em>идеального прикуса</em>
-        </h1>
-        <p class="hero-sub">
-          Выравниваем зубы незаметно и эффективно. Металлические, керамические и сапфировые системы — подберём под ваш случай и бюджет.
-        </p>
-        <div class="hero-btns">
-          <a href="index.html#appointment" class="btn-primary">
-            <i class="fas fa-calendar-check"></i>
-            Бесплатная консультация
-          </a>
-          <a href="#brc-types" class="btn-outline">
-            <i class="fas fa-arrow-down"></i>
-            Виды брекетов
-          </a>
-        </div>
-        <div class="impl-hero-badges">
-          <div class="impl-badge-item">
-            <i class="fas fa-check-circle"></i>
-            <span>Без боли</span>
-          </div>
-          <div class="impl-badge-item">
-            <i class="fas fa-check-circle"></i>
-            <span>Результат за 12–18 мес.</span>
-          </div>
-          <div class="impl-badge-item">
-            <i class="fas fa-check-circle"></i>
-            <span>Рассрочка 0%</span>
-          </div>
-        </div>
-      </div>
-      <div class="brc-hero-visual">
-        <div class="brc-visual-ring">
-          <div class="brc-visual-center">
-            <i class="fas fa-teeth"></i>
-          </div>
-        </div>
-        <div class="impl-stat-card impl-stat-card--1 float-pulse">
-          <div class="impl-stat-num">500+</div>
-          <div class="impl-stat-label">Пациентов с брекетами</div>
-        </div>
-        <div class="impl-stat-card impl-stat-card--2 float-pulse-2">
-          <div class="impl-stat-num">11 лет</div>
-          <div class="impl-stat-label">Опыт ортодонта</div>
-        </div>
-        <div class="impl-stat-card impl-stat-card--3 float-pulse">
-          <div class="impl-stat-num">3 типа</div>
-          <div class="impl-stat-label">Брекет-систем</div>
-        </div>
-      </div>
+<section class="sp-hero brc-sp-hero">
+  <div class="sp-hero-inner">
+    <a href="index.html#services" class="sp-back"><i class="fas fa-arrow-left"></i> Все услуги</a>
+    <div class="sp-hero-badge"><i class="fas fa-circle"></i> Ортодонт с опытом 8+ лет</div>
+    <h1 class="sp-hero-title">Брекеты для<br><em>идеального прикуса</em></h1>
+    <p class="sp-hero-sub">Металлические, керамические и сапфировые системы — выравниваем зубы эффективно и комфортно. Подберём под ваш случай и бюджет.</p>
+    <div class="sp-hero-btns">
+      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Бесплатная консультация</a>
+      <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
+    </div>
+    <div class="sp-hero-stats">
+      <div class="sp-stat"><div class="sp-stat-num">500+</div><div class="sp-stat-lbl">Пациентов с брекетами</div></div>
+      <div class="sp-stat"><div class="sp-stat-num">12–24</div><div class="sp-stat-lbl">Месяцев лечения</div></div>
+      <div class="sp-stat"><div class="sp-stat-num">3 типа</div><div class="sp-stat-lbl">Брекет-систем</div></div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="brc-about">
+<section class="sp-about-section">
   <div class="container">
-    <div class="impl-about-grid">
+    <div class="sp-about-grid">
       <div>
         <div class="section-label reveal">Зачем нужны брекеты</div>
         <h2 class="section-title reveal reveal-delay-1">Ровные зубы —<br>это здоровье, не только красота</h2>
-        <p class="section-sub reveal reveal-delay-2">
-          Неправильный прикус вызывает кариес, проблемы с суставами, головные боли и износ зубной эмали. Брекеты решают всё это комплексно.
-        </p>
-        <div class="impl-about-list reveal reveal-delay-3">
-          <div class="impl-about-item">
-            <div class="impl-about-icon"><i class="fas fa-smile"></i></div>
-            <div>
-              <strong>Красивая улыбка</strong>
-              <span>Ровные зубы повышают уверенность в себе и производят впечатление</span>
-            </div>
+        <p class="section-sub reveal reveal-delay-2">Неправильный прикус вызывает кариес, проблемы с суставами, головные боли и износ эмали. Брекеты решают всё это комплексно.</p>
+        <div class="sp-about-list reveal reveal-delay-3">
+          <div class="sp-about-item">
+            <div class="sp-about-icon"><i class="fas fa-smile"></i></div>
+            <div><strong>Красивая улыбка</strong><span>Ровные зубы повышают уверенность и производят впечатление.</span></div>
           </div>
-          <div class="impl-about-item">
-            <div class="impl-about-icon"><i class="fas fa-heartbeat"></i></div>
-            <div>
-              <strong>Здоровые дёсны</strong>
-              <span>Ровные зубы легче чистить — меньше кариеса, воспалений и камня</span>
-            </div>
+          <div class="sp-about-item">
+            <div class="sp-about-icon"><i class="fas fa-heartbeat"></i></div>
+            <div><strong>Здоровые дёсны</strong><span>Ровные зубы легче чистить — меньше кариеса, воспалений и камня.</span></div>
           </div>
-          <div class="impl-about-item">
-            <div class="impl-about-icon"><i class="fas fa-utensils"></i></div>
-            <div>
-              <strong>Правильное жевание</strong>
-              <span>Исправленный прикус снижает нагрузку на суставы и мышцы лица</span>
-            </div>
+          <div class="sp-about-item">
+            <div class="sp-about-icon"><i class="fas fa-utensils"></i></div>
+            <div><strong>Правильное жевание</strong><span>Исправленный прикус снижает нагрузку на суставы и мышцы лица.</span></div>
           </div>
-          <div class="impl-about-item">
-            <div class="impl-about-icon"><i class="fas fa-shield-alt"></i></div>
-            <div>
-              <strong>Долговечный результат</strong>
-              <span>После брекетов ретейнер сохраняет результат на всю жизнь</span>
-            </div>
+          <div class="sp-about-item">
+            <div class="sp-about-icon"><i class="fas fa-shield-alt"></i></div>
+            <div><strong>Долговечный результат</strong><span>После брекетов ретейнер сохраняет результат на всю жизнь.</span></div>
           </div>
         </div>
       </div>
       <div class="reveal reveal-delay-2">
-        <div class="brc-who-grid">
-          <div class="brc-who-card">
-            <div class="brc-who-icon"><i class="fas fa-child"></i></div>
-            <div class="brc-who-title">Дети от 10 лет</div>
-            <div class="brc-who-desc">Оптимальный возраст — когда все постоянные зубы уже прорезались</div>
+        <div class="adv-grid" style="grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="adv-card">
+            <div class="adv-icon"><i class="fas fa-child"></i></div>
+            <div class="adv-title">Дети от 10 лет</div>
+            <div class="adv-desc">Оптимальный возраст — когда все постоянные зубы прорезались</div>
           </div>
-          <div class="brc-who-card">
-            <div class="brc-who-icon"><i class="fas fa-user"></i></div>
-            <div class="brc-who-title">Подростки</div>
-            <div class="brc-who-desc">Наиболее частые пациенты — кость ещё гибкая, лечение идёт быстрее</div>
+          <div class="adv-card">
+            <div class="adv-icon"><i class="fas fa-user"></i></div>
+            <div class="adv-title">Подростки</div>
+            <div class="adv-desc">Кость гибкая — лечение идёт быстрее и с лучшим результатом</div>
           </div>
-          <div class="brc-who-card">
-            <div class="brc-who-icon"><i class="fas fa-user-tie"></i></div>
-            <div class="brc-who-title">Взрослые</div>
-            <div class="brc-who-desc">Возраст не помеха. Лечим пациентов любого возраста с отличным результатом</div>
+          <div class="adv-card">
+            <div class="adv-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="adv-title">Взрослые</div>
+            <div class="adv-desc">Возраст не помеха — лечим пациентов любого возраста</div>
           </div>
-          <div class="brc-who-card">
-            <div class="brc-who-icon"><i class="fas fa-tooth"></i></div>
-            <div class="brc-who-title">После имплантов</div>
-            <div class="brc-who-desc">Совмещаем ортодонтию с имплантацией по индивидуальному плану</div>
-          </div>
-        </div>
-        <div class="brc-result-banner reveal reveal-delay-3">
-          <i class="fas fa-clock"></i>
-          <div>
-            <strong>Средний срок лечения: 12–24 месяца</strong>
-            <span>Зависит от сложности случая — определяем на первой консультации</span>
+          <div class="adv-card">
+            <div class="adv-icon"><i class="fas fa-tooth"></i></div>
+            <div class="adv-title">После имплантов</div>
+            <div class="adv-desc">Совмещаем ортодонтию с имплантацией по индивидуальному плану</div>
           </div>
         </div>
       </div>
@@ -190,235 +123,168 @@
 </section>
 
 <!-- TYPES -->
-<section class="brc-types" id="brc-types">
+<section style="padding:80px 0; background:var(--gray-50);" id="brc-types">
   <div class="container">
-    <div class="section-head" style="text-align:center;">
-      <div class="section-label reveal" style="justify-content:center;">Виды систем</div>
+    <div class="section-head centered">
+      <div class="section-label reveal">Виды систем</div>
       <h2 class="section-title reveal reveal-delay-1">Какие брекеты выбрать</h2>
-      <p class="section-sub reveal reveal-delay-2" style="margin: 12px auto 0;">Поможем подобрать оптимальную систему на консультации</p>
+      <p class="section-sub reveal reveal-delay-2">Поможем подобрать оптимальную систему на консультации</p>
     </div>
-    <div class="brc-types-grid">
-      <div class="brc-type-card reveal reveal-delay-1">
-        <div class="brc-type-top">
-          <div class="brc-type-icon"><i class="fas fa-cog"></i></div>
-          <div class="brc-type-badge">Самый надёжный</div>
+    <div class="sp-type-grid">
+      <div class="sp-type-card reveal reveal-delay-1">
+        <div class="sp-type-top">
+          <div class="sp-type-icon"><i class="fas fa-cog"></i></div>
+          <span class="sp-type-badge">Самый надёжный</span>
         </div>
-        <div class="brc-type-name">Металлические</div>
-        <div class="brc-type-desc">Классика ортодонтии. Самые эффективные при сложных случаях. Дуги и замки из медицинской стали.</div>
-        <div class="brc-type-pros">
-          <div class="brc-pro"><i class="fas fa-check"></i> Максимальная эффективность</div>
-          <div class="brc-pro"><i class="fas fa-check"></i> Самая низкая цена</div>
-          <div class="brc-pro"><i class="fas fa-check"></i> Подходят для любого случая</div>
-          <div class="brc-con"><i class="fas fa-times"></i> Заметны при улыбке</div>
+        <div class="sp-type-name">Металлические</div>
+        <div class="sp-type-desc">Классика ортодонтии. Самые эффективные при сложных случаях. Дуги и замки из медицинской стали.</div>
+        <div class="sp-type-pros">
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Максимальная эффективность</div>
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Самая низкая цена</div>
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Подходят для любого случая</div>
+          <div class="sp-type-pro con"><i class="fas fa-times"></i> Заметны при улыбке</div>
         </div>
-        <div class="brc-type-price">от 35 000 ₽ <span>за челюсть</span></div>
+        <div class="sp-type-price">от 15 000 сом <span>за челюсть</span></div>
       </div>
-      <div class="brc-type-card brc-type-card--featured reveal reveal-delay-2">
-        <div class="brc-type-top">
-          <div class="brc-type-icon"><i class="fas fa-gem"></i></div>
-          <div class="brc-type-badge brc-badge-gold">Популярный</div>
+      <div class="sp-type-card sp-type-card--featured reveal reveal-delay-2">
+        <div class="sp-type-top">
+          <div class="sp-type-icon"><i class="fas fa-gem"></i></div>
+          <span class="sp-type-badge">Популярный</span>
         </div>
-        <div class="brc-type-name">Керамические</div>
-        <div class="brc-type-desc">Замки цвета зубной эмали — почти незаметны. Отличное сочетание эстетики и эффективности.</div>
-        <div class="brc-type-pros">
-          <div class="brc-pro"><i class="fas fa-check"></i> Почти не видны</div>
-          <div class="brc-pro"><i class="fas fa-check"></i> Не окрашиваются</div>
-          <div class="brc-pro"><i class="fas fa-check"></i> Высокая эффективность</div>
-          <div class="brc-con"><i class="fas fa-times"></i> Дороже металлических</div>
+        <div class="sp-type-name">Керамические</div>
+        <div class="sp-type-desc">Замки цвета зубной эмали — почти незаметны. Отличное сочетание эстетики и эффективности.</div>
+        <div class="sp-type-pros">
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Почти не видны</div>
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Не окрашиваются</div>
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Высокая эффективность</div>
+          <div class="sp-type-pro con"><i class="fas fa-times"></i> Дороже металлических</div>
         </div>
-        <div class="brc-type-price">от 55 000 ₽ <span>за челюсть</span></div>
+        <div class="sp-type-price">от 25 000 сом <span>за челюсть</span></div>
       </div>
-      <div class="brc-type-card reveal reveal-delay-3">
-        <div class="brc-type-top">
-          <div class="brc-type-icon"><i class="fas fa-star"></i></div>
-          <div class="brc-type-badge">Премиум</div>
+      <div class="sp-type-card reveal reveal-delay-3">
+        <div class="sp-type-top">
+          <div class="sp-type-icon"><i class="fas fa-star"></i></div>
+          <span class="sp-type-badge">Премиум</span>
         </div>
-        <div class="brc-type-name">Сапфировые</div>
-        <div class="brc-type-desc">Монокристаллический сапфир — абсолютно прозрачные замки. Максимальная эстетика для взрослых.</div>
-        <div class="brc-type-pros">
-          <div class="brc-pro"><i class="fas fa-check"></i> Полностью прозрачные</div>
-          <div class="brc-pro"><i class="fas fa-check"></i> Не теряют цвет</div>
-          <div class="brc-pro"><i class="fas fa-check"></i> Гладкая поверхность</div>
-          <div class="brc-con"><i class="fas fa-times"></i> Максимальная цена</div>
+        <div class="sp-type-name">Сапфировые</div>
+        <div class="sp-type-desc">Монокристаллический сапфир — абсолютно прозрачные замки. Максимальная эстетика для взрослых.</div>
+        <div class="sp-type-pros">
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Полностью прозрачные</div>
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Не теряют цвет</div>
+          <div class="sp-type-pro"><i class="fas fa-check"></i> Гладкая поверхность</div>
+          <div class="sp-type-pro con"><i class="fas fa-times"></i> Максимальная цена</div>
         </div>
-        <div class="brc-type-price">от 75 000 ₽ <span>за челюсть</span></div>
+        <div class="sp-type-price">от 35 000 сом <span>за челюсть</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="brc-process">
+<section class="impl-process">
   <div class="container">
-    <div class="section-head" style="text-align:center;">
-      <div class="section-label reveal" style="justify-content:center;">Этапы</div>
+    <div class="section-head centered">
+      <div class="section-label reveal">Этапы</div>
       <h2 class="section-title reveal reveal-delay-1">Как проходит лечение</h2>
-      <p class="section-sub reveal reveal-delay-2" style="margin: 12px auto 0;">Прозрачно и понятно — от первого визита до ретейнера</p>
+      <p class="section-sub reveal reveal-delay-2">От первого визита до красивой улыбки</p>
     </div>
     <div class="impl-steps">
       <div class="impl-step reveal reveal-delay-1">
-        <div class="impl-step-num">01</div>
-        <div class="impl-step-icon"><i class="fas fa-search"></i></div>
-        <div class="impl-step-title">Консультация</div>
-        <div class="impl-step-desc">Фото, слепки или 3D-скан, анализ прикуса и план лечения. Бесплатно.</div>
-        <div class="impl-step-time"><i class="fas fa-clock"></i> 60 минут</div>
+        <div class="step-num">01</div>
+        <div class="step-title">Консультация</div>
+        <div class="step-desc">Фото, слепки или 3D-скан, анализ прикуса и план лечения. <strong>Бесплатно.</strong></div>
       </div>
       <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="impl-step reveal reveal-delay-2">
-        <div class="impl-step-num">02</div>
-        <div class="impl-step-icon"><i class="fas fa-teeth"></i></div>
-        <div class="impl-step-title">Установка брекетов</div>
-        <div class="impl-step-desc">Фиксируем замки на зубы специальным клеем. Процедура безболезненная.</div>
-        <div class="impl-step-time"><i class="fas fa-clock"></i> 1.5–2 часа</div>
+        <div class="step-num">02</div>
+        <div class="step-title">Установка</div>
+        <div class="step-desc">Фиксируем замки на зубы специальным клеем. Безболезненно, 1.5–2 часа.</div>
       </div>
       <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="impl-step reveal reveal-delay-3">
-        <div class="impl-step-num">03</div>
-        <div class="impl-step-icon"><i class="fas fa-sync-alt"></i></div>
-        <div class="impl-step-title">Коррекции</div>
-        <div class="impl-step-desc">Каждые 4–6 недель приходите на замену дуги. Зубы постепенно перемещаются.</div>
-        <div class="impl-step-time"><i class="fas fa-clock"></i> каждые 4–6 нед.</div>
+        <div class="step-num">03</div>
+        <div class="step-title">Коррекции</div>
+        <div class="step-desc">Каждые 4–6 недель — замена дуги. Зубы постепенно перемещаются.</div>
       </div>
       <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
       <div class="impl-step reveal reveal-delay-4">
-        <div class="impl-step-num">04</div>
-        <div class="impl-step-icon"><i class="fas fa-smile-beam"></i></div>
-        <div class="impl-step-title">Ретейнер</div>
-        <div class="impl-step-desc">Снимаем брекеты и ставим ретейнер — фиксирует результат навсегда.</div>
-        <div class="impl-step-time"><i class="fas fa-clock"></i> 1 визит</div>
+        <div class="step-num">04</div>
+        <div class="step-title">Ретейнер</div>
+        <div class="step-desc">Снимаем брекеты и ставим ретейнер — фиксирует результат навсегда.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="brc-pricing">
+<!-- PRICING TABLE -->
+<section class="sp-pricing">
   <div class="container">
     <div class="section-head">
       <div class="section-label reveal">Цены</div>
       <h2 class="section-title reveal reveal-delay-1">Стоимость лечения</h2>
       <p class="section-sub reveal reveal-delay-2">Цена указана за одну челюсть. Полный курс — верхняя + нижняя.</p>
     </div>
-    <div class="brc-price-table reveal">
-      <div class="brc-price-row brc-price-head">
-        <span>Услуга</span>
-        <span>Стоимость</span>
+    <div class="sp-price-table reveal reveal-delay-1">
+      <div class="sp-price-row sp-price-row-head"><span>Услуга</span><span>Стоимость</span></div>
+      <div class="sp-price-row">
+        <div class="sp-price-item-name"><i class="fas fa-cog"></i> Металлические брекеты (1 челюсть)</div>
+        <span class="sp-price-amount">от 15 000 сом</span>
       </div>
-      <div class="brc-price-row">
-        <div class="brc-price-item-name">
-          <i class="fas fa-cog"></i>
-          Металлические брекеты (1 челюсть)
-        </div>
-        <span class="brc-price-amount">от 35 000 ₽</span>
+      <div class="sp-price-row">
+        <div class="sp-price-item-name"><i class="fas fa-gem"></i> Керамические брекеты (1 челюсть)</div>
+        <span class="sp-price-amount">от 25 000 сом</span>
       </div>
-      <div class="brc-price-row">
-        <div class="brc-price-item-name">
-          <i class="fas fa-gem"></i>
-          Керамические брекеты (1 челюсть)
-        </div>
-        <span class="brc-price-amount">от 55 000 ₽</span>
+      <div class="sp-price-row">
+        <div class="sp-price-item-name"><i class="fas fa-star"></i> Сапфировые брекеты (1 челюсть)</div>
+        <span class="sp-price-amount">от 35 000 сом</span>
       </div>
-      <div class="brc-price-row">
-        <div class="brc-price-item-name">
-          <i class="fas fa-star"></i>
-          Сапфировые брекеты (1 челюсть)
-        </div>
-        <span class="brc-price-amount">от 75 000 ₽</span>
+      <div class="sp-price-row">
+        <div class="sp-price-item-name"><i class="fas fa-sync-alt"></i> Плановая коррекция (визит)</div>
+        <span class="sp-price-amount">800 сом</span>
       </div>
-      <div class="brc-price-row">
-        <div class="brc-price-item-name">
-          <i class="fas fa-sync-alt"></i>
-          Плановая коррекция (визит)
-        </div>
-        <span class="brc-price-amount">1 500 ₽</span>
+      <div class="sp-price-row">
+        <div class="sp-price-item-name"><i class="fas fa-lock"></i> Ретейнер несъёмный (1 челюсть)</div>
+        <span class="sp-price-amount">4 000 сом</span>
       </div>
-      <div class="brc-price-row">
-        <div class="brc-price-item-name">
-          <i class="fas fa-lock"></i>
-          Ретейнер несъёмный (1 челюсть)
-        </div>
-        <span class="brc-price-amount">8 000 ₽</span>
-      </div>
-      <div class="brc-price-row">
-        <div class="brc-price-item-name">
-          <i class="fas fa-search"></i>
-          Консультация ортодонта
-        </div>
-        <span class="brc-price-amount brc-price-free">Бесплатно</span>
+      <div class="sp-price-row">
+        <div class="sp-price-item-name"><i class="fas fa-search"></i> Консультация ортодонта</div>
+        <span class="sp-price-amount sp-price-free">Бесплатно</span>
       </div>
     </div>
-    <div class="impl-installment reveal" style="margin-top: 24px;">
-      <div class="impl-installment-icon"><i class="fas fa-credit-card"></i></div>
-      <div>
-        <strong>Рассрочка 0% на 12 месяцев</strong>
-        <span>Оформляем прямо в клинике — без банка и переплат</span>
-      </div>
-      <a href="index.html#appointment" class="btn-outline" style="border-color: var(--gray-200); color: var(--navy); white-space: nowrap; margin-left: auto;">Узнать подробнее</a>
+    <div class="sp-installment reveal">
+      <div class="sp-installment-icon"><i class="fas fa-credit-card"></i></div>
+      <div><strong>Рассрочка 0% на 12 месяцев</strong><span>Оформляем прямо в клинике — без банка и переплат</span></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="brc-faq">
+<section class="impl-faq-section">
   <div class="container">
-    <div class="section-head" style="text-align:center;">
-      <div class="section-label reveal" style="justify-content:center;">FAQ</div>
+    <div class="section-head centered">
+      <div class="section-label reveal">FAQ</div>
       <h2 class="section-title reveal reveal-delay-1">Частые вопросы</h2>
     </div>
     <div class="impl-faq-list">
       <div class="impl-faq-item reveal reveal-delay-1">
-        <button class="impl-faq-q">
-          Больно ли носить брекеты?
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="impl-faq-a">
-          Установка безболезненна. Первые 3–5 дней после установки и каждой коррекции возможна небольшая ноющая боль при жевании — это нормально, зубы реагируют на давление. Снимается обычными обезболивающими.
-        </div>
+        <button class="impl-faq-q">Больно ли носить брекеты? <i class="fas fa-plus"></i></button>
+        <div class="impl-faq-a">Установка безболезненна. Первые 3–5 дней после установки и коррекции возможна ноющая боль при жевании — это нормально. Снимается обычными обезболивающими.</div>
       </div>
       <div class="impl-faq-item reveal reveal-delay-2">
-        <button class="impl-faq-q">
-          Можно ли носить брекеты взрослым?
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="impl-faq-a">
-          Да, ограничений по возрасту нет. У взрослых лечение может занять чуть больше времени, чем у подростков, но результат тот же. Многие наши пациенты — люди 30–45 лет.
-        </div>
+        <button class="impl-faq-q">Можно ли носить брекеты взрослым? <i class="fas fa-plus"></i></button>
+        <div class="impl-faq-a">Да, ограничений по возрасту нет. У взрослых лечение может занять чуть больше времени, но результат тот же. Многие наши пациенты — люди 30–45 лет.</div>
       </div>
       <div class="impl-faq-item reveal reveal-delay-3">
-        <button class="impl-faq-q">
-          Как ухаживать за зубами с брекетами?
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="impl-faq-a">
-          Чистить зубы нужно после каждого приёма пищи — специальной ортодонтической щёткой и ёршиками для чистки под дугой. Также рекомендуется ирригатор. Избегать твёрдой и липкой пищи (орехи, карамель, жвачка).
-        </div>
+        <button class="impl-faq-q">Какие брекеты лучше? <i class="fas fa-plus"></i></button>
+        <div class="impl-faq-a">С медицинской точки зрения — одинаково эффективны. Металлические дешевле и прочнее, керамические и сапфировые — незаметнее. Ортодонт поможет выбрать на консультации.</div>
       </div>
       <div class="impl-faq-item reveal reveal-delay-1">
-        <button class="impl-faq-q">
-          Какие брекеты лучше — металлические или керамические?
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="impl-faq-a">
-          С медицинской точки зрения — одинаково эффективны. Металлические дешевле и чуть прочнее, керамические и сапфировые — незаметнее. Выбор зависит от ваших приоритетов: бюджет или эстетика. Ортодонт поможет определиться на консультации.
-        </div>
+        <button class="impl-faq-q">Что будет после снятия брекетов? <i class="fas fa-plus"></i></button>
+        <div class="impl-faq-a">Устанавливается ретейнер — тонкая проволока на внутренней поверхности зубов. Фиксирует результат и носится постоянно. Без ретейнера зубы могут вернуться в исходное положение.</div>
       </div>
       <div class="impl-faq-item reveal reveal-delay-2">
-        <button class="impl-faq-q">
-          Что будет после снятия брекетов?
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="impl-faq-a">
-          После снятия устанавливается ретейнер — несъёмная тонкая проволока на внутренней поверхности зубов. Она фиксирует результат и носится постоянно. Без ретейнера зубы могут вернуться в исходное положение.
-        </div>
-      </div>
-      <div class="impl-faq-item reveal reveal-delay-3">
-        <button class="impl-faq-q">
-          Можно ли поставить брекеты только на одну челюсть?
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="impl-faq-a">
-          В некоторых случаях — да. Это решается индивидуально после диагностики. Чаще всего требуется лечение обеих челюстей для правильного смыкания прикуса, но бывают исключения.
-        </div>
+        <button class="impl-faq-q">Как ухаживать за зубами с брекетами? <i class="fas fa-plus"></i></button>
+        <div class="impl-faq-a">Чистить зубы после каждого приёма пищи ортодонтической щёткой и ёршиками. Рекомендуется ирригатор. Избегать твёрдой и липкой пищи.</div>
       </div>
     </div>
   </div>
@@ -426,64 +292,54 @@
 
 <!-- CTA -->
 <section class="impl-cta">
-  <div class="hero-blob hero-blob-1" style="opacity:0.5;"></div>
   <div class="container">
-    <div class="impl-cta-inner reveal">
-      <div class="impl-cta-text">
-        <div class="section-label" style="color: var(--gold-light);">Бесплатно</div>
-        <h2 class="section-title" style="color:white;">Запишитесь на консультацию ортодонта</h2>
-        <p style="color:rgba(255,255,255,0.6); margin-top:12px; font-size:16px; line-height:1.7;">
-          Первичный осмотр, анализ прикуса и план лечения — бесплатно.<br>
-          Подберём систему под ваш случай и бюджет.
-        </p>
-        <div class="impl-cta-badges">
-          <span><i class="fas fa-check"></i> Без очередей</span>
-          <span><i class="fas fa-check"></i> Опытный ортодонт</span>
-          <span><i class="fas fa-check"></i> Ответ за 15 минут</span>
-        </div>
+    <div class="sp-cta-inner reveal">
+      <div class="section-label label-light" style="justify-content:center;">Бесплатно</div>
+      <h2>Запишитесь к ортодонту</h2>
+      <p>Первичный осмотр, анализ прикуса и план лечения — бесплатно.<br>Подберём систему под ваш случай и бюджет.</p>
+      <div class="sp-cta-badges">
+        <span><i class="fas fa-check"></i> Без очередей</span>
+        <span><i class="fas fa-check"></i> Опытный ортодонт</span>
+        <span><i class="fas fa-check"></i> Ответ за 15 минут</span>
       </div>
-      <div class="impl-cta-action">
-        <a href="index.html#appointment" class="btn-submit" style="text-decoration:none; display:inline-flex;">
-          <i class="fab fa-whatsapp"></i>
-          Записаться в WhatsApp
-        </a>
-        <a href="tel:+79990000000" class="btn-outline" style="margin-top:12px; justify-content:center;">
-          <i class="fas fa-phone"></i>
-          +7 (999) 000-00-00
-        </a>
+      <div class="sp-cta-btns">
+        <a href="index.html#appointment" class="btn-green"><i class="fab fa-whatsapp"></i> Записаться в WhatsApp</a>
+        <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
       </div>
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
+  <div class="footer-inner container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="logo">
+        <a href="index.html" class="logo logo-white">
           <div class="logo-icon"><i class="fas fa-tooth"></i></div>
-          <span class="logo-text" style="color:white">Atlant Dental</span>
+          <div class="logo-text-wrap">
+            <span class="logo-main">ATLANT DENTAL</span>
+            <span class="logo-sub">CLINIC</span>
+          </div>
         </a>
         <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
+        <div class="footer-hours"><i class="fas fa-clock"></i> Ежедневно 09:00 – 19:00</div>
         <div class="footer-socials">
-          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-vk"></i></a>
         </div>
       </div>
-      <div>
+      <div class="footer-col">
         <div class="footer-col-title">Услуги</div>
         <ul class="footer-links">
           <li><a href="implants.html">Имплантация</a></li>
           <li><a href="braces.html">Брекеты</a></li>
-          <li><a href="index.html#services">Лечение зубов</a></li>
-          <li><a href="index.html#services">Виниры</a></li>
-          <li><a href="index.html#services">Отбеливание</a></li>
+          <li><a href="dentheal.html">Лечение зубов</a></li>
+          <li><a href="dentclean.html">Чистка зубов</a></li>
+          <li><a href="veneers.html">Виниры</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <div class="footer-col-title">Клиника</div>
         <ul class="footer-links">
           <li><a href="index.html#advantages">О нас</a></li>
@@ -493,62 +349,32 @@
           <li><a href="index.html#appointment">Запись</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <div class="footer-col-title">Контакты</div>
         <ul class="footer-links">
-          <li><a href="#">+7 (999) 000-00-00</a></li>
-          <li><a href="#">info@atlantdental.ru</a></li>
-          <li><a href="#">ул. Примерная, 42</a></li>
-          <li><a href="#">Пн–Пт: 9:00–20:00</a></li>
+          <li><a href="tel:+996550228030">0 (550) 22-80-30</a></li>
+          <li><a href="https://wa.me/996550228030" target="_blank">WhatsApp</a></li>
+          <li><a href="#">7-й микрорайон, 37/1</a></li>
+          <li><a href="#">Ежедневно 09:00–19:00</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 Atlant Dental. Все права защищены.</span>
-      <span>Лицензия № ЛО-77-01-000000</span>
     </div>
   </div>
 </footer>
-
 <script>
-  // ─── NAVBAR ───
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // ─── BURGER ───
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-  });
-  closeMenu.addEventListener('click', () => {
-    burger.classList.remove('active');
-    mobileMenu.classList.remove('active');
-  });
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-    });
-  });
-
-  // ─── REVEAL ───
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // ─── FAQ ACCORDION ───
+  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  document.getElementById('closeMenu').addEventListener('click', closeMobile);
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   document.querySelectorAll('.impl-faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
