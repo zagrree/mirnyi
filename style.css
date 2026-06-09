@@ -1128,3 +1128,129 @@ footer { background: var(--dark); color: rgba(255,255,255,0.55); padding: 64px 0
   .sp-compare     { grid-template-columns:1fr; }
   .sp-installment { flex-direction:column; text-align:center; }
 }
+
+
+/* ═══════════════════════════════════════════
+   MINI CTA STRIP
+═══════════════════════════════════════════ */
+.mini-cta {
+  background: var(--gray-50);
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 18px 0;
+}
+.mini-cta--dark {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.mini-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.mini-cta-inner span {
+  font-size: 1rem;
+  color: var(--dark);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mini-cta-inner span i {
+  color: var(--primary);
+}
+.btn-green-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-green-sm:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+@media (max-width: 600px) {
+  .mini-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING WHATSAPP BUTTON
+═══════════════════════════════════════════ */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  padding: 14px 20px 14px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: waFloatIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 1.5s both;
+}
+.wa-float i { font-size: 1.4rem; }
+.wa-float:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+}
+@keyframes waFloatIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.8); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 600px) {
+  .wa-float { bottom: 20px; right: 16px; padding: 13px 16px; }
+  .wa-float-label { display: none; }
+  .wa-float { border-radius: 50%; width: 56px; height: 56px; justify-content: center; padding: 0; }
+}
+
+/* ═══════════════════════════════════════════
+   FORM IMPROVEMENTS
+═══════════════════════════════════════════ */
+.form-wa-alt {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 4px 0 12px;
+}
+.form-wa-alt a {
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+.form-wa-alt a:hover { color: var(--primary-dark); }
+.form-wa-alt a i { font-size: 1rem; color: #25d366; }
+
+/* Form header accent */
+.appt-form .form-header {
+  border-left: 4px solid var(--primary);
+  padding-left: 14px;
+  margin-bottom: 24px;
+}
+
+/* Section paddings — чуть компактнее */
+#advantages { padding: 72px 0; }
+#services   { padding: 72px 0; }
+#doctors    { padding: 72px 0; }
+#appointment { padding: 72px 0; }
+#contacts   { padding: 72px 0; }
