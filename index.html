@@ -6,7 +6,7 @@
   <title>Atlant Dental Clinic — Стоматология в Бишкеке</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -15,7 +15,9 @@
 <!-- ═══ NAVBAR ═══ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
+    <a href="#hero" class="logo">
+      <img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/>
+    </a>
     <ul class="nav-links">
       <li><a href="#services">Услуги</a></li>
       <li><a href="#sedation">Седация</a></li>
@@ -23,10 +25,8 @@
       <li><a href="#testimonials">Отзывы</a></li>
       <li><a href="#contacts">Контакты</a></li>
     </ul>
-    <div class="nav-right">
-      <div class="nav-hours"><i class="fas fa-clock"></i> 09:00–19:00 · Без выходных</div>
-      <a href="#appointment" class="btn-nav">Записаться</a>
-    </div>
+    <div class="nav-hours"><i class="fas fa-clock"></i> Пн–Вс 09:00–19:00</div>
+    <a href="#appointment" class="btn-nav">Записаться</a>
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
@@ -34,161 +34,182 @@
 <!-- ═══ MOBILE MENU ═══ -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
-  <a href="#services"     class="mob-link">Услуги</a>
-  <a href="#sedation"     class="mob-link">Седация</a>
-  <a href="#doctors"      class="mob-link">Врачи</a>
-  <a href="#testimonials" class="mob-link">Отзывы</a>
-  <a href="#contacts"     class="mob-link">Контакты</a>
-  <a href="#appointment"  class="mob-link mob-cta">Записаться на приём</a>
-  <div class="mob-hours"><i class="fas fa-clock"></i> Работаем ежедневно 09:00 – 19:00</div>
+  <a href="#services"      class="mob-link">Услуги</a>
+  <a href="#sedation"      class="mob-link">Седация</a>
+  <a href="#doctors"       class="mob-link">Врачи</a>
+  <a href="#testimonials"  class="mob-link">Отзывы</a>
+  <a href="#contacts"      class="mob-link">Контакты</a>
+  <a href="#appointment"   class="mob-link mob-cta">Записаться</a>
+  <div class="mob-hours"><i class="fas fa-phone"></i> 0 (550) 22-80-30</div>
 </div>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-bg">
-    <div class="hero-shape shape-1"></div>
-    <div class="hero-shape shape-2"></div>
-    <div class="hero-shape shape-3"></div>
+    <div class="hero-shape" style="width:600px;height:600px;top:-200px;right:-100px;opacity:0.07;"></div>
+    <div class="hero-shape" style="width:300px;height:300px;bottom:-100px;left:10%;opacity:0.05;"></div>
   </div>
-  <div class="hero-inner container">
-    <div class="hero-content">
-      <div class="hero-tag fade-up delay-1"><i class="fas fa-circle-check"></i> Без выходных · 09:00 – 19:00</div>
-      <h1 class="hero-title fade-up delay-2">
-        Здоровые зубы —<br>
-        <em>без боли и страха</em>
-      </h1>
-      <p class="hero-desc fade-up delay-3">Лечение, имплантация, брекеты и виниры в Бишкеке.<br>Принимаем в день обращения.</p>
-      <div class="hero-btns fade-up delay-4">
-        <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
-        <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
-      </div>
-      <div class="hero-stats fade-up delay-5">
-        <div class="hero-stat">
-          <span class="hero-stat-num" data-target="10">0</span><span class="hero-stat-suf">+</span>
-          <span class="hero-stat-lbl">лет опыта</span>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num" data-target="5000">0</span><span class="hero-stat-suf">+</span>
-          <span class="hero-stat-lbl">пациентов</span>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num" data-target="8">0</span>
-          <span class="hero-stat-lbl">специалистов</span>
-        </div>
-        <div class="hero-stat-div"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num" data-target="199">0</span><span class="hero-stat-suf">+</span>
-          <span class="hero-stat-lbl">отзывов 2ГИС</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual fade-in delay-3">
-      <div class="hv-stack">
-        <div class="hv-card hv-rating">
-          <div class="hv-rating-top">
-            <span class="hv-label">Рейтинг на 2ГИС</span>
-            <span class="hv-pill">199+ отзывов</span>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag reveal"><i class="fas fa-circle" style="font-size:8px"></i> Стоматология в Бишкеке</div>
+        <h1 class="hero-title reveal delay-1">Красивая улыбка<br>без боли и <em>страха</em></h1>
+        <p class="hero-desc reveal delay-2">Современное оборудование, опытные врачи, лечение под седацией. Принимаем взрослых и детей.</p>
+        <div class="hero-stats reveal delay-3">
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-target="10">0</span><span class="hero-stat-suf">+</span>
+            <span class="hero-stat-lbl">лет на рынке</span>
           </div>
-          <div class="hv-rating-row">
-            <span class="hv-score">4.5</span>
+          <div class="hero-stat-div"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-target="5000">0</span><span class="hero-stat-suf">+</span>
+            <span class="hero-stat-lbl">пациентов</span>
+          </div>
+          <div class="hero-stat-div"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-target="8">0</span><span class="hero-stat-suf"></span>
+            <span class="hero-stat-lbl">специалистов</span>
+          </div>
+        </div>
+        <div class="hero-btns reveal delay-4">
+          <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
+          <a href="#services" class="btn-white-outline">Наши услуги</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal delay-2">
+        <div class="hv-stack">
+          <!-- Rating card -->
+          <div class="hv-card hv-rating">
+            <div class="hv-rating-top">
+              <div class="hv-label">Рейтинг клиники</div>
+              <span class="hv-pill">99+ отзывов</span>
+            </div>
+            <div class="hv-rating-row">
+              <span class="hv-score">4.5</span>
+              <div>
+                <div class="hv-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="hv-city">2ГИС · Бишкек</div>
+              </div>
+            </div>
+          </div>
+          <!-- Review card -->
+          <div class="hv-card hv-review">
+            <div class="hv-review-head">
+              <div class="hv-ava">А</div>
+              <div>
+                <div class="hv-reviewer">Айнура М.</div>
+                <div class="hv-rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              </div>
+              <div class="hv-ago">3 дня назад</div>
+            </div>
+            <p class="hv-review-text">«Наконец нашла стоматологию без страха. Всё безболезненно, врач объяснила каждый шаг.»</p>
+          </div>
+          <!-- Slot card -->
+          <div class="hv-card hv-slot">
+            <div class="hv-slot-icon"><i class="fas fa-calendar-check"></i></div>
             <div>
-              <div class="hv-stars">★★★★<span style="opacity:.5">★</span></div>
-              <div class="hv-city">Стоматология · Бишкек</div>
+              <div class="hv-slot-label">Ближайший приём</div>
+              <div class="hv-slot-time">Сегодня · 14:00 <span class="hv-dot"></span></div>
             </div>
           </div>
         </div>
-        <div class="hv-card hv-review">
-          <div class="hv-review-head">
-            <div class="hv-ava">А</div>
-            <div>
-              <div class="hv-reviewer">Айнура М.</div>
-              <div class="hv-rev-stars">★★★★★</div>
-            </div>
-            <span class="hv-ago">2 дня назад</span>
-          </div>
-          <p class="hv-review-text">«Поставили имплант — всё прошло безболезненно. Очень внимательные врачи!»</p>
-        </div>
-        <div class="hv-card hv-slot">
-          <div class="hv-slot-icon"><i class="fas fa-calendar-check"></i></div>
+
+        <!-- Floating badge -->
+        <div class="hero-badge-float">
+          <div class="badge-icon"><i class="fas fa-shield-alt"></i></div>
           <div>
-            <div class="hv-slot-label">Ближайший свободный слот</div>
-            <div class="hv-slot-time">Сегодня · 15:00 – 17:00</div>
+            <strong>Гарантия качества</strong>
+            <span>на все виды работ</span>
           </div>
-          <div class="hv-dot"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="hero-scroll-hint"><i class="fas fa-chevron-down"></i></div>
 </section>
 
 <!-- ═══ SERVICES ═══ -->
-<section id="services">
+<section id="services" style="padding: 80px 0;">
   <div class="container">
     <div class="idx-head reveal">
-      <h2>Наши услуги</h2>
+      <div>
+        <h2>Услуги</h2>
+        <div class="idx-head-sub">Полный спектр стоматологии в одном месте</div>
+      </div>
       <a href="#appointment" class="idx-head-link">Записаться <i class="fas fa-arrow-right"></i></a>
     </div>
+
     <div class="svc2-grid">
       <a href="implants.html" class="svc2-card reveal delay-1">
-        <div class="svc2-icon" style="background:#dcfce7;color:#16a34a"><i class="fas fa-tooth"></i></div>
+        <div class="svc2-icon" style="background:#f0fffe;color:#059669"><i class="fas fa-tooth"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Имплантация</div>
-          <div class="svc2-desc">Nobel, Straumann, MIS, Osstem — под ключ</div>
-          <div class="svc2-price">от 40 000 сом</div>
+          <div class="svc2-desc">Восстановим зуб навсегда. Бренды Nobel, Osstem. Срок службы 20+ лет.</div>
+          <div class="svc2-price">от 35 000 сом</div>
         </div>
-        <i class="fas fa-arrow-right svc2-arrow"></i>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
       <a href="braces.html" class="svc2-card reveal delay-2">
-        <div class="svc2-icon" style="background:#dbeafe;color:#2563eb"><i class="fas fa-teeth"></i></div>
+        <div class="svc2-icon" style="background:#eff6ff;color:#3b82f6"><i class="fas fa-teeth"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Брекеты</div>
-          <div class="svc2-desc">Металл, керамика, сапфир — ровный прикус</div>
-          <div class="svc2-price">от 15 000 сом / челюсть</div>
+          <div class="svc2-desc">Металлические, керамические, сапфировые. Исправляем прикус у детей и взрослых.</div>
+          <div class="svc2-price">от 25 000 сом</div>
         </div>
-        <i class="fas fa-arrow-right svc2-arrow"></i>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
       <a href="dentheal.html" class="svc2-card reveal delay-3">
-        <div class="svc2-icon" style="background:#fef9c3;color:#ca8a04"><i class="fas fa-briefcase-medical"></i></div>
+        <div class="svc2-icon" style="background:#fef9f0;color:#f59e0b"><i class="fas fa-briefcase-medical"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Лечение зубов</div>
-          <div class="svc2-desc">Кариес, пульпит, каналы — за 1 визит</div>
-          <div class="svc2-price">от 1 500 сом</div>
+          <div class="svc2-desc">Кариес, пульпит, периодонтит. Безболезненно под современной анестезией.</div>
+          <div class="svc2-price">от 2 500 сом</div>
         </div>
-        <i class="fas fa-arrow-right svc2-arrow"></i>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
       <a href="dentclean.html" class="svc2-card reveal delay-1">
-        <div class="svc2-icon" style="background:#f0fdf4;color:#16a34a"><i class="fas fa-soap"></i></div>
+        <div class="svc2-icon" style="background:#f0f9ff;color:#0ea5e9"><i class="fas fa-soap"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Чистка зубов</div>
-          <div class="svc2-desc">Ультразвук + Air Flow за 60 минут</div>
+          <div class="svc2-desc">Ультразвук + Air Flow. Убираем налёт, камень, полируем эмаль.</div>
           <div class="svc2-price">от 2 000 сом</div>
         </div>
-        <i class="fas fa-arrow-right svc2-arrow"></i>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
       <a href="veneers.html" class="svc2-card reveal delay-2">
-        <div class="svc2-icon" style="background:#fce7f3;color:#db2777"><i class="fas fa-star"></i></div>
+        <div class="svc2-icon" style="background:#fdf4ff;color:#a855f7"><i class="fas fa-star"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Виниры</div>
-          <div class="svc2-desc">Керамика, E-max — голливудская улыбка</div>
-          <div class="svc2-price">от 18 000 сом / зуб</div>
+          <div class="svc2-desc">Керамические и композитные. Голливудская улыбка за 2–3 визита.</div>
+          <div class="svc2-price">от 15 000 сом</div>
         </div>
-        <i class="fas fa-arrow-right svc2-arrow"></i>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
       <a href="#appointment" class="svc2-card reveal delay-3">
-        <div class="svc2-icon" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-magic"></i></div>
+        <div class="svc2-icon" style="background:#fff7ed;color:#f97316"><i class="fas fa-magic"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Отбеливание</div>
-          <div class="svc2-desc">Zoom — светлее на 6–12 тонов за 1 визит</div>
-          <div class="svc2-price">Уточните цену</div>
+          <div class="svc2-desc">Zoom-отбеливание. Осветляем на 6–12 тонов за один сеанс.</div>
+          <div class="svc2-price">от 8 000 сом</div>
         </div>
-        <i class="fas fa-arrow-right svc2-arrow"></i>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
     </div>
   </div>
 </section>
+
+<!-- mini CTA -->
+<div class="mini-cta mini-cta--dark">
+  <div class="container">
+    <div class="mini-cta-inner">
+      <span><i class="fas fa-moon"></i> Боитесь стоматолога? Лечим под седацией — засыпаете и просыпаетесь со здоровыми зубами.</span>
+      <a href="#sedation" class="btn-green-sm">Узнать подробнее</a>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ SEDATION ═══ -->
 <section id="sedation" class="sed-section">
@@ -252,101 +273,125 @@
 </section>
 
 <!-- ═══ DOCTORS ═══ -->
-<section id="doctors">
+<section id="doctors" style="padding: 80px 0;">
   <div class="container">
     <div class="idx-head reveal">
-      <h2>Врачи клиники</h2>
-      <span class="idx-head-sub">8 специалистов · стаж от 8 до 27 лет</span>
+      <div>
+        <h2>Врачи клиники</h2>
+        <div class="idx-head-sub">Квалифицированные специалисты с многолетним опытом</div>
+      </div>
     </div>
     <div class="doc2-grid">
       <div class="doc2-card reveal delay-1">
-        <div class="doc2-ava" style="background:#dcfce7;color:#16a34a">НТ</div>
+        <div class="doc2-ava" style="background:linear-gradient(135deg,#10b981,#059669)">НТ</div>
         <div class="doc2-spec">Хирург-имплантолог</div>
         <div class="doc2-name">Нурбек Таалайбекович</div>
-        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 12 лет</div>
+        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 12 лет</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-2">
-        <div class="doc2-ava" style="background:#dbeafe;color:#2563eb">АС</div>
+        <div class="doc2-ava" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">АС</div>
         <div class="doc2-spec">Ортодонт</div>
         <div class="doc2-name">Сулайманов Айдин</div>
-        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 8 лет</div>
+        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 8 лет</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-3">
-        <div class="doc2-ava" style="background:#fef9c3;color:#ca8a04">ГТ</div>
+        <div class="doc2-ava" style="background:linear-gradient(135deg,#f59e0b,#d97706)">ГТ</div>
         <div class="doc2-spec">Терапевт-стоматолог</div>
         <div class="doc2-name">Тыналиева Гульжан</div>
-        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 27 лет</div>
+        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 27 лет</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-4">
-        <div class="doc2-ava" style="background:#ede9fe;color:#7c3aed">БА</div>
-        <div class="doc2-spec">Ортопед</div>
+        <div class="doc2-ava" style="background:linear-gradient(135deg,#a855f7,#7c3aed)">БА</div>
+        <div class="doc2-spec">Ортопед, виниры и коронки</div>
         <div class="doc2-name">Асылбеков Бекзат</div>
-        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 10 лет</div>
+        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 10 лет</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- mini CTA -->
+<div class="mini-cta">
+  <div class="container">
+    <div class="mini-cta-inner">
+      <span><i class="fas fa-star" style="color:var(--primary)"></i> 99+ отзывов на 2ГИС — пациенты доверяют нам</span>
+      <a href="https://2gis.kg/bishkek/firm/70000001019327883/tab/reviews" target="_blank" class="btn-green-sm">Читать отзывы</a>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ TESTIMONIALS ═══ -->
-<section id="testimonials" class="section-dark">
+<section id="testimonials" class="section-dark" style="padding: 80px 0;">
   <div class="container">
     <div class="idx-head reveal">
-      <h2 style="color:#fff">Что говорят пациенты</h2>
-      <span class="idx-head-sub" style="color:rgba(255,255,255,.55)">199+ отзывов на 2ГИС</span>
+      <div>
+        <h2 class="title-white">Отзывы пациентов</h2>
+        <div class="idx-head-sub" style="color:rgba(255,255,255,.55)">99+ отзывов на 2ГИС</div>
+      </div>
+      <a href="https://2gis.kg/bishkek/firm/70000001019327883/tab/reviews" target="_blank" class="idx-head-link" style="color:var(--primary-light)">Все отзывы <i class="fas fa-arrow-right"></i></a>
     </div>
     <div class="slider-wrap reveal">
       <div class="slider-track" id="sliderTrack">
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="review-text">«Наконец-то нашла стоматологию, где не страшно! Всё прошло абсолютно безболезненно. Уже рекомендую всем знакомым.»</p>
-          <div class="review-author"><div class="author-ava">А</div><div><div class="author-name">Анна Михайлова</div><div class="author-date">Март 2025</div></div></div>
+          <div class="review-author"><div class="author-ava">А</div><div><div class="author-name">Айнура М.</div><div class="author-date">Март 2025</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Поставили имплант — всё прошло идеально. Запись через WhatsApp очень удобная. Клиника чистая, современная.»</p>
-          <div class="review-author"><div class="author-ava">С</div><div><div class="author-name">Сергей Волков</div><div class="author-date">Апрель 2025</div></div></div>
+          <p class="review-text">«Поставили имплант — всё прошло идеально. Запись через WhatsApp очень удобная. Клиника чистая, современная, персонал вежливый.»</p>
+          <div class="review-author"><div class="author-ava">С</div><div><div class="author-name">Сергей В.</div><div class="author-date">Апрель 2025</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Делала виниры — результат превзошёл ожидания. Улыбка совершенно другая. Спасибо за профессионализм!»</p>
-          <div class="review-author"><div class="author-ava">М</div><div><div class="author-name">Мария Соколова</div><div class="author-date">Май 2025</div></div></div>
+          <p class="review-text">«Делала виниры — результат превзошёл все ожидания. Улыбка стала совершенно другой. Спасибо за профессионализм!»</p>
+          <div class="review-author"><div class="author-ava">М</div><div><div class="author-name">Мария С.</div><div class="author-date">Май 2025</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
           <p class="review-text">«Брал брекеты для дочери. Очень грамотный ортодонт, цены справедливые, качество на высоте.»</p>
-          <div class="review-author"><div class="author-ava">К</div><div><div class="author-name">Константин Лебедев</div><div class="author-date">Февраль 2025</div></div></div>
+          <div class="review-author"><div class="author-ava">К</div><div><div class="author-name">Константин Л.</div><div class="author-date">Февраль 2025</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Пришла на отбеливание Zoom. Зубы на 8 тонов светлее! Врач всё объяснила заранее, никакого дискомфорта.»</p>
-          <div class="review-author"><div class="author-ava">Е</div><div><div class="author-name">Екатерина Новикова</div><div class="author-date">Апрель 2025</div></div></div>
+          <p class="review-text">«Пришла на отбеливание. Зубы стали на 8 тонов светлее! Врач всё объяснила заранее, никакого дискомфорта.»</p>
+          <div class="review-author"><div class="author-ava">Е</div><div><div class="author-name">Екатерина Н.</div><div class="author-date">Апрель 2025</div></div></div>
         </div>
       </div>
     </div>
     <div class="slider-controls">
       <button class="slider-btn" id="sliderPrev"><i class="fas fa-arrow-left"></i></button>
-      <div class="slider-dots" id="sliderDots"></div>
       <button class="slider-btn" id="sliderNext"><i class="fas fa-arrow-right"></i></button>
+      <div class="slider-dots" id="sliderDots"></div>
     </div>
   </div>
 </section>
 
 <!-- ═══ APPOINTMENT ═══ -->
-<section id="appointment">
+<section id="appointment" style="padding: 80px 0;">
   <div class="container">
     <div class="appt-wrap">
-      <div class="appt-left">
+      <div>
         <div class="section-label reveal">Запись</div>
         <h2 class="section-title reveal delay-1">Запишитесь<br>на приём</h2>
         <p class="section-sub reveal delay-2">Оставьте заявку — ответим в WhatsApp в течение 15 минут.</p>
-        <div class="appt-features reveal delay-2">
-          <div class="appt-feat"><div class="appt-feat-icon"><i class="fab fa-whatsapp"></i></div><div><strong>Подтверждение в WhatsApp</strong><span>В течение 15 минут</span></div></div>
-          <div class="appt-feat"><div class="appt-feat-icon"><i class="fas fa-clock"></i></div><div><strong>Ежедневно без выходных</strong><span>09:00 – 19:00</span></div></div>
-          <div class="appt-feat"><div class="appt-feat-icon"><i class="fas fa-lock"></i></div><div><strong>Данные защищены</strong><span>Не передаём третьим лицам</span></div></div>
+        <div class="appt-features">
+          <div class="appt-feat reveal delay-1">
+            <div class="appt-feat-icon"><i class="fab fa-whatsapp"></i></div>
+            <div><strong>Ответим в WhatsApp</strong><span>в течение 15 минут</span></div>
+          </div>
+          <div class="appt-feat reveal delay-2">
+            <div class="appt-feat-icon"><i class="fas fa-clock"></i></div>
+            <div><strong>Режим работы</strong><span>Пн–Вс, 09:00–19:00</span></div>
+          </div>
+          <div class="appt-feat reveal delay-3">
+            <div class="appt-feat-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><strong>Адрес</strong><span>7-й микрорайон, 37/1, Бишкек</span></div>
+          </div>
         </div>
       </div>
       <div class="appt-form reveal delay-2">
@@ -354,7 +399,7 @@
           <h3>Заявка на приём</h3>
           <p>Заполните форму — мы напишем вам в WhatsApp</p>
         </div>
-        <div class="form-grid">
+        <div class="form-row">
           <div class="form-group">
             <label>Ваше имя *</label>
             <input type="text" id="f-name" placeholder="Алибек Иванов" required/>
@@ -364,11 +409,11 @@
             <input type="tel" id="f-phone" placeholder="+996 (500) 00-00-00" required/>
           </div>
           <div class="form-group">
-            <label>Дата</label>
+            <label>Предпочтительная дата</label>
             <input type="date" id="f-date"/>
           </div>
           <div class="form-group">
-            <label>Время</label>
+            <label>Удобное время</label>
             <select id="f-time">
               <option value="">Выберите время</option>
               <option>09:00 – 11:00</option>
@@ -382,40 +427,41 @@
             <label>Услуга</label>
             <select id="f-service">
               <option value="">Выберите услугу</option>
-              <option>Консультация</option>
               <option>Имплантация</option>
               <option>Брекеты</option>
               <option>Лечение зубов</option>
               <option>Чистка зубов</option>
               <option>Виниры</option>
               <option>Отбеливание</option>
-              <option>Лечение во сне (Седация)</option>
+              <option>Седация</option>
               <option>Другое</option>
             </select>
           </div>
           <div class="form-group full">
-            <label>Опишите ситуацию</label>
-            <textarea id="f-problem" placeholder="Расскажите о вашей ситуации или вопросе..."></textarea>
+            <label>Опишите проблему</label>
+            <textarea id="f-problem" placeholder="Расскажите о вашей ситуации..."></textarea>
           </div>
         </div>
-        <div id="form-error" style="display:none">
+        <div id="form-error" style="display:none;color:#e53e3e;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#fff5f5;border-radius:8px;border:1px solid #fed7d7;">
           <i class="fas fa-exclamation-circle"></i> <span id="form-error-text"></span>
         </div>
         <button class="btn-submit" id="submitBtn">
           <i class="fab fa-whatsapp"></i> Отправить заявку в WhatsApp
         </button>
-        <div class="form-wa-alt">или <a href="https://wa.me/996550228030" target="_blank"><i class="fab fa-whatsapp"></i> напишите напрямую в WhatsApp</a></div>
-        <div class="form-note"><i class="fas fa-lock"></i> Ваши данные защищены и не передаются третьим лицам</div>
+        <div class="form-note">
+          <i class="fas fa-lock" style="font-size:11px;color:var(--gray-400)"></i>
+          Ваши данные защищены и не передаются третьим лицам
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ CONTACTS ═══ -->
-<section id="contacts" class="section-alt">
+<section id="contacts" class="section-alt" style="padding: 80px 0;">
   <div class="container">
     <div class="idx-head reveal">
-      <h2>Контакты</h2>
+      <div><h2>Контакты</h2></div>
     </div>
     <div class="contacts-grid">
       <div class="contacts-info">
@@ -442,11 +488,11 @@
           <div class="hours-row"><span>Понедельник – Пятница</span><span class="hours-time">09:00 – 19:00</span></div>
           <div class="hours-row"><span>Суббота</span><span class="hours-time">09:00 – 19:00</span></div>
           <div class="hours-row"><span>Воскресенье</span><span class="hours-time">09:00 – 19:00</span></div>
-          <div class="hours-note"><i class="fas fa-circle-check"></i> Работаем без выходных и праздников</div>
+          <div class="hours-note"><i class="fas fa-circle-check"></i> Работаем без выходных</div>
         </div>
       </div>
       <div class="map-wrap reveal delay-2">
-        <a href="https://2gis.kg/bishkek/search/Атлант%20Дентал%207%20микрорайон" target="_blank" class="map-img-link" title="Открыть в 2ГИС">
+        <a href="https://2gis.kg/bishkek/firm/70000001019327883" target="_blank" class="map-img-link" title="Открыть в 2ГИС">
           <img src="images/map.png" alt="Атлант Дентал на карте" class="map-img" onerror="this.parentElement.classList.add('map-no-img')"/>
           <span class="map-img-overlay"><i class="fas fa-map-marker-alt"></i> Открыть в 2ГИС</span>
         </a>
@@ -457,45 +503,47 @@
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-inner container">
+  <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#hero" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
+        <a href="#hero" class="logo">
+          <img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/>
+        </a>
         <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
-        <div class="footer-hours"><i class="fas fa-clock"></i> Ежедневно 09:00 – 19:00</div>
+        <div class="footer-hours"><i class="fas fa-clock"></i> Пн–Вс 09:00–19:00</div>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.instagram.com/atlant.kg" target="_blank" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/996550228030" target="_blank" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://2gis.kg/bishkek/firm/70000001019327883" target="_blank" class="footer-social-btn"><i class="fas fa-map-marker-alt"></i></a>
         </div>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Услуги</div>
         <ul class="footer-links">
-          <li><a href="implants.html">Имплантация</a></li>
-          <li><a href="braces.html">Брекеты</a></li>
-          <li><a href="dentheal.html">Лечение зубов</a></li>
-          <li><a href="dentclean.html">Чистка зубов</a></li>
-          <li><a href="veneers.html">Виниры</a></li>
-          <li><a href="#sedation">Лечение во сне</a></li>
+          <li><a href="implants.html"><i class="fas fa-chevron-right"></i> Имплантация</a></li>
+          <li><a href="braces.html"><i class="fas fa-chevron-right"></i> Брекеты</a></li>
+          <li><a href="dentheal.html"><i class="fas fa-chevron-right"></i> Лечение зубов</a></li>
+          <li><a href="dentclean.html"><i class="fas fa-chevron-right"></i> Чистка зубов</a></li>
+          <li><a href="veneers.html"><i class="fas fa-chevron-right"></i> Виниры</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Клиника</div>
         <ul class="footer-links">
-          <li><a href="#doctors">Врачи</a></li>
-          <li><a href="#testimonials">Отзывы</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-          <li><a href="#appointment">Запись</a></li>
+          <li><a href="#doctors"><i class="fas fa-chevron-right"></i> Врачи</a></li>
+          <li><a href="#sedation"><i class="fas fa-chevron-right"></i> Седация</a></li>
+          <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Отзывы</a></li>
+          <li><a href="#contacts"><i class="fas fa-chevron-right"></i> Контакты</a></li>
+          <li><a href="#appointment"><i class="fas fa-chevron-right"></i> Запись</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Контакты</div>
         <ul class="footer-links">
-          <li><a href="tel:+996550228030"><i class="fas fa-phone fa-xs"></i> 0 (550) 22-80-30</a></li>
-          <li><a href="https://wa.me/996550228030" target="_blank"><i class="fab fa-whatsapp fa-xs"></i> WhatsApp</a></li>
-          <li><a href="#"><i class="fas fa-map-marker-alt fa-xs"></i> 7-й мкр, 37/1, Бишкек</a></li>
-          <li><a href="#"><i class="fas fa-clock fa-xs"></i> 09:00–19:00 · Без выходных</a></li>
+          <li><a href="tel:+996550228030"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a></li>
+          <li><a href="https://wa.me/996550228030" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="https://2gis.kg/bishkek/firm/70000001019327883" target="_blank"><i class="fas fa-map-marker-alt"></i> 7-й микрорайон, 37/1</a></li>
+          <li><a href="#"><i class="fas fa-clock"></i> Пн–Вс: 09:00–19:00</a></li>
         </ul>
       </div>
     </div>
@@ -506,38 +554,41 @@
   </div>
 </footer>
 
-<!-- NOTIFICATION -->
+<!-- ═══ WA FLOAT ═══ -->
+<a href="https://wa.me/996550228030" target="_blank" class="wa-float">
+  <i class="fab fa-whatsapp"></i>
+  <span class="wa-float-label">Написать</span>
+</a>
+
+<!-- ═══ NOTIFICATION ═══ -->
 <div id="notif">
   <div class="notif-icon"><i class="fas fa-check"></i></div>
   <div class="notif-text">
     <strong>Заявка отправлена!</strong>
-    <span>Ответим в WhatsApp в течение 15 минут</span>
+    <span>Администратор свяжется с вами в WhatsApp</span>
   </div>
 </div>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/996550228030" class="wa-float" target="_blank" aria-label="Написать в WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-float-label">Написать</span>
-</a>
 
 <script>
   const ADMIN_PHONE = '996221100809';
   const WORKER_URL  = 'https://atlant-form.crycrazydiamond.workers.dev';
 
+  // ─── NAVBAR ───
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-  const burger = document.getElementById('burger');
+  // ─── BURGER ───
+  const burger     = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
-  document.getElementById('closeMenu').addEventListener('click', closeMobile);
-  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
-  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  document.getElementById('closeMenu').addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); });
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
 
+  // ─── REVEAL ───
   const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
+  // ─── SEDATION POPUP ───
   const sedPopup = document.getElementById('sedPopup');
   if (sedPopup) {
     const sedObs = new IntersectionObserver(([entry]) => {
@@ -546,85 +597,99 @@
     sedObs.observe(sedPopup);
   }
 
-  const counterObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ animateCounter(e.target); counterObs.unobserve(e.target); } }), { threshold: 0.5 });
-  document.querySelectorAll('.hero-stat-num').forEach(el => counterObs.observe(el));
+  // ─── COUNTERS ───
   function animateCounter(el) {
-    const target = +el.dataset.target, duration = 1800, step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if(current >= target) { el.textContent = target.toLocaleString(); clearInterval(timer); }
-      else el.textContent = Math.floor(current).toLocaleString();
-    }, 16);
+    const target = +el.dataset.target;
+    const duration = 1500;
+    const start = performance.now();
+    const update = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(update);
   }
+  const counterObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ animateCounter(e.target); counterObs.unobserve(e.target); } }), { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
 
-  const track = document.getElementById('sliderTrack');
-  const sliderWrap = track.parentElement;
+  // ─── SLIDER ───
+  const track      = document.getElementById('sliderTrack');
+  const sliderWrap = track ? track.parentElement : null;
   const dotsContainer = document.getElementById('sliderDots');
   let current = 0;
-  const cards = track.querySelectorAll('.review-card');
-  const getVisible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1100 ? 2 : 3;
-  const total = () => Math.ceil(cards.length / getVisible());
-  function buildDots() {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < total(); i++) {
-      const d = document.createElement('div');
-      d.className = 'dot' + (i === current ? ' active' : '');
-      d.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(d);
+  if (track) {
+    const cards = track.querySelectorAll('.review-card');
+    const getVisible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+    const total = () => Math.ceil(cards.length / getVisible());
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < total(); i++) {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i === current ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+      }
     }
-  }
-  function goTo(idx) {
-    current = Math.max(0, Math.min(idx, total() - 1));
-    const vis = getVisible(), gap = 24;
-    const cardW = (sliderWrap.offsetWidth - gap * (vis - 1)) / vis;
-    track.style.transform = `translateX(-${current * vis * (cardW + gap)}px)`;
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, total() - 1));
+      const vis = getVisible(), gap = 24;
+      const cardW = (sliderWrap.offsetWidth - gap * (vis - 1)) / vis;
+      track.style.transform = `translateX(-${current * vis * (cardW + gap)}px)`;
+      buildDots();
+    }
+    document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
     buildDots();
+    window.addEventListener('resize', () => { current = 0; goTo(0); });
+    setInterval(() => goTo(current < total() - 1 ? current + 1 : 0), 5000);
   }
-  document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
-  document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
-  buildDots();
-  window.addEventListener('resize', () => { current = 0; goTo(0); });
-  setInterval(() => goTo(current < total() - 1 ? current + 1 : 0), 5000);
 
+  // ─── FORM ───
   function showError(msg) {
     const box = document.getElementById('form-error');
     document.getElementById('form-error-text').textContent = msg;
-    box.style.display = 'flex';
+    box.style.display = 'block';
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
   function hideError() { document.getElementById('form-error').style.display = 'none'; }
   function setBtnLoading(on) {
     const btn = document.getElementById('submitBtn');
     btn.disabled = on;
-    btn.innerHTML = on ? '<i class="fas fa-spinner fa-spin"></i> Отправляем...' : '<i class="fab fa-whatsapp"></i> Отправить заявку в WhatsApp';
+    btn.innerHTML = on
+      ? '<i class="fas fa-spinner fa-spin"></i> Отправляем...'
+      : '<i class="fab fa-whatsapp"></i> Отправить заявку в WhatsApp';
   }
   function showSuccess() {
     const notif = document.getElementById('notif');
     notif.classList.add('show');
     setTimeout(() => notif.classList.remove('show'), 4000);
-    ['f-name','f-phone','f-date','f-time','f-service','f-problem'].forEach(id => document.getElementById(id).value = '');
+    ['f-name','f-phone','f-date','f-time','f-service','f-problem'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
   }
+
   document.getElementById('submitBtn').addEventListener('click', async () => {
     hideError();
-    const name = document.getElementById('f-name').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    const date = document.getElementById('f-date').value;
-    const time = document.getElementById('f-time').value;
+    const name    = document.getElementById('f-name').value.trim();
+    const phone   = document.getElementById('f-phone').value.trim();
+    const date    = document.getElementById('f-date').value;
+    const time    = document.getElementById('f-time').value;
     const service = document.getElementById('f-service').value;
     const problem = document.getElementById('f-problem').value.trim();
+
     if (!name)  { showError('Пожалуйста, введите ваше имя.'); return; }
     if (!phone) { showError('Пожалуйста, введите номер телефона.'); return; }
+
     const message = [
-      '🦷 *Новая заявка — Atlant Dental*', '',
+      '🦷 *Новая заявка с сайта Atlant Dental*', '',
       `👤 *Имя:* ${name}`,
       `📞 *Телефон:* ${phone}`,
-      date    ? `📅 *Дата:* ${date}` : '',
-      time    ? `🕐 *Время:* ${time}` : '',
-      service ? `🏥 *Услуга:* ${service}` : '',
-      problem ? `📝 *Вопрос:* ${problem}` : '',
-      '', '📍 _atlant.kg_'
+      date    ? `📅 *Дата:* ${date}`       : '',
+      time    ? `🕐 *Время:* ${time}`       : '',
+      service ? `🏥 *Услуга:* ${service}`   : '',
+      problem ? `📝 *Проблема:* ${problem}` : '',
+      '', '📍 _Сайт: atlant.kg_'
     ].filter(Boolean).join('\n');
+
     setBtnLoading(true);
     try {
       const res = await fetch(WORKER_URL, {
@@ -635,6 +700,7 @@
       const data = await res.json();
       data.idMessage ? showSuccess() : showError('Не удалось отправить. Позвоните: 0 (550) 22-80-30');
     } catch(err) {
+      console.error(err);
       showError('Ошибка соединения. Позвоните: 0 (550) 22-80-30');
     } finally {
       setBtnLoading(false);
