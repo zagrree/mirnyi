@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Atlant Dental Clinic — Премиальная Стоматология в Бишкеке</title>
+  <title>Atlant Dental Clinic — Стоматология в Бишкеке</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
@@ -15,18 +15,12 @@
 <!-- ═══ NAVBAR ═══ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="logo">
-      <div class="logo-icon"><i class="fas fa-tooth"></i></div>
-      <div class="logo-text-wrap">
-        <span class="logo-main">ATLANT DENTAL</span>
-        <span class="logo-sub">CLINIC</span>
-      </div>
-    </a>
+    <a href="#hero" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
     <ul class="nav-links">
       <li><a href="#services">Услуги</a></li>
-      <li><a href="#consultation">Консультация</a></li>
       <li><a href="#sedation">Седация</a></li>
       <li><a href="#doctors">Врачи</a></li>
+      <li><a href="#testimonials">Отзывы</a></li>
       <li><a href="#contacts">Контакты</a></li>
     </ul>
     <div class="nav-right">
@@ -40,12 +34,12 @@
 <!-- ═══ MOBILE MENU ═══ -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
-  <a href="#services" class="mob-link">Услуги</a>
-  <a href="#consultation" class="mob-link">Консультация</a>
-  <a href="#sedation" class="mob-link">Седация</a>
-  <a href="#doctors" class="mob-link">Врачи</a>
-  <a href="#contacts" class="mob-link">Контакты</a>
-  <a href="#appointment" class="mob-link mob-cta">Записаться на приём</a>
+  <a href="#services"     class="mob-link">Услуги</a>
+  <a href="#sedation"     class="mob-link">Седация</a>
+  <a href="#doctors"      class="mob-link">Врачи</a>
+  <a href="#testimonials" class="mob-link">Отзывы</a>
+  <a href="#contacts"     class="mob-link">Контакты</a>
+  <a href="#appointment"  class="mob-link mob-cta">Записаться на приём</a>
   <div class="mob-hours"><i class="fas fa-clock"></i> Работаем ежедневно 09:00 – 19:00</div>
 </div>
 
@@ -63,7 +57,7 @@
         Здоровые зубы —<br>
         <em>без боли и страха</em>
       </h1>
-      <p class="hero-desc fade-up delay-3">Лечение, имплантация, брекеты и виниры в Бишкеке. Работаем ежедневно — принимаем в день обращения.</p>
+      <p class="hero-desc fade-up delay-3">Лечение, имплантация, брекеты и виниры в Бишкеке.<br>Принимаем в день обращения.</p>
       <div class="hero-btns fade-up delay-4">
         <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
         <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
@@ -91,19 +85,38 @@
       </div>
     </div>
     <div class="hero-visual fade-in delay-3">
-      <div class="hero-card-main">
-        <!-- Место для фото клиники -->
-        <div class="img-placeholder">
-          <i class="fas fa-hospital"></i>
-          <span>Фото клиники</span>
+      <div class="hv-stack">
+        <div class="hv-card hv-rating">
+          <div class="hv-rating-top">
+            <span class="hv-label">Рейтинг на 2ГИС</span>
+            <span class="hv-pill">199+ отзывов</span>
+          </div>
+          <div class="hv-rating-row">
+            <span class="hv-score">4.5</span>
+            <div>
+              <div class="hv-stars">★★★★<span style="opacity:.5">★</span></div>
+              <div class="hv-city">Стоматология · Бишкек</div>
+            </div>
+          </div>
         </div>
-        <div class="hero-badge-float badge-safe">
-          <div class="badge-icon"><i class="fas fa-shield-heart"></i></div>
-          <div><strong>Безопасно</strong><span>Стерилизация A-класса</span></div>
+        <div class="hv-card hv-review">
+          <div class="hv-review-head">
+            <div class="hv-ava">А</div>
+            <div>
+              <div class="hv-reviewer">Айнура М.</div>
+              <div class="hv-rev-stars">★★★★★</div>
+            </div>
+            <span class="hv-ago">2 дня назад</span>
+          </div>
+          <p class="hv-review-text">«Поставили имплант — всё прошло безболезненно. Очень внимательные врачи!»</p>
         </div>
-        <div class="hero-badge-float badge-fast">
-          <div class="badge-icon"><i class="fas fa-bolt"></i></div>
-          <div><strong>Без боли</strong><span>Современная анестезия</span></div>
+        <div class="hv-card hv-slot">
+          <div class="hv-slot-icon"><i class="fas fa-calendar-check"></i></div>
+          <div>
+            <div class="hv-slot-label">Ближайший свободный слот</div>
+            <div class="hv-slot-time">Сегодня · 15:00 – 17:00</div>
+          </div>
+          <div class="hv-dot"></div>
         </div>
       </div>
     </div>
@@ -111,315 +124,128 @@
   <div class="hero-scroll-hint"><i class="fas fa-chevron-down"></i></div>
 </section>
 
-<!-- ═══ TRUST BAR ═══ -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-items">
-      <div class="trust-item"><i class="fas fa-award"></i><span>Лицензированная клиника</span></div>
-      <div class="trust-div"></div>
-      <div class="trust-item"><i class="fas fa-star"></i><span>Рейтинг 4.5 на 2ГИС</span></div>
-      <div class="trust-div"></div>
-      <div class="trust-item"><i class="fas fa-clock"></i><span>Работаем без выходных</span></div>
-      <div class="trust-div"></div>
-      <div class="trust-item"><i class="fas fa-shield-alt"></i><span>Гарантия на все работы</span></div>
-      <div class="trust-div"></div>
-      <div class="trust-item"><i class="fab fa-whatsapp"></i><span>Запись в WhatsApp</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ ADVANTAGES ═══ -->
-<section id="advantages">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal">Почему мы</div>
-      <h2 class="section-title reveal delay-1">Наши преимущества</h2>
-      <p class="section-sub reveal delay-2">Мы создаём атмосферу доверия и комфорта для каждого пациента</p>
-    </div>
-    <div class="adv-grid">
-      <div class="adv-card reveal delay-1">
-        <div class="adv-icon"><i class="fas fa-microscope"></i></div>
-        <h3 class="adv-title">Современное оборудование</h3>
-        <p class="adv-desc">Цифровой рентген, 3D-томограф, лазерная стоматология и новейшие материалы мировых производителей.</p>
-      </div>
-      <div class="adv-card reveal delay-2">
-        <div class="adv-icon"><i class="fas fa-user-doctor"></i></div>
-        <h3 class="adv-title">Опытные специалисты</h3>
-        <p class="adv-desc">8 квалифицированных врачей с регулярным повышением квалификации и многолетним стажем.</p>
-      </div>
-      <div class="adv-card reveal delay-3">
-        <div class="adv-icon"><i class="fas fa-face-smile"></i></div>
-        <h3 class="adv-title">Безболезненно</h3>
-        <p class="adv-desc">Компьютерная анестезия и предварительное обезболивание. Вы не почувствуете дискомфорта.</p>
-      </div>
-      <div class="adv-card reveal delay-1">
-        <div class="adv-icon"><i class="fas fa-heart-pulse"></i></div>
-        <h3 class="adv-title">Индивидуальный подход</h3>
-        <p class="adv-desc">Детальная диагностика и персональный план лечения для каждого пациента.</p>
-      </div>
-      <div class="adv-card reveal delay-2">
-        <div class="adv-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3 class="adv-title">Гарантия качества</h3>
-        <p class="adv-desc">Официальная гарантия на все виды работ. Бесплатные контрольные осмотры год.</p>
-      </div>
-      <div class="adv-card reveal delay-3">
-        <div class="adv-icon"><i class="fas fa-calendar-check"></i></div>
-        <h3 class="adv-title">Удобная запись</h3>
-        <p class="adv-desc">Онлайн-запись 24/7, подтверждение в WhatsApp. Работаем ежедневно 09:00–19:00.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══ SERVICES ═══ -->
-<section id="services" class="section-alt">
+<section id="services">
   <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal">Что мы делаем</div>
-      <h2 class="section-title reveal delay-1">Наши услуги</h2>
-      <p class="section-sub reveal delay-2">Полный спектр стоматологических услуг — всё в одном месте</p>
+    <div class="idx-head reveal">
+      <h2>Наши услуги</h2>
+      <a href="#appointment" class="idx-head-link">Записаться <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="services-grid">
-      <a href="implants.html" class="svc-card reveal delay-1">
-        <div class="svc-img-wrap">
-          <div class="img-placeholder svc-img"><i class="fas fa-tooth"></i><span>Имплантация</span></div>
+    <div class="svc2-grid">
+      <a href="implants.html" class="svc2-card reveal delay-1">
+        <div class="svc2-icon" style="background:#dcfce7;color:#16a34a"><i class="fas fa-tooth"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Имплантация</div>
+          <div class="svc2-desc">Nobel, Straumann, MIS, Osstem — под ключ</div>
+          <div class="svc2-price">от 40 000 сом</div>
         </div>
-        <div class="svc-body">
-          <div class="svc-icon"><i class="fas fa-tooth"></i></div>
-          <h3 class="svc-name">Имплантация</h3>
-          <p class="svc-desc">Установка имплантатов премиальных брендов. Восстанавливаем зубы на 20+ лет.</p>
-          <span class="svc-link">Подробнее <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <i class="fas fa-arrow-right svc2-arrow"></i>
       </a>
-      <a href="braces.html" class="svc-card reveal delay-2">
-        <div class="svc-img-wrap">
-          <div class="img-placeholder svc-img"><i class="fas fa-teeth"></i><span>Брекеты</span></div>
+      <a href="braces.html" class="svc2-card reveal delay-2">
+        <div class="svc2-icon" style="background:#dbeafe;color:#2563eb"><i class="fas fa-teeth"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Брекеты</div>
+          <div class="svc2-desc">Металл, керамика, сапфир — ровный прикус</div>
+          <div class="svc2-price">от 15 000 сом / челюсть</div>
         </div>
-        <div class="svc-body">
-          <div class="svc-icon"><i class="fas fa-teeth"></i></div>
-          <h3 class="svc-name">Брекеты</h3>
-          <p class="svc-desc">Металлические, керамические и сапфировые брекеты. Ровный прикус навсегда.</p>
-          <span class="svc-link">Подробнее <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <i class="fas fa-arrow-right svc2-arrow"></i>
       </a>
-      <a href="dentheal.html" class="svc-card reveal delay-3">
-        <div class="svc-img-wrap">
-          <div class="img-placeholder svc-img"><i class="fas fa-briefcase-medical"></i><span>Лечение</span></div>
+      <a href="dentheal.html" class="svc2-card reveal delay-3">
+        <div class="svc2-icon" style="background:#fef9c3;color:#ca8a04"><i class="fas fa-briefcase-medical"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Лечение зубов</div>
+          <div class="svc2-desc">Кариес, пульпит, каналы — за 1 визит</div>
+          <div class="svc2-price">от 1 500 сом</div>
         </div>
-        <div class="svc-body">
-          <div class="svc-icon"><i class="fas fa-briefcase-medical"></i></div>
-          <h3 class="svc-name">Лечение зубов</h3>
-          <p class="svc-desc">Кариес, пульпит, каналы — безболезненно под современной анестезией.</p>
-          <span class="svc-link">Подробнее <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <i class="fas fa-arrow-right svc2-arrow"></i>
       </a>
-      <a href="dentclean.html" class="svc-card reveal delay-1">
-        <div class="svc-img-wrap">
-          <div class="img-placeholder svc-img"><i class="fas fa-soap"></i><span>Чистка</span></div>
+      <a href="dentclean.html" class="svc2-card reveal delay-1">
+        <div class="svc2-icon" style="background:#f0fdf4;color:#16a34a"><i class="fas fa-soap"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Чистка зубов</div>
+          <div class="svc2-desc">Ультразвук + Air Flow за 60 минут</div>
+          <div class="svc2-price">от 2 000 сом</div>
         </div>
-        <div class="svc-body">
-          <div class="svc-icon"><i class="fas fa-soap"></i></div>
-          <h3 class="svc-name">Чистка зубов</h3>
-          <p class="svc-desc">Ультразвук + Air Flow. Убираем камень и налёт за 60 минут.</p>
-          <span class="svc-link">Подробнее <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <i class="fas fa-arrow-right svc2-arrow"></i>
       </a>
-      <a href="veneers.html" class="svc-card reveal delay-2">
-        <div class="svc-img-wrap">
-          <div class="img-placeholder svc-img"><i class="fas fa-star"></i><span>Виниры</span></div>
+      <a href="veneers.html" class="svc2-card reveal delay-2">
+        <div class="svc2-icon" style="background:#fce7f3;color:#db2777"><i class="fas fa-star"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Виниры</div>
+          <div class="svc2-desc">Керамика, E-max — голливудская улыбка</div>
+          <div class="svc2-price">от 18 000 сом / зуб</div>
         </div>
-        <div class="svc-body">
-          <div class="svc-icon"><i class="fas fa-star"></i></div>
-          <h3 class="svc-name">Виниры</h3>
-          <p class="svc-desc">Керамические и E-max виниры. Голливудская улыбка за 2–3 визита.</p>
-          <span class="svc-link">Подробнее <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <i class="fas fa-arrow-right svc2-arrow"></i>
       </a>
-      <a href="#appointment" class="svc-card reveal delay-3">
-        <div class="svc-img-wrap">
-          <div class="img-placeholder svc-img"><i class="fas fa-sparkles"></i><span>Отбеливание</span></div>
+      <a href="#appointment" class="svc2-card reveal delay-3">
+        <div class="svc2-icon" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-magic"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Отбеливание</div>
+          <div class="svc2-desc">Zoom — светлее на 6–12 тонов за 1 визит</div>
+          <div class="svc2-price">Уточните цену</div>
         </div>
-        <div class="svc-body">
-          <div class="svc-icon"><i class="fas fa-magic"></i></div>
-          <h3 class="svc-name">Отбеливание</h3>
-          <p class="svc-desc">Zoom-отбеливание. Светлее на 6–12 тонов за один визит.</p>
-          <span class="svc-link">Записаться <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <i class="fas fa-arrow-right svc2-arrow"></i>
       </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ MINI CTA: после услуг ═══ -->
-<div class="mini-cta">
-  <div class="container">
-    <div class="mini-cta-inner">
-      <span><i class="fas fa-question-circle"></i> Не знаете, с чего начать?</span>
-      <a href="#appointment" class="btn-green-sm">Записаться на консультацию <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ CONSULTATION ═══ -->
-<section id="consultation">
-  <div class="container">
-    <div class="consult-wrap">
-      <div class="consult-visual reveal">
-        <div class="consult-img-wrap">
-          <!-- Место для фото врача на консультации -->
-          <div class="img-placeholder consult-img">
-            <i class="fas fa-user-doctor"></i>
-            <span>Фото врача</span>
-          </div>
-        </div>
-        <div class="consult-price-card">
-          <div class="consult-price-label">Платная консультация</div>
-          <div class="consult-price-val">от 500 <span>сом</span></div>
-          <div class="consult-price-note">Специалист-стоматолог</div>
-        </div>
-      </div>
-      <div class="consult-content">
-        <div class="section-label reveal">Консультация</div>
-        <h2 class="section-title reveal delay-1">Начните с осмотра специалиста</h2>
-        <p class="section-sub reveal delay-2">Первый шаг к здоровой улыбке — личная консультация врача. Мы детально оценим состояние ваших зубов и составим индивидуальный план.</p>
-        <div class="consult-list reveal delay-2">
-          <div class="consult-item">
-            <div class="consult-item-icon"><i class="fas fa-search"></i></div>
-            <div>
-              <strong>Осмотр полости рта</strong>
-              <span>Детальный визуальный осмотр зубов, дёсен и слизистой</span>
-            </div>
-          </div>
-          <div class="consult-item">
-            <div class="consult-item-icon"><i class="fas fa-chart-line"></i></div>
-            <div>
-              <strong>Оценка состояния</strong>
-              <span>Диагностика текущих проблем и зон риска</span>
-            </div>
-          </div>
-          <div class="consult-item">
-            <div class="consult-item-icon"><i class="fas fa-clipboard-list"></i></div>
-            <div>
-              <strong>План лечения</strong>
-              <span>Пошаговый план с приоритетами и стоимостью</span>
-            </div>
-          </div>
-          <div class="consult-item">
-            <div class="consult-item-icon"><i class="fas fa-comments"></i></div>
-            <div>
-              <strong>Ответы на вопросы</strong>
-              <span>Врач ответит на все ваши вопросы и опасения</span>
-            </div>
-          </div>
-        </div>
-        <a href="#appointment" class="btn-green reveal delay-3"><i class="fas fa-calendar-check"></i> Записаться на консультацию</a>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ SEDATION ═══ -->
-<!-- ═══ SEDATION POPUP ═══ -->
 <section id="sedation" class="sed-section">
-  <!-- Декоративные блобы фона -->
   <div class="sed-bg-blob sed-blob-1"></div>
   <div class="sed-bg-blob sed-blob-2"></div>
   <div class="sed-bg-blob sed-blob-3"></div>
-
   <div class="container">
-    <!-- Карточка-попап -->
     <div class="sed-popup-wrap" id="sedPopup">
-
-      <!-- Левая часть: вопрос + кому подходит -->
       <div class="sed-left">
         <div class="sed-badge-pill sed-a1">
           <span class="sed-live-dot"></span>
           Лечение без страха
         </div>
-
-        <h2 class="sed-question sed-a2">
-          Боитесь<br>лечить <em>зубы?</em>
-        </h2>
-
-        <p class="sed-subtitle sed-a3">
-          Мы знаем решение — <strong>лечение под седацией.</strong><br>
-          Вы просто засыпаете, а просыпаетесь<br>уже с красивыми зубами.
-        </p>
-
+        <h2 class="sed-question sed-a2">Боитесь<br><em>стоматологов?</em></h2>
+        <p class="sed-subtitle sed-a3">Мы решаем это с помощью <strong>седации.</strong><br>Взрослым вводят лекарство внутривенно — вы засыпаете за 30 секунд. Детям дают вдохнуть специальный газ — и они спокойно дремлют всё лечение. Просыпаетесь уже со здоровыми зубами, без боли и стресса.</p>
         <ul class="sed-for-list sed-a4">
-          <li><i class="fas fa-check-circle"></i> Боязливым пациентам</li>
-          <li><i class="fas fa-check-circle"></i> Детям и подросткам</li>
-          <li><i class="fas fa-check-circle"></i> При комплексном лечении за 1 визит</li>
+          <li><i class="fas fa-check-circle"></i> Боязливым пациентам любого возраста</li>
+          <li><i class="fas fa-check-circle"></i> Детям — без слёз и уговоров</li>
+          <li><i class="fas fa-check-circle"></i> Несколько зубов за один визит</li>
           <li><i class="fas fa-check-circle"></i> Повышенный рвотный рефлекс</li>
           <li><i class="fas fa-check-circle"></i> Сложные и длительные операции</li>
         </ul>
-
         <a href="#appointment" class="btn-sed sed-a5">
           <i class="fas fa-moon"></i> Хочу лечиться во сне
           <i class="fas fa-arrow-right btn-sed-arrow"></i>
         </a>
       </div>
-
-      <!-- Правая часть: карточки преимуществ -->
       <div class="sed-right">
         <div class="sed-cards-grid">
           <div class="sed-benefit-card sed-a6">
-            <div class="sed-card-icon"><i class="fas fa-moon"></i></div>
-            <strong>Вы просто спите</strong>
-            <span>Полное расслабление. Никакой боли, никаких воспоминаний о процедуре.</span>
+            <div class="sed-card-icon"><i class="fas fa-syringe"></i></div>
+            <strong>Взрослым — внутривенно</strong>
+            <span>Лекарство вводят в вену, через 30 секунд вы уже спите. Просыпаетесь без воспоминаний о процедуре.</span>
           </div>
           <div class="sed-benefit-card sed-a7">
-            <div class="sed-card-icon"><i class="fas fa-heart-pulse"></i></div>
-            <strong>Ноль стресса</strong>
-            <span>Снимает тревогу ещё до начала — идеально для тех, кто боится.</span>
+            <div class="sed-card-icon"><i class="fas fa-wind"></i></div>
+            <strong>Детям — газ через маску</strong>
+            <span>Ребёнок вдыхает смесь кислорода и закиси азота — расслабляется и дремлет. Безопасно с 3 лет.</span>
           </div>
           <div class="sed-benefit-card sed-a8">
             <div class="sed-card-icon"><i class="fas fa-bolt"></i></div>
-            <strong>Всё за 1 визит</strong>
-            <span>Лечим несколько зубов сразу. Экономите время и нервы.</span>
+            <strong>Несколько зубов за раз</strong>
+            <span>Пока пациент спит — лечим всё, что нужно. Один визит вместо пяти.</span>
           </div>
           <div class="sed-benefit-card sed-a9">
             <div class="sed-card-icon"><i class="fas fa-user-doctor"></i></div>
-            <strong>Полная безопасность</strong>
-            <span>Анестезиолог рядом на протяжении всей процедуры.</span>
+            <strong>Анестезиолог рядом</strong>
+            <span>Врач следит за состоянием весь сеанс. Седация сертифицирована и безопасна.</span>
           </div>
         </div>
-
-        <!-- Мини-статистика -->
         <div class="sed-stats-row sed-a10">
-          <div class="sed-stat">
-            <span class="sed-stat-num">98%</span>
-            <span class="sed-stat-lbl">пациентов<br>не чувствуют боли</span>
-          </div>
+          <div class="sed-stat"><span class="sed-stat-num">98%</span><span class="sed-stat-lbl">пациентов<br>не чувствуют боли</span></div>
           <div class="sed-stat-div"></div>
-          <div class="sed-stat">
-            <span class="sed-stat-num">3–4ч</span>
-            <span class="sed-stat-lbl">всё лечение<br>за один сеанс</span>
-          </div>
+          <div class="sed-stat"><span class="sed-stat-num">3–4ч</span><span class="sed-stat-lbl">всё лечение<br>за один сеанс</span></div>
           <div class="sed-stat-div"></div>
-          <div class="sed-stat">
-            <span class="sed-stat-num">100%</span>
-            <span class="sed-stat-lbl">безопасно<br>для здоровья</span>
-          </div>
+          <div class="sed-stat"><span class="sed-stat-num">100%</span><span class="sed-stat-lbl">безопасно<br>для здоровья</span></div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA MID ═══ -->
-<section class="cta-mid">
-  <div class="container">
-    <div class="cta-mid-inner reveal">
-      <div class="cta-mid-text">
-        <h2>Готовы к здоровой улыбке?</h2>
-        <p>Запишитесь прямо сейчас — ответим в WhatsApp в течение 15 минут</p>
-      </div>
-      <div class="cta-mid-btns">
-        <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться</a>
-        <a href="tel:+996550228030" class="btn-white-outline-dark"><i class="fas fa-phone"></i> Позвонить</a>
       </div>
     </div>
   </div>
@@ -428,78 +254,49 @@
 <!-- ═══ DOCTORS ═══ -->
 <section id="doctors">
   <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal">Наша команда</div>
-      <h2 class="section-title reveal delay-1">Врачи клиники</h2>
-      <p class="section-sub reveal delay-2">Квалифицированные специалисты с многолетним опытом и постоянным развитием</p>
+    <div class="idx-head reveal">
+      <h2>Врачи клиники</h2>
+      <span class="idx-head-sub">8 специалистов · стаж от 8 до 27 лет</span>
     </div>
-    <div class="doctors-grid">
-      <div class="doctor-card reveal delay-1">
-        <div class="doctor-img">
-          <div class="img-placeholder doctor-photo"><i class="fas fa-user-doctor"></i></div>
-        </div>
-        <div class="doctor-body">
-          <div class="doctor-spec">Хирург-имплантолог</div>
-          <h3 class="doctor-name">Нурбек Таалайбекович</h3>
-          <div class="doctor-exp"><i class="fas fa-graduation-cap"></i> Стаж 12 лет</div>
-          <p class="doctor-desc">Специалист по дентальной имплантации и хирургии полости рта.</p>
-        </div>
+    <div class="doc2-grid">
+      <div class="doc2-card reveal delay-1">
+        <div class="doc2-ava" style="background:#dcfce7;color:#16a34a">НТ</div>
+        <div class="doc2-spec">Хирург-имплантолог</div>
+        <div class="doc2-name">Нурбек Таалайбекович</div>
+        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 12 лет</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
-      <div class="doctor-card reveal delay-2">
-        <div class="doctor-img">
-          <div class="img-placeholder doctor-photo"><i class="fas fa-user-doctor"></i></div>
-        </div>
-        <div class="doctor-body">
-          <div class="doctor-spec">Ортодонт</div>
-          <h3 class="doctor-name">Сулайманов Айдин</h3>
-          <div class="doctor-exp"><i class="fas fa-graduation-cap"></i> Стаж 8 лет</div>
-          <p class="doctor-desc">Эксперт по брекет-системам. Исправление прикуса у детей и взрослых.</p>
-        </div>
+      <div class="doc2-card reveal delay-2">
+        <div class="doc2-ava" style="background:#dbeafe;color:#2563eb">АС</div>
+        <div class="doc2-spec">Ортодонт</div>
+        <div class="doc2-name">Сулайманов Айдин</div>
+        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 8 лет</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
-      <div class="doctor-card reveal delay-3">
-        <div class="doctor-img">
-          <div class="img-placeholder doctor-photo"><i class="fas fa-user-doctor"></i></div>
-        </div>
-        <div class="doctor-body">
-          <div class="doctor-spec">Терапевт-стоматолог</div>
-          <h3 class="doctor-name">Тыналиева Гульжан</h3>
-          <div class="doctor-exp"><i class="fas fa-graduation-cap"></i> Стаж 27 лет</div>
-          <p class="doctor-desc">Опытный терапевт. Лечение кариеса и эстетические реставрации.</p>
-        </div>
+      <div class="doc2-card reveal delay-3">
+        <div class="doc2-ava" style="background:#fef9c3;color:#ca8a04">ГТ</div>
+        <div class="doc2-spec">Терапевт-стоматолог</div>
+        <div class="doc2-name">Тыналиева Гульжан</div>
+        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 27 лет</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
-      <div class="doctor-card reveal delay-4">
-        <div class="doctor-img">
-          <div class="img-placeholder doctor-photo"><i class="fas fa-user-doctor"></i></div>
-        </div>
-        <div class="doctor-body">
-          <div class="doctor-spec">Ортопед</div>
-          <h3 class="doctor-name">Асылбеков Бекзат</h3>
-          <div class="doctor-exp"><i class="fas fa-graduation-cap"></i> Стаж 10 лет</div>
-          <p class="doctor-desc">Виниры, коронки и мостовидные конструкции. Эстетическое протезирование.</p>
-        </div>
+      <div class="doc2-card reveal delay-4">
+        <div class="doc2-ava" style="background:#ede9fe;color:#7c3aed">БА</div>
+        <div class="doc2-spec">Ортопед</div>
+        <div class="doc2-name">Асылбеков Бекзат</div>
+        <div class="doc2-exp"><i class="fas fa-graduation-cap"></i> Стаж 10 лет</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ═══ MINI CTA: после врачей ═══ -->
-<div class="mini-cta mini-cta--dark">
-  <div class="container">
-    <div class="mini-cta-inner">
-      <span><i class="fas fa-user-doctor"></i> Хотите попасть к конкретному специалисту?</span>
-      <a href="#appointment" class="btn-green-sm">Выбрать врача при записи <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</div>
-
 <!-- ═══ TESTIMONIALS ═══ -->
 <section id="testimonials" class="section-dark">
   <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal label-light">Отзывы</div>
-      <h2 class="section-title reveal delay-1 title-white">Что говорят пациенты</h2>
-      <p class="section-sub reveal delay-2 sub-white">Более 199 отзывов на 2ГИС — нам доверяют</p>
+    <div class="idx-head reveal">
+      <h2 style="color:#fff">Что говорят пациенты</h2>
+      <span class="idx-head-sub" style="color:rgba(255,255,255,.55)">199+ отзывов на 2ГИС</span>
     </div>
     <div class="slider-wrap reveal">
       <div class="slider-track" id="sliderTrack">
@@ -545,7 +342,7 @@
       <div class="appt-left">
         <div class="section-label reveal">Запись</div>
         <h2 class="section-title reveal delay-1">Запишитесь<br>на приём</h2>
-        <p class="section-sub reveal delay-2">Оставьте заявку — администратор свяжется с вами в WhatsApp в течение 15 минут.</p>
+        <p class="section-sub reveal delay-2">Оставьте заявку — ответим в WhatsApp в течение 15 минут.</p>
         <div class="appt-features reveal delay-2">
           <div class="appt-feat"><div class="appt-feat-icon"><i class="fab fa-whatsapp"></i></div><div><strong>Подтверждение в WhatsApp</strong><span>В течение 15 минут</span></div></div>
           <div class="appt-feat"><div class="appt-feat-icon"><i class="fas fa-clock"></i></div><div><strong>Ежедневно без выходных</strong><span>09:00 – 19:00</span></div></div>
@@ -617,9 +414,8 @@
 <!-- ═══ CONTACTS ═══ -->
 <section id="contacts" class="section-alt">
   <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal">Где мы</div>
-      <h2 class="section-title reveal delay-1">Контакты</h2>
+    <div class="idx-head reveal">
+      <h2>Контакты</h2>
     </div>
     <div class="contacts-grid">
       <div class="contacts-info">
@@ -650,12 +446,10 @@
         </div>
       </div>
       <div class="map-wrap reveal delay-2">
-        <!-- Вставьте iframe Google Maps здесь -->
-        <div class="map-placeholder">
-          <i class="fas fa-map-marker-alt"></i>
-          <p>7-й микрорайон, 37/1, Бишкек</p>
-          <a href="https://maps.google.com" target="_blank" class="btn-green-sm">Открыть в картах</a>
-        </div>
+        <a href="https://2gis.kg/bishkek/search/Атлант%20Дентал%207%20микрорайон" target="_blank" class="map-img-link" title="Открыть в 2ГИС">
+          <img src="images/map.png" alt="Атлант Дентал на карте" class="map-img" onerror="this.parentElement.classList.add('map-no-img')"/>
+          <span class="map-img-overlay"><i class="fas fa-map-marker-alt"></i> Открыть в 2ГИС</span>
+        </a>
       </div>
     </div>
   </div>
@@ -666,18 +460,13 @@
   <div class="footer-inner container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#hero" class="logo logo-white">
-          <div class="logo-icon"><i class="fas fa-tooth"></i></div>
-          <div class="logo-text-wrap">
-            <span class="logo-main">ATLANT DENTAL</span>
-            <span class="logo-sub">CLINIC</span>
-          </div>
-        </a>
+        <a href="#hero" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
         <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
         <div class="footer-hours"><i class="fas fa-clock"></i> Ежедневно 09:00 – 19:00</div>
         <div class="footer-socials">
           <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -694,7 +483,6 @@
       <div class="footer-col">
         <div class="footer-col-title">Клиника</div>
         <ul class="footer-links">
-          <li><a href="#consultation">Консультация</a></li>
           <li><a href="#doctors">Врачи</a></li>
           <li><a href="#testimonials">Отзывы</a></li>
           <li><a href="#contacts">Контакты</a></li>
@@ -727,8 +515,7 @@
   </div>
 </div>
 
-
-<!-- ═══ FLOATING WHATSAPP ═══ -->
+<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/996550228030" class="wa-float" target="_blank" aria-label="Написать в WhatsApp">
   <i class="fab fa-whatsapp"></i>
   <span class="wa-float-label">Написать</span>
@@ -738,11 +525,9 @@
   const ADMIN_PHONE = '996221100809';
   const WORKER_URL  = 'https://atlant-form.crycrazydiamond.workers.dev';
 
-  // ─── NAVBAR ───
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-  // ─── BURGER ───
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
   burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
@@ -750,29 +535,21 @@
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
   function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
 
-  // ─── REVEAL ───
   const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-  // ─── SEDATION POPUP ───
   const sedPopup = document.getElementById('sedPopup');
   if (sedPopup) {
     const sedObs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        sedPopup.classList.add('sed-active');
-        sedObs.unobserve(sedPopup);
-      }
+      if (entry.isIntersecting) { sedPopup.classList.add('sed-active'); sedObs.unobserve(sedPopup); }
     }, { threshold: 0.15 });
     sedObs.observe(sedPopup);
   }
 
-  // ─── COUNTERS ───
   const counterObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ animateCounter(e.target); counterObs.unobserve(e.target); } }), { threshold: 0.5 });
   document.querySelectorAll('.hero-stat-num').forEach(el => counterObs.observe(el));
   function animateCounter(el) {
-    const target = +el.dataset.target;
-    const duration = 1800;
-    const step = target / (duration / 16);
+    const target = +el.dataset.target, duration = 1800, step = target / (duration / 16);
     let current = 0;
     const timer = setInterval(() => {
       current += step;
@@ -781,7 +558,6 @@
     }, 16);
   }
 
-  // ─── SLIDER ───
   const track = document.getElementById('sliderTrack');
   const sliderWrap = track.parentElement;
   const dotsContainer = document.getElementById('sliderDots');
@@ -811,7 +587,6 @@
   window.addEventListener('resize', () => { current = 0; goTo(0); });
   setInterval(() => goTo(current < total() - 1 ? current + 1 : 0), 5000);
 
-  // ─── FORM ───
   function showError(msg) {
     const box = document.getElementById('form-error');
     document.getElementById('form-error-text').textContent = msg;
@@ -830,19 +605,16 @@
     setTimeout(() => notif.classList.remove('show'), 4000);
     ['f-name','f-phone','f-date','f-time','f-service','f-problem'].forEach(id => document.getElementById(id).value = '');
   }
-
   document.getElementById('submitBtn').addEventListener('click', async () => {
     hideError();
-    const name    = document.getElementById('f-name').value.trim();
-    const phone   = document.getElementById('f-phone').value.trim();
-    const date    = document.getElementById('f-date').value;
-    const time    = document.getElementById('f-time').value;
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const date = document.getElementById('f-date').value;
+    const time = document.getElementById('f-time').value;
     const service = document.getElementById('f-service').value;
     const problem = document.getElementById('f-problem').value.trim();
-
     if (!name)  { showError('Пожалуйста, введите ваше имя.'); return; }
     if (!phone) { showError('Пожалуйста, введите номер телефона.'); return; }
-
     const message = [
       '🦷 *Новая заявка — Atlant Dental*', '',
       `👤 *Имя:* ${name}`,
@@ -853,7 +625,6 @@
       problem ? `📝 *Вопрос:* ${problem}` : '',
       '', '📍 _atlant.kg_'
     ].filter(Boolean).join('\n');
-
     setBtnLoading(true);
     try {
       const res = await fetch(WORKER_URL, {
