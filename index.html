@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" href="images/logo.png" type="image/png"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -52,10 +53,13 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-tag reveal"><i class="fas fa-circle" style="font-size:8px"></i> Стоматология в Бишкеке</div>
-        <h1 class="hero-title reveal delay-1">Красивая улыбка<br>без боли и <em>страха</em></h1>
+<h1 class="hero-title reveal delay-1">Красивая улыбка<br>без боли и <em>страха</em></h1>
         <p class="hero-desc reveal delay-2">Современное оборудование, опытные врачи, лечение под седацией. Принимаем взрослых и детей.</p>
-        <div class="hero-stats reveal delay-3">
+        <div class="hero-btns reveal delay-3">
+          <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
+          <a href="#services" class="btn-white-outline">Наши услуги</a>
+        </div>
+        <div class="hero-stats reveal delay-4">
           <div class="hero-stat">
             <span class="hero-stat-num" data-target="10">0</span><span class="hero-stat-suf">+</span>
             <span class="hero-stat-lbl">лет на рынке</span>
@@ -70,10 +74,6 @@
             <span class="hero-stat-num" data-target="8">0</span><span class="hero-stat-suf"></span>
             <span class="hero-stat-lbl">специалистов</span>
           </div>
-        </div>
-        <div class="hero-btns reveal delay-4">
-          <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
-          <a href="#services" class="btn-white-outline">Наши услуги</a>
         </div>
       </div>
 
@@ -118,14 +118,6 @@
           </div>
         </div>
 
-        <!-- Floating badge -->
-        <div class="hero-badge-float">
-          <div class="badge-icon"><i class="fas fa-shield-alt"></i></div>
-          <div>
-            <strong>Гарантия качества</strong>
-            <span>на все виды работ</span>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -201,15 +193,6 @@
   </div>
 </section>
 
-<!-- mini CTA -->
-<div class="mini-cta mini-cta--dark">
-  <div class="container">
-    <div class="mini-cta-inner">
-      <span><i class="fas fa-moon"></i> Боитесь стоматолога? Лечим под седацией — засыпаете и просыпаетесь со здоровыми зубами.</span>
-      <a href="#sedation" class="btn-green-sm">Узнать подробнее</a>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ SEDATION ═══ -->
 <section id="sedation" class="sed-section">
@@ -219,11 +202,7 @@
   <div class="container">
     <div class="sed-popup-wrap" id="sedPopup">
       <div class="sed-left">
-        <div class="sed-badge-pill sed-a1">
-          <span class="sed-live-dot"></span>
-          Лечение без страха
-        </div>
-        <h2 class="sed-question sed-a2">Боитесь<br><em>стоматологов?</em></h2>
+<h2 class="sed-question sed-a2">Боитесь<br><em>стоматологов?</em></h2>
         <p class="sed-subtitle sed-a3">Мы решаем это с помощью <strong>седации.</strong><br>Взрослым вводят лекарство внутривенно — вы засыпаете за 30 секунд. Детям дают вдохнуть специальный газ — и они спокойно дремлют всё лечение. Просыпаетесь уже со здоровыми зубами, без боли и стресса.</p>
         <ul class="sed-for-list sed-a4">
           <li><i class="fas fa-check-circle"></i> Боязливым пациентам любого возраста</li>
@@ -314,15 +293,6 @@
   </div>
 </section>
 
-<!-- mini CTA -->
-<div class="mini-cta">
-  <div class="container">
-    <div class="mini-cta-inner">
-      <span><i class="fas fa-star" style="color:var(--primary)"></i> 99+ отзывов на 2ГИС — пациенты доверяют нам</span>
-      <a href="https://2gis.kg/bishkek/firm/70000001019327883/tab/reviews" target="_blank" class="btn-green-sm">Читать отзывы</a>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ TESTIMONIALS ═══ -->
 <section id="testimonials" class="section-dark" style="padding: 80px 0;">
@@ -376,8 +346,7 @@
   <div class="container">
     <div class="appt-wrap">
       <div>
-        <div class="section-label reveal">Запись</div>
-        <h2 class="section-title reveal delay-1">Запишитесь<br>на приём</h2>
+<h2 class="section-title reveal delay-1">Запишитесь<br>на приём</h2>
         <p class="section-sub reveal delay-2">Оставьте заявку — ответим в WhatsApp в течение 15 минут.</p>
         <div class="appt-features">
           <div class="appt-feat reveal delay-1">
@@ -554,11 +523,16 @@
   </div>
 </footer>
 
-<!-- ═══ WA FLOAT ═══ -->
-<a href="https://wa.me/996550228030" target="_blank" class="wa-float">
-  <i class="fab fa-whatsapp"></i>
-  <span class="wa-float-label">Написать</span>
+<!-- ═══ SCROLL TOAST ═══ -->
+<a href="https://wa.me/996550228030" target="_blank" class="scroll-toast scroll-toast--wa" id="reviewToast">
+  <div class="scroll-toast-icon scroll-toast-icon--wa"><i class="fab fa-whatsapp"></i></div>
+  <div>
+    <strong>Написать в WhatsApp</strong>
+    <span>Ответим в течение 15 минут</span>
+  </div>
+  <button class="scroll-toast-close" id="toastClose" onclick="event.preventDefault();event.stopPropagation();document.getElementById('reviewToast').classList.remove('show');"><i class="fas fa-times"></i></button>
 </a>
+
 
 <!-- ═══ NOTIFICATION ═══ -->
 <div id="notif">
@@ -666,6 +640,15 @@
     setTimeout(() => notif.classList.remove('show'), 4000);
     ['f-name','f-phone','f-date','f-time','f-service','f-problem'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
   }
+
+  // ─── WA TOAST ───
+  let toastShown = false;
+  window.addEventListener('scroll', () => {
+    if (!toastShown && window.scrollY > window.innerHeight * 0.6) {
+      toastShown = true;
+      document.getElementById('reviewToast').classList.add('show');
+    }
+  });
 
   document.getElementById('submitBtn').addEventListener('click', async () => {
     hideError();
