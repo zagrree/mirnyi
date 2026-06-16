@@ -338,6 +338,22 @@ section { padding: 96px 0; }
 .hero-stat-lbl { display: block; font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; }
 .hero-stat-div { width: 1px; height: 40px; background: rgba(255,255,255,0.1); margin: 0 8px; }
 
+/* hero chips */
+.hero-chips {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-top: 18px;
+}
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.82);
+  padding: 6px 14px; border-radius: 50px;
+  font-size: 13px; font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+.hero-chip i { color: var(--primary-light); font-size: 12px; }
+
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
 .hero-card-main {
   width: 100%; max-width: 460px; aspect-ratio: 4/5;
@@ -1755,11 +1771,14 @@ footer { background: var(--dark); color: rgba(255,255,255,0.55); padding: 64px 0
 
 /* ═══ LOGO IMAGE ═══ */
 .logo-img {
-  height: 44px;
-  width: 44px;
+  height: 44px !important;
+  width: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  flex-shrink: 0;
   transition: transform 0.2s;
 }
 .logo:hover .logo-img {
