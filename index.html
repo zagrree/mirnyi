@@ -300,9 +300,9 @@
     <div class="idx-head reveal">
       <div>
         <h2 class="title-white">Отзывы пациентов</h2>
-        <div class="idx-head-sub" style="color:rgba(255,255,255,.55)">99+ отзывов на 2ГИС</div>
+        <div class="idx-head-sub">99+ отзывов на 2ГИС</div>
       </div>
-      <a href="https://2gis.kg/bishkek/firm/70000001019327883/tab/reviews" target="_blank" class="idx-head-link" style="color:var(--primary-light)">Все отзывы <i class="fas fa-arrow-right"></i></a>
+      <a href="https://2gis.kg/bishkek/firm/70000001019327883/tab/reviews" target="_blank" class="idx-head-link">Все отзывы <i class="fas fa-arrow-right"></i></a>
     </div>
     <div class="slider-wrap reveal">
       <div class="slider-track" id="sliderTrack">
@@ -681,14 +681,4 @@
         body: JSON.stringify({ chatId: `${ADMIN_PHONE}@c.us`, message })
       });
       const data = await res.json();
-      data.idMessage ? showSuccess() : showError('Не удалось отправить. Позвоните: 0 (550) 22-80-30');
-    } catch(err) {
-      console.error(err);
-      showError('Ошибка соединения. Позвоните: 0 (550) 22-80-30');
-    } finally {
-      setBtnLoading(false);
-    }
-  });
-</script>
-</body>
-</html>
+      data.idMessage ? showSuccess() : showError('Не удалось отправить
