@@ -559,8 +559,11 @@
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
 
   // ─── REVEAL ───
-  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+  // Fallback: immediately reveal anything already in viewport
+  setTimeout(() => { revealEls.forEach(el => { const r = el.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible'); }); }, 100);
 
   // ─── SEDATION POPUP ───
   const sedPopup = document.getElementById('sedPopup');
@@ -681,4 +684,14 @@
         body: JSON.stringify({ chatId: `${ADMIN_PHONE}@c.us`, message })
       });
       const data = await res.json();
-      data.idMessage ? showSuccess() : showError('Не удалось отправить
+      data.idMessage ? showSuccess() : showError('Не удалось отправить. Позвоните: 0 (550) 22-80-30');
+    } catch(err) {
+      console.error(err);
+      showError('Ошибка соединения. Позвоните: 0 (550) 22-80-30');
+    } finally {
+      setBtnLoading(false);
+    }
+  });
+</script>
+</body>
+</html>
