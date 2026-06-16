@@ -721,18 +721,17 @@ footer { background: var(--gray-900); }
    NOTIFICATION (form success)
 ══════════════════════════════════════ */
 #notif {
-  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(120%);
+  display: none;
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
   z-index: 1200;
   background: #fff; border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
   padding: 14px 20px;
-  display: flex; align-items: center; gap: 12px;
+  align-items: center; gap: 12px;
   box-shadow: var(--shadow-lg);
-  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
   white-space: nowrap;
-  pointer-events: none;
 }
-#notif.show { transform: translateX(-50%) translateY(0); }
+#notif.show { display: flex; }
 .notif-icon {
   width: 32px; height: 32px; border-radius: 50%;
   background: var(--primary-soft); color: var(--primary);
