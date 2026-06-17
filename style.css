@@ -5,7 +5,7 @@
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
   background: #fff;
@@ -1268,7 +1268,7 @@ footer { background: var(--gray-900); }
 }
 
 /* Appointment section — organic blob accent */
-#appointment { position: relative; }
+#appointment { position: relative; overflow: hidden; }
 .appt-org-blob {
   position: absolute; pointer-events: none; z-index: 0;
   background: var(--primary); filter: blur(90px);
