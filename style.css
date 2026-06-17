@@ -233,16 +233,31 @@ nav.scrolled {
 #hero {
   min-height: 100vh;
   background: #fff;
+  background-image: radial-gradient(circle, rgba(16,185,129,0.18) 1px, transparent 1px);
+  background-size: 30px 30px;
   position: relative; overflow: hidden;
   display: flex; align-items: center;
   padding: 130px 0 90px;
   border-bottom: 1px solid var(--gray-100);
 }
 .hero-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+/* corner gradient — green tint on right side */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.92) 38%, rgba(16,185,129,0.07) 100%);
+  pointer-events: none;
+}
 .hero-shape {
   position: absolute; border-radius: 50%;
   background: var(--primary);
-  filter: blur(120px); opacity: 0.05;
+  filter: blur(70px); opacity: 0.22;
+}
+/* large circle arc accents */
+.hero-arc {
+  position: absolute; pointer-events: none; z-index: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(16,185,129,0.32);
 }
 .hero-inner {
   display: grid; grid-template-columns: 55% 45%;
@@ -397,15 +412,71 @@ nav.scrolled {
   padding: 24px 20px;
   border-right: 1px solid var(--gray-200);
   border-bottom: 1px solid var(--gray-200);
-  transition: background var(--transition);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.45s ease, border-color 0.45s ease;
 }
 .svc2-card:nth-child(3n) { border-right: none; }
 .svc2-card:nth-last-child(-n+3):not(:nth-child(3n+1):nth-last-child(-n+3) ~ *),
 .svc2-card:last-child,
 .svc2-card:nth-last-child(2),
 .svc2-card:nth-last-child(3) { border-bottom: none; }
-.svc2-card:hover { background: var(--gray-50); }
+
+/* ── background image layer ── */
+.svc2-card::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background-image: var(--card-img);
+  background-size: cover;
+  background-position: center top;
+  opacity: 0;
+  transform: scale(1.07);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+/* ── dark + brand colour overlay ── */
+.svc2-card::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(4, 26, 18, 0.58) 0%,
+    rgba(16, 185, 129, 0.28) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+/* lift all direct children above overlays */
+.svc2-icon,
+.svc2-body,
+.svc2-arrow { position: relative; z-index: 2; }
+
+/* smooth colour transitions on inner elements */
+.svc2-icon  { transition: background 0.45s ease, border-color 0.45s ease, color 0.45s ease; }
+.svc2-name  { transition: color 0.45s ease; }
+.svc2-desc  { transition: color 0.45s ease; }
+.svc2-price { transition: color 0.45s ease; }
+.svc2-arrow { transition: color 0.45s ease, transform 0.45s ease; margin-top: 14px; font-size: 11px; color: var(--gray-300); }
+
+/* ── hover state ── */
+.svc2-card:hover {
+  box-shadow: 0 12px 40px rgba(16,185,129,0.22), 0 2px 10px rgba(0,0,0,0.14);
+  border-color: transparent;
+  z-index: 2;
+}
+.svc2-card:hover::before { opacity: 1; transform: scale(1); }
+.svc2-card:hover::after  { opacity: 1; }
+
+.svc2-card:hover .svc2-icon {
+  background: rgba(255,255,255,0.15) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+  color: #fff !important;
+}
+.svc2-card:hover .svc2-name  { color: #fff; }
+.svc2-card:hover .svc2-desc  { color: rgba(255,255,255,0.80); }
+.svc2-card:hover .svc2-price { color: #6ee7b7; }
+.svc2-card:hover .svc2-arrow { color: rgba(255,255,255,0.65); transform: translateX(4px); }
+
 .svc2-icon {
   width: 38px; height: 38px; border-radius: var(--radius);
   border: 1px solid var(--gray-200);
@@ -417,11 +488,6 @@ nav.scrolled {
 .svc2-name { font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 6px; }
 .svc2-desc { font-size: 13px; color: var(--gray-400); line-height: 1.6; margin-bottom: 14px; }
 .svc2-price { font-size: 13px; font-weight: 700; color: var(--primary); }
-.svc2-arrow {
-  margin-top: 14px; font-size: 11px; color: var(--gray-300);
-  transition: color var(--transition), transform var(--transition);
-}
-.svc2-card:hover .svc2-arrow { color: var(--primary); transform: translateX(4px); }
 
 /* ══════════════════════════════════════
    SEDATION
@@ -452,7 +518,7 @@ nav.scrolled {
   top: 50%; left: 45%; opacity: 0.025; filter: blur(60px);
   border-radius: 52% 48% 60% 40% / 45% 58% 42% 55%;
 }
-.sed-popup-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.sed-popup-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: stretch; }
 .sed-left {}
 
 .sed-question {
@@ -469,18 +535,137 @@ nav.scrolled {
 .sed-for-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--gray-600); }
 .sed-for-list li i { color: var(--primary); font-size: 13px; margin-top: 3px; flex-shrink: 0; }
 
-/* Sedation right side */
-.sed-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
-.sed-benefit-card {
-  background: #fff;
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius);
-  padding: 18px;
-  display: flex; flex-direction: column; gap: 6px;
+/* ── Sedation: photo right column ── */
+.sed-photo-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.sed-card-icon { font-size: 17px; color: var(--primary); margin-bottom: 2px; }
-.sed-benefit-card strong { font-size: 13px; font-weight: 600; color: var(--gray-900); }
-.sed-benefit-card span { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+.sed-photo-frame {
+  flex: 1;
+}
+
+/* organic brand blobs behind the photo */
+.sed-deco-blob {
+  position: absolute; pointer-events: none; z-index: 0;
+  background: var(--primary); border-radius: 50%;
+}
+.sed-deco-1 {
+  width: 200px; height: 190px;
+  bottom: -40px; right: -40px;
+  opacity: 0.12; filter: blur(52px);
+  border-radius: 42% 58% 60% 40% / 48% 55% 45% 52%;
+}
+.sed-deco-2 {
+  width: 120px; height: 110px;
+  top: -22px; left: -22px;
+  opacity: 0.08; filter: blur(36px);
+  border-radius: 60% 40% 48% 52% / 55% 42% 58% 45%;
+}
+
+/* photo frame with organic corner */
+.sed-photo-frame {
+  position: relative; z-index: 1;
+  border-radius: 20px 20px 72px 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #0a3324 0%, #134e38 50%, #10b981 100%);
+  box-shadow:
+    0 24px 64px rgba(16,185,129,0.16),
+    0 4px 20px rgba(0,0,0,0.10);
+}
+
+/* photo itself */
+.sed-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* soft brand green wash — keeps photo natural, adds Atlant brand tint */
+.sed-photo-wash {
+  position: absolute; inset: 0; z-index: 1;
+  background: rgba(16,185,129,0.10);
+  pointer-events: none;
+}
+.sed-photo-frame:hover .sed-photo-img { transform: scale(1.03); }
+
+/* entrance animation triggered by .reveal → .visible */
+.sed-photo-wrap.visible .sed-photo-img {
+  animation: sedPhotoIn 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes sedPhotoIn {
+  from { transform: scale(1.06); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* dark-to-transparent gradient at bottom for badge readability */
+.sed-photo-gradient {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 48%;
+  background: linear-gradient(to top, rgba(4,18,12,0.58) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* floating trust badge on photo */
+.sed-photo-badge {
+  position: absolute; bottom: 22px; left: 22px;
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.94);
+  border-radius: 14px;
+  padding: 12px 18px 12px 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.sed-badge-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--primary-soft); color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; flex-shrink: 0;
+}
+.sed-badge-text strong {
+  font-size: 13px; font-weight: 700; color: var(--gray-900); display: block; line-height: 1.2; margin-bottom: 2px;
+}
+.sed-badge-text span { font-size: 11px; color: var(--gray-500); }
+
+/* floating stat chips — positioned inside photo frame */
+.sed-chip {
+  position: absolute; z-index: 3;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  text-align: center;
+  min-width: 76px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.sed-chip-tr { top: 20px; right: 20px; }
+.sed-chip-br { bottom: 100px; right: 20px; }
+.sed-chip-num {
+  font-family: var(--font-head);
+  font-size: 20px; font-weight: 600; color: var(--primary);
+  display: block; line-height: 1;
+}
+.sed-chip-lbl { font-size: 10px; color: var(--gray-400); display: block; margin-top: 2px; }
+
+/* stats row moved to left column */
+.sed-left-stats {
+  display: flex; align-items: center; gap: 0;
+  margin-top: 24px; padding-top: 22px;
+  border-top: 1px solid var(--gray-200);
+}
+.sed-ls { flex: 1; text-align: center; }
+.sed-ls-num {
+  font-family: var(--font-head); font-size: 22px; font-weight: 600;
+  color: var(--primary); display: block; line-height: 1;
+}
+.sed-ls-lbl { font-size: 11px; color: var(--gray-500); display: block; margin-top: 3px; }
+.sed-ls-div { width: 1px; height: 28px; background: var(--gray-200); flex-shrink: 0; }
 
 .sed-stats-row {
   display: flex; align-items: center;
@@ -815,7 +1000,14 @@ footer { background: var(--gray-900); }
   position: relative; overflow: hidden;
 }
 .impl-sp-hero, .dh-hero, .vc-hero, .dc-hero, .br-hero { background: var(--gray-50); }
-.sp-hero-inner { max-width: 800px; }
+
+/* inner has its own max-width — needs explicit horizontal padding like .container */
+.sp-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
 .sp-back {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 13px; font-weight: 500; color: var(--gray-400);
@@ -824,13 +1016,26 @@ footer { background: var(--gray-900); }
 .sp-back:hover { color: var(--primary); }
 .sp-hero-title {
   font-family: var(--font-head);
-  font-size: clamp(30px, 4vw, 50px);
+  font-size: clamp(28px, 4vw, 50px);
   font-weight: 600; font-style: italic;
   color: var(--gray-900); line-height: 1.15; margin-bottom: 14px;
 }
 .sp-hero-title em { color: var(--gold-light); font-style: italic; }
 .sp-hero-sub { font-size: 15px; color: var(--gray-500); line-height: 1.75; max-width: 580px; margin-bottom: 28px; }
 .sp-hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+
+/* On gray-50 hero, the white-outline button must look like hero-outline */
+.sp-hero-btns .btn-white-outline {
+  border-color: var(--gray-300);
+  color: var(--gray-700);
+  background: #fff;
+}
+.sp-hero-btns .btn-white-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #fff;
+}
+
 .sp-hero-stats {
   display: flex; gap: 44px; flex-wrap: wrap;
   padding-top: 28px; border-top: 1px solid var(--gray-200);
@@ -1015,11 +1220,11 @@ footer { background: var(--gray-900); }
 /* Hero: floating accent rings */
 .hero-ring {
   position: absolute; pointer-events: none; z-index: 0;
-  border: 1.5px solid rgba(16,185,129,0.14);
+  border: 2.5px solid rgba(16,185,129,0.42);
   animation: driftRing 9s ease-in-out infinite;
 }
 .hero-ring-2 {
-  border-color: rgba(16,185,129,0.09);
+  border-color: rgba(16,185,129,0.28);
   animation-delay: -3.5s; animation-duration: 7s;
 }
 @keyframes driftRing {
@@ -1030,10 +1235,10 @@ footer { background: var(--gray-900); }
 /* Hero: small organic petal/leaf accent */
 .deco-petal {
   position: absolute; pointer-events: none; z-index: 0;
-  background: rgba(16,185,129,0.07);
+  background: rgba(16,185,129,0.30);
   border-radius: 0 70% 0 70%;
   transform: rotate(-35deg);
-  filter: blur(3px);
+  filter: blur(0px);
 }
 
 /* Organic wave separator — absolute, sits at section top */
@@ -1044,15 +1249,21 @@ footer { background: var(--gray-900); }
 .brand-wave svg { display: block; width: 100%; height: 52px; }
 
 /* Doctors section — organic blob accent */
-#doctors { position: relative; overflow: hidden; }
+#doctors { padding: var(--section-v) 0; position: relative; overflow: hidden; }
 .doc-org-blob {
   position: absolute; pointer-events: none; z-index: 0;
   background: var(--primary); filter: blur(100px);
 }
 
-/* Doctor avatar: subtle brand glow ring */
+/* Doctor avatar: subtle brand glow ring + photo support */
 .doc2-ava {
   box-shadow: 0 0 0 5px rgba(16,185,129,0.08), 0 0 28px rgba(16,185,129,0.14);
+  overflow: hidden; padding: 0;
+}
+.doc2-ava img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block; border-radius: 50%;
 }
 
 /* Appointment section — organic blob accent */
@@ -1071,9 +1282,10 @@ footer { background: var(--gray-900); }
   border-radius: 2px; margin-top: 10px;
 }
 
-/* Mobile: hide rings & petals */
+/* Mobile: hide decorative rings, arcs, petals */
 @media (max-width: 768px) {
-  .hero-ring, .hero-ring-2, .deco-petal { display: none; }
+  .hero-ring, .hero-ring-2, .deco-petal, .hero-arc { display: none; }
+  #hero { background-image: none; }
 }
 
 /* ══════════════════════════════════════
@@ -1088,46 +1300,116 @@ footer { background: var(--gray-900); }
 }
 
 @media (max-width: 768px) {
-  :root { --section-v: 60px; }
-  .container { padding: 0 20px; }
+  :root { --section-v: 56px; }
+  .container { padding: 0 16px; }
 
-  /* Nav */
+  /* ── Nav ── */
+  .nav-inner { padding: 0 16px; }
   .nav-links, .nav-hours { display: none; }
   .nav-right .btn-nav { display: none; }
   .burger { display: flex; }
 
-  /* Hero */
+  /* ── Hero ── */
+  #hero { padding: 96px 0 52px; min-height: auto; }
   .hero-inner { grid-template-columns: 1fr; gap: 0; }
   .hero-right { display: none; }
+  .hero-desc { max-width: 100%; font-size: 14px; margin-bottom: 22px; }
+  .hero-btns { gap: 10px; }
+  .hero-stats {
+    margin-top: 28px; padding-top: 20px;
+    justify-content: space-between;
+    gap: 0;
+  }
   .hero-stat-div { display: none; }
-  .hero-stats { gap: 0; justify-content: space-around; }
-  .hero-stat { text-align: center; }
+  .hero-stat { text-align: center; flex: 1; }
+  .hero-stat-num { font-size: 24px; }
+  .hero-stat-lbl { font-size: 10px; }
 
-  /* Services */
+  /* ── Section headings ── */
+  .idx-head { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 24px; }
+  .section-head { margin-bottom: 32px; }
+
+  /* ── Services ── */
   .svc2-grid { grid-template-columns: 1fr 1fr; }
+  .svc2-card { padding: 18px 14px 16px; }
+  /* reset desktop 3-col border rules, apply 2-col rules */
+  .svc2-card { border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
   .svc2-card:nth-child(3n) { border-right: 1px solid var(--gray-200); }
   .svc2-card:nth-child(2n) { border-right: none; }
+  .svc2-card:nth-last-child(1),
+  .svc2-card:nth-last-child(2) { border-bottom: none; }
+  .svc2-name { font-size: 13px; }
+  .svc2-desc { font-size: 12px; line-height: 1.55; }
+  .svc2-price { font-size: 12px; }
 
-  /* Sedation */
-  .sed-popup-wrap { grid-template-columns: 1fr; gap: 36px; }
-  .sed-cards-grid { grid-template-columns: 1fr 1fr; }
+  /* ── Sedation ── */
+  .sed-popup-wrap { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  .sed-photo-wrap { display: block; }
+  .sed-photo-frame { flex: none; border-radius: 16px 16px 40px 16px; }
+  .sed-photo-img { aspect-ratio: 16/9; height: auto; }
+  .sed-chip { display: none; }
+  .sed-deco-blob { display: none; }
+  .sed-left-stats { gap: 0; }
+  .btn-sed { width: 100%; justify-content: center; }
+  .sed-photo-badge { padding: 10px 14px 10px 12px; }
 
-  /* Doctors */
-  .doc2-grid { grid-template-columns: 1fr 1fr; }
+  /* ── Doctors ── */
+  .doc2-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .doc2-card { padding: 18px 12px 16px; }
+  .doc2-ava { width: 80px; height: 80px; margin-bottom: 12px; }
 
-  /* Appointment */
-  .appt-wrap { grid-template-columns: 1fr; gap: 36px; }
+  /* ── Reviews / slider ── */
+  .slider-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+  .slider-track { scroll-snap-align: start; padding: 4px 0; gap: 12px; }
+  .review-card {
+    flex: 0 0 82vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+  .slider-controls { display: none; }
+
+  /* ── Appointment ── */
+  .appt-wrap { grid-template-columns: 1fr; gap: 28px; }
   .form-row { grid-template-columns: 1fr; }
+  .appt-form { padding: 20px; }
+  .appt-features { gap: 12px; margin-top: 16px; }
+  .appt-feat-icon { width: 34px; height: 34px; font-size: 14px; }
 
-  /* Contacts */
-  .contacts-grid { grid-template-columns: 1fr; gap: 36px; }
+  /* ── Contacts ── */
+  .contacts-grid { grid-template-columns: 1fr; gap: 28px; }
+  .map-img { aspect-ratio: 16/9; }
+  .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-card { padding: 12px 14px; gap: 10px; }
 
-  /* Footer */
-  .footer-top { grid-template-columns: 1fr; gap: 28px; }
-  .footer-inner { padding: 44px 20px 22px; }
+  /* ── Footer ── */
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-inner { padding: 40px 16px 20px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
 
-  /* Subpages */
-  .sp-about-grid { grid-template-columns: 1fr; gap: 36px; }
+  /* ── Notification toast ── */
+  #notif { white-space: normal; max-width: calc(100vw - 32px); }
+
+  /* ── WhatsApp button ── */
+  .scroll-toast { bottom: 16px; right: 16px; }
+
+  /* ── Subpages ── */
+  .sp-hero { padding: 88px 0 48px; }
+  .sp-hero-inner { padding: 0 16px; }
+  .sp-hero-title { font-size: clamp(26px, 6.5vw, 38px); margin-bottom: 12px; }
+  .sp-hero-sub { font-size: 14px; margin-bottom: 22px; }
+  .sp-hero-btns { gap: 10px; margin-bottom: 28px; }
+  .sp-hero-btns .btn-green,
+  .sp-hero-btns .btn-white-outline { width: 100%; justify-content: center; }
+  .sp-hero-stats { gap: 24px; padding-top: 22px; }
+  .sp-stat-num { font-size: 22px; }
+  .sp-about-grid { grid-template-columns: 1fr; gap: 32px; }
   .sp-type-grid { grid-template-columns: 1fr; }
   .sp-who-grid { grid-template-columns: 1fr 1fr; }
   .sp-price-grid { grid-template-columns: 1fr; }
@@ -1135,20 +1417,87 @@ footer { background: var(--gray-900); }
   .impl-steps { flex-direction: column; gap: 20px; }
   .impl-step { padding: 0; text-align: left; }
   .impl-step-arrow { display: none; }
-  .idx-head { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .slider-wrap { overflow-x: auto; }
-  .review-card { flex: 0 0 280px; }
+  .sp-cta-btns { flex-direction: column; align-items: stretch; }
+  .sp-cta-btns .btn-green,
+  .sp-cta-btns .btn-white-outline { justify-content: center; }
+  .sp-cta-badges { gap: 10px; }
 }
 
 @media (max-width: 480px) {
+  :root { --section-v: 48px; }
+  .container { padding: 0 14px; }
+  .nav-inner { padding: 0 14px; }
+
+  /* Hero */
+  #hero { padding: 84px 0 44px; }
+  .hero-title { font-size: clamp(26px, 7.5vw, 32px); margin-bottom: 14px; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
+  .hero-btns .btn-green,
+  .hero-btns .btn-hero-outline { justify-content: center; }
+  .hero-stat-num { font-size: 22px; }
+
+  /* Services */
   .svc2-grid { grid-template-columns: 1fr; }
-  .svc2-card { border-right: none !important; }
-  .doc2-grid { grid-template-columns: 1fr; }
+  .svc2-card { border-right: none !important; padding: 18px 16px; }
+  .svc2-card:nth-last-child(1),
+  .svc2-card:nth-last-child(2) { border-bottom: 1px solid var(--gray-200); }
+  .svc2-card:last-child { border-bottom: none; }
+  .svc2-desc { display: none; } /* hide long desc on tiny screens, show name+price only */
+
+  /* Sedation */
   .sed-cards-grid { grid-template-columns: 1fr; }
+  .sed-question { font-size: clamp(22px, 7vw, 30px); }
+  .sed-subtitle { font-size: 13px; }
+  .sed-for-list li { font-size: 13px; }
+  .sed-photo-img { aspect-ratio: 4/3; }
+  .sed-photo-badge { left: 14px; bottom: 14px; padding: 9px 12px 9px 10px; gap: 8px; }
+  .sed-badge-icon { width: 30px; height: 30px; font-size: 13px; }
+  .sed-badge-text strong { font-size: 12px; }
+  .sed-badge-text span { font-size: 10px; }
+  .sed-ls-num { font-size: 18px; }
+
+  /* Doctors */
+  .doc2-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .doc2-card { padding: 14px 10px 12px; }
+  .doc2-ava { width: 72px; height: 72px; }
+  .doc2-name { font-size: 13px; }
+  .doc2-spec { font-size: 9px; }
+
+  /* Reviews */
+  .review-card { flex: 0 0 88vw; }
+
+  /* Appointment */
+  .appt-form { padding: 16px; }
+  .section-title { font-size: clamp(24px, 7vw, 34px); }
+
+  /* Contacts */
+  .contact-cards { grid-template-columns: 1fr; }
+  .hours-row { font-size: 12px; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; gap: 20px; }
+  .footer-inner { padding: 32px 14px 18px; }
+
+  /* Subpages */
+  .sp-hero { padding: 80px 0 40px; }
+  .sp-hero-inner { padding: 0 14px; }
+  .sp-hero-title { font-size: clamp(24px, 7vw, 32px); line-height: 1.18; }
+  .sp-hero-sub { font-size: 13px; line-height: 1.65; }
+  .sp-back { font-size: 12px; margin-bottom: 16px; }
+  .sp-hero-stats { gap: 18px; flex-wrap: wrap; padding-top: 18px; }
+  .sp-stat-num { font-size: 20px; }
+  .sp-stat-lbl { font-size: 11px; }
   .sp-cards { grid-template-columns: 1fr; }
   .sp-who-grid { grid-template-columns: 1fr; }
-  .hero-btns { flex-direction: column; }
-  .sp-hero-btns { flex-direction: column; }
-  .sp-hero-stats { gap: 24px; }
-  .footer-top { gap: 24px; }
+  .sp-price-grid { grid-template-columns: 1fr; }
+  .sp-type-grid { grid-template-columns: 1fr; }
+  .sp-about-grid { gap: 24px; }
+  .sp-installment { flex-direction: column; gap: 10px; padding: 16px; }
+  .sp-cta-inner { padding: 0 4px; }
+
+  /* WhatsApp button smaller on tiny phones */
+  .scroll-toast--wa { padding: 10px 12px; }
+  .scroll-toast-icon--wa { font-size: 18px; }
+  .scroll-toast--wa strong { font-size: 12px; }
+  .scroll-toast--wa span { font-size: 10px; }
 }

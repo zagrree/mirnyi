@@ -262,4 +262,9 @@
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.impl-faq-item').forEach(i => i.classList.remove('open'));
-      i
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

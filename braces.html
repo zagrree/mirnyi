@@ -116,7 +116,7 @@
 </section>
 
 <!-- TYPES -->
-<section style="padding:80px 0; background:var(--gray-50);" id="brc-types">
+<section style="padding:var(--section-v) 0; background:var(--gray-50);" id="brc-types">
   <div class="container">
     <div class="section-head centered">
       <div class="section-label reveal">Виды систем</div>
@@ -376,4 +376,20 @@
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  function closeMobile() { burger.classList.remove
+  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  document.getElementById('closeMenu').addEventListener('click', closeMobile);
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  document.querySelectorAll('.impl-faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.impl-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
