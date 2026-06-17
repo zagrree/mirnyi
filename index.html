@@ -47,24 +47,30 @@
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-bg">
+    <!-- corner green gradient wash -->
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0) 45%,rgba(16,185,129,0.06) 100%);pointer-events:none;z-index:0;"></div>
     <!-- organic background blobs -->
-    <div class="hero-shape" style="width:720px;height:680px;top:-260px;right:-160px;opacity:0.06;border-radius:62% 38% 68% 32% / 46% 56% 44% 54%;"></div>
-    <div class="hero-shape" style="width:480px;height:420px;bottom:-180px;left:-120px;opacity:0.04;border-radius:38% 62% 48% 52% / 58% 42% 58% 42%;"></div>
-    <div class="hero-shape" style="width:230px;height:260px;top:40%;left:34%;opacity:0.025;filter:blur(50px);border-radius:56% 44% 62% 38% / 48% 58% 42% 52%;"></div>
-    <!-- floating accent rings -->
+    <div class="hero-shape" style="width:720px;height:680px;top:-260px;right:-160px;opacity:0.22;border-radius:62% 38% 68% 32% / 46% 56% 44% 54%;"></div>
+    <div class="hero-shape" style="width:480px;height:420px;bottom:-180px;left:-120px;opacity:0.16;border-radius:38% 62% 48% 52% / 58% 42% 58% 42%;"></div>
+    <div class="hero-shape" style="width:260px;height:290px;top:38%;left:32%;opacity:0.11;filter:blur(60px);border-radius:56% 44% 62% 38% / 48% 58% 42% 52%;"></div>
+    <!-- large circle arcs -->
+    <div class="hero-arc" style="width:600px;height:600px;top:-120px;right:-220px;"></div>
+    <div class="hero-arc" style="width:400px;height:400px;top:-20px;right:-120px;border-color:rgba(16,185,129,0.20);"></div>
+    <!-- floating organic rings -->
     <div class="hero-ring" style="width:300px;height:278px;top:5%;right:-10px;border-radius:64% 36% 56% 44% / 54% 46% 54% 46%;"></div>
     <div class="hero-ring hero-ring-2" style="width:155px;height:165px;top:22%;right:19%;border-radius:48% 52% 72% 28% / 40% 60% 40% 60%;"></div>
-    <!-- leaf petal accent -->
-    <div class="deco-petal" style="width:88px;height:96px;top:64%;right:30%;"></div>
+    <!-- leaf petal accents -->
+    <div class="deco-petal" style="width:100px;height:112px;top:62%;right:28%;"></div>
+    <div class="deco-petal" style="width:56px;height:64px;top:18%;right:42%;opacity:0.55;transform:rotate(40deg);"></div>
   </div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-left">
-<h1 class="hero-title reveal delay-1">Имплантация и лечение<br>зубов в <em>Бишкеке</em></h1>
-        <p class="hero-desc reveal delay-2">Ставим импланты Straumann, Osstem и MegaGen — КТ делаем прямо в клинике, план лечения составляем в день обращения. Лечение без страха: закись азота снимает тревогу за 3 минуты. Рассрочка 0% через MBANK.</p>
+<h1 class="hero-title reveal delay-1">Восстанавливаем здоровье<br>и эстетику <em>улыбки!</em></h1>
+        <p class="hero-desc reveal delay-2">Имплантация, ортодонтия, виниры и лечение зубов в Бишкеке. Диагностика на современном КТ, понятный план лечения и комплексный подход без лишних процедур.</p>
         <div class="hero-btns reveal delay-3">
           <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
-          <a href="implants.html" class="btn-hero-outline">Имплантация →</a>
+          <a href="#services" class="btn-hero-outline">Наши услуги →</a>
         </div>
         <div class="hero-stats reveal delay-4">
           <div class="hero-stat">
@@ -108,22 +114,14 @@
             <div class="hv-review-head">
               <div class="hv-ava">А</div>
               <div>
-                <div class="hv-reviewer">Айнура М.</div>
+                <div class="hv-reviewer">Наргиза Ш.</div>
                 <div class="hv-rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
               </div>
-              <div class="hv-ago">3 дня назад</div>
+              <div class="hv-ago">02.04.2026</div>
             </div>
-            <p class="hv-review-text">«Наконец нашла стоматологию без страха. Всё безболезненно, врач объяснила каждый шаг.»</p>
+            <p class="hv-review-text">«Уже более 10 лет лечу зубы только в клинике Атлант. Самая надёжная клиника в Бишкеке, доверяю только им.»</p>
           </div>
-          <!-- Slot card -->
-          <div class="hv-card hv-slot">
-            <div class="hv-slot-icon"><i class="fas fa-calendar-check"></i></div>
-            <div>
-              <div class="hv-slot-label">Ближайший приём</div>
-              <div class="hv-slot-time">Сегодня · 14:00 <span class="hv-dot"></span></div>
-            </div>
-          </div>
-        </div>
+         
 
       </div>
     </div>
@@ -131,7 +129,7 @@
 </section>
 
 <!-- ═══ SERVICES ═══ -->
-<section id="services" style="padding: 80px 0;">
+<section id="services">
   <div class="container">
     <div class="idx-head reveal">
       <div>
@@ -142,16 +140,16 @@
     </div>
 
     <div class="svc2-grid">
-      <a href="implants.html" class="svc2-card reveal delay-1">
+      <a href="implants.html" class="svc2-card reveal delay-1" style="--card-img:url('images/Implantation.jpg')">
         <div class="svc2-icon" style="background:#f0fffe;color:#059669"><i class="fas fa-tooth"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Имплантация</div>
-          <div class="svc2-desc">Системы Straumann (Швейцария), Osstem и MegaGen. КТ делаем прямо в клинике — не нужно ехать в другое место. При наличии кости — имплант и временная коронка за один визит.</div>
+          <div class="svc2-desc">Системы Straumann (Швейцария), Osstem и MegaGen. КТ делаем прямо в клинике, не нужно ехать в другое место. При наличии достаточной кости ставим имплант и временную коронку за один визит.</div>
           <div class="svc2-price">от 35 200 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="diagnostics.html" class="svc2-card reveal delay-2">
+      <a href="diagnostics.html" class="svc2-card reveal delay-2" style="--card-img:url('images/KT.jpg')">
         <div class="svc2-icon" style="background:#eff6ff;color:#3b82f6"><i class="fas fa-x-ray"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Диагностика и КТ</div>
@@ -160,38 +158,38 @@
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="braces.html" class="svc2-card reveal delay-3">
+      <a href="braces.html" class="svc2-card reveal delay-3" style="--card-img:url('images/Ortodont.jpg')">
         <div class="svc2-icon" style="background:#fef9f0;color:#f59e0b"><i class="fas fa-teeth"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Ортодонтия</div>
-          <div class="svc2-desc">Металлические и керамические брекеты, самолигирующие системы. Средний срок лечения — 12–24 месяца. На консультации показываем прогноз и обсуждаем план до начала лечения.</div>
+          <div class="svc2-desc">Металлические и керамические брекеты, самолигирующие системы. Средний срок лечения: 12–24 месяца. На консультации показываем прогноз и обсуждаем план до начала лечения.</div>
           <div class="svc2-price">от 60 000 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="veneers.html" class="svc2-card reveal delay-1">
+      <a href="veneers.html" class="svc2-card reveal delay-1" style="--card-img:url('images/Aesthetic.jpg')">
         <div class="svc2-icon" style="background:#fdf4ff;color:#a855f7"><i class="fas fa-star"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Эстетика улыбки</div>
-          <div class="svc2-desc">Виниры E.max — тонкие как линза, скрывают потемнения, сколы и промежутки. Отбеливание Opalescence Boost: до 8 тонов светлее за один час в кресле. Художественная реставрация без обточки.</div>
+          <div class="svc2-desc">Виниры E.max, тонкие как линза: скрывают потемнения, сколы и промежутки. Отбеливание Opalescence Boost: до 8 тонов светлее за один час в кресле. Художественная реставрация без обточки.</div>
           <div class="svc2-price">от 8 800 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="dentheal.html" class="svc2-card reveal delay-2">
+      <a href="dentheal.html" class="svc2-card reveal delay-2" style="--card-img:url('images/Surgeon.jpg')">
         <div class="svc2-icon" style="background:#fff7ed;color:#f97316"><i class="fas fa-briefcase-medical"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Лечение и хирургия</div>
-          <div class="svc2-desc">Кариес за 40–60 минут. Каналы под контролем КТ — без «пломбирования на глаз». Удаление восьмёрок: несложный случай — 15 минут. Начинаем только когда анестезия полностью подействовала.</div>
+          <div class="svc2-desc">Кариес за 40–60 минут. Каналы под контролем КТ, без пломбирования на глаз. Удаление восьмёрок: несложный случай за 15 минут. Начинаем только когда анестезия полностью подействовала.</div>
           <div class="svc2-price">от 1 800 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="dentclean.html" class="svc2-card reveal delay-3">
+      <a href="dentclean.html" class="svc2-card reveal delay-3" style="--card-img:url('images/Child.jpg')">
         <div class="svc2-icon" style="background:#f0f9ff;color:#0ea5e9"><i class="fas fa-child"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Детская стоматология</div>
-          <div class="svc2-desc">Первый приём — без лечения: просто знакомство с инструментами. Боится — маска с закисью азота: ребёнок расслабляется за 2–3 минуты и не воспринимает кресло как что-то страшное.</div>
+          <div class="svc2-desc">Первый приём без лечения: просто знакомство с инструментами. Если ребёнок боится, надеваем маску с закисью азота. Расслабляется за 2–3 минуты и не воспринимает кресло как что-то страшное.</div>
           <div class="svc2-price">от 4 300 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
@@ -212,9 +210,9 @@
     <div class="sed-popup-wrap" id="sedPopup">
       <div class="sed-left">
 <h2 class="sed-question sed-a2">Боитесь<br><em>стоматологов?</em></h2>
-        <p class="sed-subtitle sed-a3">Мы решаем это с помощью <strong>закиси азота</strong> — безопасного газа, который применяют и детям, и взрослым. Вы дышите через маску, расслабляетесь и перестаёте чувствовать тревогу. Лечение проходит спокойно — без боли и стресса.</p>
+        <p class="sed-subtitle sed-a3">Мы решаем это с помощью <strong>закиси азота</strong>. Это безопасный газ, который применяют и детям, и взрослым. Вы дышите через маску, расслабляетесь и перестаёте чувствовать тревогу. Лечение проходит спокойно, без боли и стресса.</p>
         <ul class="sed-for-list sed-a4">
-          <li><i class="fas fa-check-circle"></i> Детям — без слёз и уговоров, с 3 лет</li>
+          <li><i class="fas fa-check-circle"></i> Детям: без слёз и уговоров, с 3 лет</li>
           <li><i class="fas fa-check-circle"></i> Взрослым с дентофобией</li>
           <li><i class="fas fa-check-circle"></i> Несколько зубов за один визит</li>
           <li><i class="fas fa-check-circle"></i> Повышенный рвотный рефлекс</li>
@@ -224,36 +222,56 @@
           <i class="fas fa-wind"></i> Записаться с седацией
           <i class="fas fa-arrow-right btn-sed-arrow"></i>
         </a>
+        <div class="sed-left-stats sed-a5">
+          <div class="sed-ls"><span class="sed-ls-num">98%</span><span class="sed-ls-lbl">без боли</span></div>
+          <div class="sed-ls-div"></div>
+          <div class="sed-ls"><span class="sed-ls-num">3–4ч</span><span class="sed-ls-lbl">весь сеанс</span></div>
+          <div class="sed-ls-div"></div>
+          <div class="sed-ls"><span class="sed-ls-num">100%</span><span class="sed-ls-lbl">безопасно</span></div>
+        </div>
       </div>
       <div class="sed-right">
-        <div class="sed-cards-grid">
-          <div class="sed-benefit-card sed-a6">
-            <div class="sed-card-icon"><i class="fas fa-wind"></i></div>
-            <strong>Закись азота — веселящий газ</strong>
-            <span>Дышите через маску — и через минуту чувствуете лёгкое расслабление. Без уколов и страха.</span>
+        <div class="sed-photo-wrap reveal">
+
+          <!-- organic brand blobs behind photo -->
+          <div class="sed-deco-blob sed-deco-1"></div>
+          <div class="sed-deco-blob sed-deco-2"></div>
+
+          <div class="sed-photo-frame">
+            <!-- замени на Sedation.webp когда добавишь фото с маской -->
+            <img
+              src="images/sedation.jpg"
+              alt="Пациент с маской для седации закисью азота"
+              loading="lazy"
+              width="640" height="800"
+              class="sed-photo-img">
+
+            <!-- soft brand-green colour wash (10% opacity) -->
+            <div class="sed-photo-wash"></div>
+
+            <!-- bottom gradient overlay for badge readability -->
+            <div class="sed-photo-gradient"></div>
+
+            <!-- floating trust badge (bottom-left) -->
+            <div class="sed-photo-badge">
+              <div class="sed-badge-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="sed-badge-text">
+                <strong>98% пациентов без боли</strong>
+                <span>Безопасно с 3 лет</span>
+              </div>
+            </div>
+
+            <!-- floating stat chips (inside frame) -->
+            <div class="sed-chip sed-chip-tr">
+              <span class="sed-chip-num">100%</span>
+              <span class="sed-chip-lbl">безопасно</span>
+            </div>
+            <div class="sed-chip sed-chip-br">
+              <span class="sed-chip-num">3–4ч</span>
+              <span class="sed-chip-lbl">весь сеанс</span>
+            </div>
           </div>
-          <div class="sed-benefit-card sed-a7">
-            <div class="sed-card-icon"><i class="fas fa-child"></i></div>
-            <strong>Детям безопасно с 3 лет</strong>
-            <span>Ребёнок вдыхает смесь кислорода и закиси азота — расслабляется и спокойно дремлет всё лечение.</span>
-          </div>
-          <div class="sed-benefit-card sed-a8">
-            <div class="sed-card-icon"><i class="fas fa-bolt"></i></div>
-            <strong>Несколько зубов за раз</strong>
-            <span>Лечим всё за один визит, пока пациент расслаблен. Один визит вместо пяти.</span>
-          </div>
-          <div class="sed-benefit-card sed-a9">
-            <div class="sed-card-icon"><i class="fas fa-shield-alt"></i></div>
-            <strong>Безопасно и обратимо</strong>
-            <span>Газ выводится за 5 минут после снятия маски. Можно сразу идти домой.</span>
-          </div>
-        </div>
-        <div class="sed-stats-row sed-a10">
-          <div class="sed-stat"><span class="sed-stat-num">98%</span><span class="sed-stat-lbl">пациентов<br>не чувствуют боли</span></div>
-          <div class="sed-stat-div"></div>
-          <div class="sed-stat"><span class="sed-stat-num">3–4ч</span><span class="sed-stat-lbl">всё лечение<br>за один сеанс</span></div>
-          <div class="sed-stat-div"></div>
-          <div class="sed-stat"><span class="sed-stat-num">100%</span><span class="sed-stat-lbl">безопасно<br>для здоровья</span></div>
+
         </div>
       </div>
     </div>
@@ -261,7 +279,7 @@
 </section>
 
 <!-- ═══ DOCTORS ═══ -->
-<section id="doctors" style="padding: 80px 0;">
+<section id="doctors">
   <div class="doc-org-blob" style="width:460px;height:420px;bottom:-140px;left:-160px;opacity:0.045;border-radius:55% 45% 42% 58% / 48% 58% 42% 52%;"></div>
   <div class="doc-org-blob" style="width:200px;height:210px;top:-60px;right:-50px;opacity:0.03;filter:blur(70px);border-radius:60% 40% 50% 50% / 42% 58% 42% 58%;"></div>
   <div class="container">
@@ -273,31 +291,47 @@
     </div>
     <div class="doc2-grid">
       <div class="doc2-card reveal delay-1">
-        <div class="doc2-ava" style="background:linear-gradient(135deg,#10b981,#059669)">НТ</div>
+        <div class="doc2-ava"><img src="images/Kubat.jpg" alt="Сагынбеков Кубат"></div>
         <div class="doc2-spec">Хирург-имплантолог</div>
-        <div class="doc2-name">Нурбек Таалайбекович</div>
-        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 12 лет</div>
+        <div class="doc2-name">Сагынбеков Кубат</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-2">
-        <div class="doc2-ava" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">АС</div>
-        <div class="doc2-spec">Ортодонт</div>
-        <div class="doc2-name">Сулайманов Айдин</div>
-        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 8 лет</div>
+        <div class="doc2-ava"><img src="images/Nurbek.jpg" alt="Нурбек Таалайбекович"></div>
+        <div class="doc2-spec">Хирург-имплантолог</div>
+        <div class="doc2-name">Нурбек Таалайбекович</div>
+        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 10+ лет</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-3">
-        <div class="doc2-ava" style="background:linear-gradient(135deg,#f59e0b,#d97706)">ГТ</div>
-        <div class="doc2-spec">Терапевт-стоматолог</div>
-        <div class="doc2-name">Тыналиева Гульжан</div>
-        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 27 лет</div>
+        <div class="doc2-ava"><img src="images/Alisher.jpg" alt="Миналиев Алишер"></div>
+        <div class="doc2-spec">Врач-ортодонт</div>
+        <div class="doc2-name">Миналиев Алишер</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-4">
-        <div class="doc2-ava" style="background:linear-gradient(135deg,#a855f7,#7c3aed)">БА</div>
-        <div class="doc2-spec">Ортопед, виниры и коронки</div>
+        <div class="doc2-ava"><img src="images/Bekzat.jpg" alt="Асылбеков Бекзат"></div>
+        <div class="doc2-spec">Стоматолог-терапевт, ортопед</div>
         <div class="doc2-name">Асылбеков Бекзат</div>
-        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 10 лет</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
+      </div>
+      <div class="doc2-card reveal delay-1">
+        <div class="doc2-ava"><img src="images/Renat.jpg" alt="Машалаев Ринат"></div>
+        <div class="doc2-spec">Стоматолог-терапевт</div>
+        <div class="doc2-name">Машалаев Ринат</div>
+        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 10+ лет</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
+      </div>
+      <div class="doc2-card reveal delay-2">
+        <div class="doc2-ava"><img src="images/Akmaral.jpg" alt="Дуйшобаева Акмарал"></div>
+        <div class="doc2-spec">Детский и взрослый стоматолог-терапевт</div>
+        <div class="doc2-name">Дуйшобаева Акмарал</div>
+        <a href="#appointment" class="doc2-btn">Записаться</a>
+      </div>
+      <div class="doc2-card reveal delay-3">
+        <div class="doc2-ava"><img src="images/Gulzhan.jpg" alt="Гульжан Шайкидиновна"></div>
+        <div class="doc2-spec">Стоматолог-терапевт</div>
+        <div class="doc2-name">Гульжан Шайкидиновна</div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
     </div>
@@ -306,7 +340,7 @@
 
 
 <!-- ═══ TESTIMONIALS ═══ -->
-<section id="testimonials" class="section-dark" style="padding: 80px 0;">
+<section id="testimonials" class="section-dark">
   <div class="container">
     <div class="idx-head reveal">
       <div>
@@ -319,27 +353,27 @@
       <div class="slider-track" id="sliderTrack">
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Пришла на удаление зуба мудрости — очень боялась. Врач сначала объяснил каждый шаг, потом начал. Не почувствовала ничего, буквально. Уже записалась на имплант.»</p>
+          <p class="review-text">«Пришла удалять зуб мудрости, очень боялась. Врач сначала объяснил каждый шаг, потом начал. Не почувствовала ничего, буквально. Уже записалась на имплант.»</p>
           <div class="review-author"><div class="author-ava">А</div><div><div class="author-name">Айнура М.</div><div class="author-date">3 дня назад · 2ГИС</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Ставили имплант на нижней челюсти. КТ сделали тут же в клинике — объяснили на снимке где и что. Через 3 месяца поставили коронку. Не отличить от родного зуба.»</p>
+          <p class="review-text">«Ставили имплант на нижней челюсти. КТ сделали тут же в клинике, объяснили на снимке где и что. Через 3 месяца поставили коронку. Не отличить от родного зуба.»</p>
           <div class="review-author"><div class="author-ava">С</div><div><div class="author-name">Сергей В.</div><div class="author-date">2 недели назад · 2ГИС</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Делала 6 виниров E.max на верхние зубы. Зубы у меня от природы с желтизной, ничего не помогало. После — улыбка совершенно другая. Носить не мешает, еду чувствую нормально.»</p>
+          <p class="review-text">«Делала 6 виниров E.max на верхние зубы. Зубы у меня от природы с желтизной, ничего не помогало. После этого улыбка совершенно другая. Носить не мешает, еду чувствую нормально.»</p>
           <div class="review-author"><div class="author-ava">М</div><div><div class="author-name">Мария С.</div><div class="author-date">1 месяц назад · 2ГИС</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-          <p class="review-text">«Дочери 14 лет — поставили металлические брекеты. Ортодонт сразу показал прогноз на экране, объяснил сроки. Ходим на контроль раз в 5–6 недель, всё по плану.»</p>
+          <p class="review-text">«Дочке 14 лет, поставили металлические брекеты. Ортодонт сразу показал прогноз на экране, объяснил сроки. Ходим на контроль раз в 5–6 недель, всё по плану.»</p>
           <div class="review-author"><div class="author-ava">К</div><div><div class="author-name">Константин Л.</div><div class="author-date">1 месяц назад · 2ГИС</div></div></div>
         </div>
         <div class="review-card">
           <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="review-text">«Пришла на отбеливание Opalescence Boost. Врач сначала проверила противопоказания, объяснила что будет. Час в кресле — результат реальный, не фотошоп. Довольна.»</p>
+          <p class="review-text">«Пришла на отбеливание Opalescence Boost. Врач сначала проверила противопоказания, объяснила что будет. Час в кресле, результат реальный, не фотошоп. Довольна.»</p>
           <div class="review-author"><div class="author-ava">Е</div><div><div class="author-name">Екатерина Н.</div><div class="author-date">2 месяца назад · 2ГИС</div></div></div>
         </div>
       </div>
@@ -353,14 +387,14 @@
 </section>
 
 <!-- ═══ APPOINTMENT ═══ -->
-<section id="appointment" style="padding: 80px 0;">
+<section id="appointment">
   <div class="appt-org-blob" style="width:420px;height:380px;bottom:-130px;right:-130px;opacity:0.04;border-radius:40% 60% 52% 48% / 58% 42% 58% 42%;"></div>
   <div class="appt-org-blob" style="width:200px;height:220px;top:-60px;left:25%;opacity:0.03;filter:blur(70px);border-radius:55% 45% 60% 40% / 50% 55% 45% 50%;"></div>
   <div class="container">
     <div class="appt-wrap">
       <div>
 <h2 class="section-title reveal delay-1">Запишитесь<br>на приём</h2>
-        <p class="section-sub reveal delay-2">Оставьте заявку — ответим в WhatsApp в течение 15 минут.</p>
+        <p class="section-sub reveal delay-2">Оставьте заявку, ответим в WhatsApp в течение 15 минут.</p>
         <div class="appt-features">
           <div class="appt-feat reveal delay-1">
             <div class="appt-feat-icon"><i class="fab fa-whatsapp"></i></div>
@@ -440,7 +474,7 @@
 </section>
 
 <!-- ═══ CONTACTS ═══ -->
-<section id="contacts" class="section-alt" style="padding: 80px 0;">
+<section id="contacts" class="section-alt">
   <div class="container">
     <div class="idx-head reveal">
       <div><h2>Контакты</h2></div>
