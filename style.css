@@ -373,7 +373,7 @@ nav.scrolled {
   font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
   color: var(--primary); margin-bottom: 10px;
 }
-.title-white { color: var(--gray-900); }
+.title-white { color: #fff; }
 .label-light { color: rgba(255,255,255,0.45) !important; }
 .section-head { margin-bottom: 44px; }
 .section-head.centered { text-align: center; }
@@ -1001,6 +1001,7 @@ footer { background: var(--gray-900); }
 }
 .impl-sp-hero, .dh-hero, .vc-hero, .dc-hero, .br-hero { background: var(--gray-50); }
 
+
 /* inner has its own max-width — needs explicit horizontal padding like .container */
 .sp-hero-inner {
   max-width: 800px;
@@ -1024,13 +1025,13 @@ footer { background: var(--gray-900); }
 .sp-hero-sub { font-size: 15px; color: var(--gray-500); line-height: 1.75; max-width: 580px; margin-bottom: 28px; }
 .sp-hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
 
-/* On gray-50 hero, the white-outline button must look like hero-outline */
-.sp-hero-btns .btn-white-outline {
+/* All sp-hero sections have light background — make phone button visible */
+.sp-hero .sp-hero-btns .btn-white-outline {
   border-color: var(--gray-300);
   color: var(--gray-700);
   background: #fff;
 }
-.sp-hero-btns .btn-white-outline:hover {
+.sp-hero .sp-hero-btns .btn-white-outline:hover {
   border-color: var(--primary);
   color: var(--primary);
   background: #fff;
@@ -1408,6 +1409,7 @@ footer { background: var(--gray-900); }
   .sp-hero-btns .btn-green,
   .sp-hero-btns .btn-white-outline { width: 100%; justify-content: center; }
   .sp-hero-stats { gap: 24px; padding-top: 22px; }
+
   .sp-stat-num { font-size: 22px; }
   .sp-about-grid { grid-template-columns: 1fr; gap: 32px; }
   .sp-type-grid { grid-template-columns: 1fr; }
