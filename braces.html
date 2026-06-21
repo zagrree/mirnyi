@@ -3,15 +3,140 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Брекеты — Atlant Dental Clinic</title>
+  <title>Ортодонтия — Atlant Dental Clinic</title>
+  <link rel="icon" href="images/Megalogo.png" type="image/png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .ord-hero{position:relative;min-height:88vh;display:flex;align-items:center;background:#f8fffe;overflow:hidden;padding:120px 0 80px;}
+    .ord-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(16,185,129,.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 10% 80%,rgba(16,185,129,.05) 0%,transparent 60%);}
+    .ord-hero-grid-deco{position:absolute;top:0;right:0;width:55%;height:100%;background-image:linear-gradient(rgba(16,185,129,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(16,185,129,.04) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to left,rgba(0,0,0,.5) 0%,transparent 100%);-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,.5) 0%,transparent 100%);}
+    .ord-hero-circle{position:absolute;right:8%;top:50%;transform:translateY(-50%);width:420px;height:420px;border-radius:50%;background:linear-gradient(135deg,rgba(16,185,129,.10) 0%,rgba(16,185,129,.03) 100%);border:1.5px solid rgba(16,185,129,.15);display:flex;align-items:center;justify-content:center;pointer-events:none;}
+    .ord-hero-circle::before{content:'';position:absolute;inset:24px;border-radius:50%;border:1px dashed rgba(16,185,129,.2);}
+    .ord-hero-circle-icon{font-size:100px;color:rgba(16,185,129,.15);line-height:1;}
+    .ord-hero-inner{position:relative;z-index:2;max-width:660px;}
+    .ord-back{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gray-500);text-decoration:none;margin-bottom:32px;transition:color .2s;}
+    .ord-back:hover{color:var(--primary);}
+    .ord-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.18);border-radius:100px;padding:5px 14px;margin-bottom:22px;}
+    .ord-hero-title{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,68px);font-weight:600;line-height:1.1;color:#0d1117;margin-bottom:22px;}
+    .ord-hero-title em{font-style:italic;color:var(--primary);}
+    .ord-hero-title em.ord-gold{color:#b8963e;}
+    .ord-hero-sub{font-size:17px;line-height:1.7;color:var(--gray-600);max-width:540px;margin-bottom:36px;}
+    .ord-hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+    .ord-hero-badges{display:flex;gap:28px;margin-top:48px;flex-wrap:wrap;}
+    .ord-hero-badge{display:flex;align-items:center;gap:10px;}
+    .ord-hero-badge-icon{width:38px;height:38px;border-radius:10px;background:rgba(16,185,129,.10);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:15px;flex-shrink:0;}
+    .ord-hero-badge-text strong{display:block;font-size:14px;font-weight:600;color:#0d1117;}
+    .ord-hero-badge-text span{font-size:12px;color:var(--gray-500);}
+    .ord-strip{background:#fff;border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);}
+    .ord-strip-inner{display:grid;grid-template-columns:repeat(4,1fr);}
+    .ord-strip-item{padding:28px 32px;display:flex;align-items:center;gap:14px;border-right:1px solid var(--gray-100);}
+    .ord-strip-item:last-child{border-right:none;}
+    .ord-strip-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:600;color:var(--primary);line-height:1;flex-shrink:0;}
+    .ord-strip-label{font-size:13px;color:var(--gray-600);line-height:1.4;}
+    .ord-why{padding:90px 0;background:#fff;}
+    .ord-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+    .ord-why-card{background:var(--gray-50);border:1px solid var(--gray-100);border-radius:18px;padding:28px 24px;transition:transform .25s,box-shadow .25s;}
+    .ord-why-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(16,185,129,.08);}
+    .ord-why-icon{width:48px;height:48px;border-radius:13px;background:rgba(16,185,129,.10);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:20px;margin-bottom:18px;}
+    .ord-why-title{font-size:15px;font-weight:600;color:#0d1117;margin-bottom:8px;}
+    .ord-why-desc{font-size:13.5px;color:var(--gray-600);line-height:1.6;}
+    .ord-services{padding:90px 0;background:var(--gray-50);}
+    .ord-sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;margin-bottom:32px;}
+    .ord-sys-card{background:#fff;border:1px solid var(--gray-100);border-radius:22px;padding:32px 28px 28px;display:flex;flex-direction:column;position:relative;transition:box-shadow .25s,transform .25s;overflow:hidden;}
+    .ord-sys-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gray-100);transition:background .25s;}
+    .ord-sys-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.07);transform:translateY(-3px);}
+    .ord-sys-card:hover::after,.ord-sys-card--featured::after{background:var(--primary);}
+    .ord-sys-card--featured{border-color:rgba(16,185,129,.3);box-shadow:0 8px 32px rgba(16,185,129,.12);}
+    .ord-sys-badge{position:absolute;top:20px;right:20px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:var(--gray-100);color:var(--gray-600);}
+    .ord-sys-card--featured .ord-sys-badge{background:rgba(16,185,129,.12);color:var(--primary);}
+    .ord-sys-icon{width:52px;height:52px;border-radius:15px;background:rgba(16,185,129,.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:22px;margin-bottom:20px;}
+    .ord-sys-card--featured .ord-sys-icon{background:var(--primary);color:#fff;}
+    .ord-sys-name{font-size:18px;font-weight:700;color:#0d1117;margin-bottom:10px;}
+    .ord-sys-desc{font-size:14px;color:var(--gray-600);line-height:1.65;flex:1;margin-bottom:20px;}
+    .ord-sys-pros{display:flex;flex-direction:column;gap:7px;margin-bottom:24px;}
+    .ord-sys-pro{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-700);}
+    .ord-sys-pro i{color:var(--primary);font-size:11px;flex-shrink:0;}
+    .ord-sys-pro.con i{color:var(--gray-400);}
+    .ord-sys-pro.con{color:var(--gray-400);}
+    .ord-sys-price{font-size:14px;color:var(--gray-500);border-top:1px solid var(--gray-100);padding-top:18px;display:flex;align-items:baseline;gap:4px;}
+    .ord-sys-price strong{font-size:22px;font-weight:700;color:#0d1117;}
+    .ord-add-wrap{background:#fff;border:1px solid var(--gray-100);border-radius:20px;overflow:hidden;margin-bottom:20px;}
+    .ord-add-head{padding:22px 28px;border-bottom:1px solid var(--gray-100);font-size:15px;font-weight:600;color:#0d1117;display:flex;align-items:center;gap:10px;}
+    .ord-add-head i{color:var(--primary);}
+    .ord-add-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:16px 28px;border-bottom:1px solid var(--gray-50);transition:background .15s;}
+    .ord-add-row:last-child{border-bottom:none;}
+    .ord-add-row:hover{background:var(--gray-50);}
+    .ord-add-name{font-size:14px;color:var(--gray-700);}
+    .ord-add-price{font-size:14px;font-weight:600;color:#0d1117;white-space:nowrap;}
+    .ord-price-note{display:flex;align-items:flex-start;gap:12px;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:14px;padding:16px 20px;font-size:13px;color:var(--gray-600);line-height:1.6;}
+    .ord-price-note i{color:var(--primary);font-size:16px;flex-shrink:0;margin-top:1px;}
+    .ord-process{padding:90px 0;background:#fff;}
+    .ord-steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:52px;position:relative;}
+    .ord-steps::before{content:'';position:absolute;top:27px;left:14%;right:14%;height:1px;background:linear-gradient(90deg,var(--primary) 0%,rgba(16,185,129,.15) 100%);}
+    .ord-step{padding:0 16px;text-align:center;position:relative;}
+    .ord-step-num{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--primary);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--primary);margin:0 auto 22px;position:relative;z-index:1;transition:background .25s,color .25s;}
+    .ord-step:hover .ord-step-num{background:var(--primary);color:#fff;}
+    .ord-step-icon{font-size:18px;color:var(--primary);margin-bottom:14px;}
+    .ord-step-title{font-size:15px;font-weight:700;color:#0d1117;margin-bottom:10px;}
+    .ord-step-desc{font-size:13px;color:var(--gray-600);line-height:1.6;}
+    .ord-faq{padding:90px 0;background:var(--gray-50);}
+    .ord-faq-list{max-width:760px;margin:48px auto 0;}
+    .ord-faq-item{background:#fff;border:1px solid var(--gray-100);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:box-shadow .2s,border-color .2s;}
+    .ord-faq-item.open{box-shadow:0 4px 20px rgba(16,185,129,.08);border-color:rgba(16,185,129,.25);}
+    .ord-faq-q{width:100%;background:none;border:none;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-size:15px;font-weight:600;color:#0d1117;text-align:left;transition:color .2s;font-family:'Inter',sans-serif;}
+    .ord-faq-item.open .ord-faq-q{color:var(--primary);}
+    .ord-faq-q .faq-ico{width:28px;height:28px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gray-600);flex-shrink:0;transition:background .2s,transform .3s;}
+    .ord-faq-item.open .faq-ico{background:var(--primary);color:#fff;transform:rotate(45deg);}
+    .ord-faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:14px;color:var(--gray-600);line-height:1.7;}
+    .ord-faq-item.open .ord-faq-a{max-height:300px;padding:0 24px 20px;}
+    .ord-cta{padding:90px 0;background:#0d1117;position:relative;overflow:hidden;}
+    .ord-cta::before{content:'';position:absolute;top:-60px;right:-60px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.15) 0%,transparent 70%);pointer-events:none;}
+    .ord-cta::after{content:'';position:absolute;bottom:-80px;left:-40px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.08) 0%,transparent 70%);pointer-events:none;}
+    .ord-cta-inner{position:relative;z-index:2;text-align:center;max-width:600px;margin:0 auto;}
+    .ord-cta-label{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;}
+    .ord-cta-label::before,.ord-cta-label::after{content:'';width:24px;height:1px;background:var(--primary);opacity:.5;}
+    .ord-cta h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,44px);font-weight:600;color:#fff;margin-bottom:16px;line-height:1.2;}
+    .ord-cta p{font-size:16px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:32px;}
+    .ord-cta-perks{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:36px;}
+    .ord-cta-perk{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.65);}
+    .ord-cta-perk i{color:var(--primary);font-size:12px;}
+    .ord-cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+    .btn-cta-wa{display:inline-flex;align-items:center;gap:9px;background:var(--primary);color:#fff;border:none;border-radius:100px;padding:14px 30px;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;}
+    .btn-cta-wa:hover{background:#0ea271;transform:translateY(-2px);}
+    .btn-cta-phone{display:inline-flex;align-items:center;gap:9px;background:transparent;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:14px 30px;font-size:15px;font-weight:500;text-decoration:none;transition:border-color .2s,color .2s;}
+    .btn-cta-phone:hover{border-color:rgba(255,255,255,.5);color:#fff;}
+    @media(max-width:1024px){
+      .ord-strip-inner{grid-template-columns:repeat(2,1fr);}
+      .ord-strip-item:nth-child(2){border-right:none;}
+      .ord-strip-item:nth-child(3),.ord-strip-item:nth-child(4){border-top:1px solid var(--gray-100);}
+      .ord-strip-item:nth-child(4){border-right:none;}
+      .ord-why-grid{grid-template-columns:repeat(2,1fr);}
+      .ord-sys-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto;}
+      .ord-steps{grid-template-columns:repeat(2,1fr);gap:32px;}
+      .ord-steps::before{display:none;}
+    }
+    @media(max-width:768px){
+      .ord-hero{min-height:auto;padding:100px 0 60px;}
+      .ord-hero-circle,.ord-hero-grid-deco{display:none;}
+    }
+    @media(max-width:480px){
+      .ord-why-grid{grid-template-columns:1fr;}
+      .ord-strip-inner{grid-template-columns:1fr 1fr;}
+      .ord-strip-item{padding:16px;}
+      .ord-strip-num{font-size:24px;}
+      .ord-steps{grid-template-columns:1fr;}
+      .ord-add-row{grid-template-columns:1fr;gap:2px;}
+      .ord-cta-perks{gap:14px;}
+      .ord-add-head{padding:16px 18px;}
+      .ord-add-row{padding:14px 18px;}
+    }
+  </style>
 </head>
 <body>
-
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="logo"><img src="images/Truelogo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
@@ -29,7 +154,6 @@
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
   <a href="index.html#services" class="mob-link">Услуги</a>
@@ -40,268 +164,188 @@
   <a href="index.html#appointment" class="mob-link mob-cta">Записаться на приём</a>
   <div class="mob-hours"><i class="fas fa-clock"></i> Работаем ежедневно 09:00 – 19:00</div>
 </div>
-
 <section class="sp-hero brc-sp-hero">
   <div class="sp-hero-inner">
     <a href="index.html#services" class="sp-back"><i class="fas fa-arrow-left"></i> Все услуги</a>
-    <h1 class="sp-hero-title">Брекеты и<br><em>ортодонтия</em></h1>
-    <p class="sp-hero-sub">Металлические, самолигирующие брекеты и элайнеры. Работаем с детьми и взрослыми. На консультации смотрим на ситуацию и говорим какой вариант подойдёт.</p>
-    <div class="sp-hero-btns">
-      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
+    <h1 class="sp-hero-title reveal">Ровные зубы —<br><em>навсегда</em></h1>
+    <p class="sp-hero-sub reveal delay-1">Брекеты, элайнеры и ортодонтические конструкции для детей и взрослых. Ортодонт подбирает систему индивидуально — исходя из ситуации, возраста и ожидаемого результата.</p>
+    <div class="sp-hero-btns reveal delay-2">
+      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на консультацию</a>
       <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
     </div>
-
   </div>
 </section>
-
-<section class="sp-about-section">
+<section class="ord-why">
   <div class="container">
     <div class="section-head centered">
-      <div class="section-label reveal">Зачем нужны брекеты</div>
-      <h2 class="section-title reveal reveal-delay-1">Ровные зубы<br>это здоровье, не только красота</h2>
-      <p class="section-sub reveal reveal-delay-2">Кривые зубы сложнее чистить, отсюда кариес, камень и воспаление дёсен. Неправильный прикус со временем даёт нагрузку на суставы. Брекеты убирают причину, а не следствие.</p>
+      <div class="section-label reveal">Зачем это нужно</div>
+      <h2 class="section-title reveal delay-1">Ровные зубы — это не только <em>эстетика</em></h2>
+      <p class="section-sub reveal delay-2">Неправильный прикус — хроническая нагрузка на суставы, трудности с гигиеной и повышенный риск кариеса. Ортодонтия убирает причину, а не следствие.</p>
     </div>
-    <div class="brc-about-list reveal reveal-delay-3">
-      <div class="brc-about-item">
-        <div class="sp-about-icon"><i class="fas fa-smile"></i></div>
-        <div><strong>Красивая улыбка</strong><span>Ровные зубы повышают уверенность и производят впечатление.</span></div>
+    <div class="ord-why-grid">
+      <div class="ord-why-card reveal delay-1">
+        <div class="ord-why-icon"><i class="fas fa-smile-beam"></i></div>
+        <div class="ord-why-title">Уверенность в улыбке</div>
+        <div class="ord-why-desc">Ровные зубы меняют восприятие себя. Пациенты замечают это уже в первые месяцы лечения.</div>
       </div>
-      <div class="brc-about-item">
-        <div class="sp-about-icon"><i class="fas fa-heartbeat"></i></div>
-        <div><strong>Здоровые дёсны</strong><span>Ровные зубы легче чистить. Меньше кариеса, воспалений и камня.</span></div>
+      <div class="ord-why-card reveal delay-2">
+        <div class="ord-why-icon"><i class="fas fa-heartbeat"></i></div>
+        <div class="ord-why-title">Здоровье дёсен</div>
+        <div class="ord-why-desc">Ровные зубы легче чистить. Меньше налёта, воспалений и риска развития пародонтита.</div>
       </div>
-      <div class="brc-about-item">
-        <div class="sp-about-icon"><i class="fas fa-utensils"></i></div>
-        <div><strong>Правильное жевание</strong><span>Исправленный прикус снижает нагрузку на суставы и мышцы лица.</span></div>
+      <div class="ord-why-card reveal delay-3">
+        <div class="ord-why-icon"><i class="fas fa-bone"></i></div>
+        <div class="ord-why-title">Меньше нагрузки</div>
+        <div class="ord-why-desc">Неправильный прикус перегружает ВНЧС. Коррекция снимает головные боли и щелчки в челюсти.</div>
       </div>
-      <div class="brc-about-item">
-        <div class="sp-about-icon"><i class="fas fa-shield-alt"></i></div>
-        <div><strong>Долговечный результат</strong><span>После брекетов ретейнер сохраняет результат на всю жизнь.</span></div>
+      <div class="ord-why-card reveal delay-4">
+        <div class="ord-why-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="ord-why-title">Результат навсегда</div>
+        <div class="ord-why-desc">Ретейнер после лечения фиксирует положение зубов. Один раз — и на всю жизнь.</div>
       </div>
     </div>
   </div>
 </section>
-
-<section style="padding:var(--section-v) 0; background:var(--gray-50);" id="brc-types">
+<section class="ord-services" id="ord-services">
   <div class="container">
     <div class="section-head centered">
-      <div class="section-label reveal">Виды систем</div>
-      <h2 class="section-title reveal reveal-delay-1">Какие брекеты выбрать</h2>
-      <p class="section-sub reveal reveal-delay-2">На приёме смотрим на зубы и говорим что подойдёт именно вам</p>
+      <div class="section-label reveal">Услуги и цены</div>
+      <h2 class="section-title reveal delay-1">Системы ортодонтического лечения</h2>
+      <p class="section-sub reveal delay-2">На консультации ортодонт рекомендует систему, которая даст оптимальный результат именно в вашем случае</p>
     </div>
-    <div class="sp-type-grid">
-      <div class="sp-type-card reveal reveal-delay-1">
-        <div class="sp-type-top">
-          <div class="sp-type-icon"><i class="fas fa-cog"></i></div>
-          <span class="sp-type-badge">Самый надёжный</span>
+    <div class="ord-sys-grid">
+      <div class="ord-sys-card reveal delay-1">
+        <div class="ord-sys-icon"><i class="fas fa-cog"></i></div>
+        <div class="ord-sys-name">Металлические брекеты</div>
+        <div class="ord-sys-desc">Классика ортодонтии. Медицинская сталь, высокая эффективность даже при сложных случаях. Самый проверенный метод с предсказуемым результатом.</div>
+        <div class="ord-sys-pros">
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Максимальная эффективность</div>
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Самая доступная цена</div>
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Любая сложность случая</div>
+          <div class="ord-sys-pro con"><i class="fas fa-times"></i> Заметны при улыбке</div>
         </div>
-        <div class="sp-type-name">Металлические</div>
-        <div class="sp-type-desc">Классика ортодонтии. Самые эффективные при сложных случаях. Дуги и замки из медицинской стали.</div>
-        <div class="sp-type-pros">
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Максимальная эффективность</div>
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Самая доступная цена</div>
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Подходят для любого случая</div>
-          <div class="sp-type-pro con"><i class="fas fa-times"></i> Заметны при улыбке</div>
-        </div>
-        <div class="sp-type-price">от 60 000 сом <span>за курс</span></div>
+        <div class="ord-sys-price">от <strong>60 000</strong> сом за курс</div>
       </div>
-      <div class="sp-type-card sp-type-card--featured reveal reveal-delay-2">
-        <div class="sp-type-top">
-          <div class="sp-type-icon"><i class="fas fa-gem"></i></div>
-          <span class="sp-type-badge">Популярный</span>
+      <div class="ord-sys-card ord-sys-card--featured reveal delay-2">
+        <div class="ord-sys-icon"><i class="fas fa-star"></i></div>
+        <div class="ord-sys-name">Самолигирующие брекеты</div>
+        <div class="ord-sys-desc">Замок сам фиксирует дугу — без лигатур. Меньше трения, быстрее перемещение зубов, реже нужны визиты на коррекцию. Отличный баланс цены и результата.</div>
+        <div class="ord-sys-pros">
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Быстрее стандартных</div>
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Реже нужны коррекции</div>
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Меньше дискомфорта</div>
+          <div class="ord-sys-pro con"><i class="fas fa-times"></i> Дороже металлических</div>
         </div>
-        <div class="sp-type-name">Самолигирующие</div>
-        <div class="sp-type-desc">Без лигатур: замок сам фиксирует дугу. Меньше трения, быстрее результат, реже визиты.</div>
-        <div class="sp-type-pros">
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Быстрее стандартных</div>
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Реже нужны коррекции</div>
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Меньше давление на зубы</div>
-          <div class="sp-type-pro con"><i class="fas fa-times"></i> Дороже металлических</div>
-        </div>
-        <div class="sp-type-price">от 65 000 сом <span>за курс</span></div>
+        <div class="ord-sys-price">от <strong>65 000</strong> сом за курс</div>
       </div>
-      <div class="sp-type-card reveal reveal-delay-3">
-        <div class="sp-type-top">
-          <div class="sp-type-icon"><i class="fas fa-star"></i></div>
-          <span class="sp-type-badge">Премиум</span>
+      <div class="ord-sys-card reveal delay-3">
+        <div class="ord-sys-icon"><i class="fas fa-magic"></i></div>
+        <div class="ord-sys-name">Элайнеры</div>
+        <div class="ord-sys-desc">Прозрачные съёмные капы. Абсолютно незаметны, снимаются на время еды и чистки. Максимальный комфорт без ограничений в питании и образе жизни.</div>
+        <div class="ord-sys-pros">
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Полностью незаметны</div>
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Снимаются при еде</div>
+          <div class="ord-sys-pro"><i class="fas fa-check"></i> Легко чистить зубы</div>
+          <div class="ord-sys-pro con"><i class="fas fa-times"></i> Требуют дисциплины</div>
         </div>
-        <div class="sp-type-name">Элайнеры</div>
-        <div class="sp-type-desc">Прозрачные съёмные капы. Исправляют прикус без брекетов, незаметны, снимаются на время еды.</div>
-        <div class="sp-type-pros">
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Полностью невидимы</div>
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Снимаются при еде</div>
-          <div class="sp-type-pro"><i class="fas fa-check"></i> Легко чистить зубы</div>
-          <div class="sp-type-pro con"><i class="fas fa-times"></i> Требуют дисциплины</div>
-        </div>
-        <div class="sp-type-price">от 300 000 сом <span>за курс</span></div>
+        <div class="ord-sys-price">от <strong>300 000</strong> сом за курс</div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="impl-process">
-  <div class="container">
-    <div class="section-head centered">
-      <div class="section-label reveal">Этапы</div>
-      <h2 class="section-title reveal reveal-delay-1">Как проходит лечение</h2>
-      <p class="section-sub reveal reveal-delay-2">От первого визита до красивой улыбки</p>
+    <div class="ord-add-wrap reveal delay-2">
+      <div class="ord-add-head"><i class="fas fa-list-ul"></i> Дополнительные услуги</div>
+      <div class="ord-add-row"><span class="ord-add-name">Ортодонтические пластинки</span><span class="ord-add-price">от 8 000 сом</span></div>
+      <div class="ord-add-row"><span class="ord-add-name">Несъёмные ортодонтические конструкции</span><span class="ord-add-price">от 14 000 сом</span></div>
+      <div class="ord-add-row"><span class="ord-add-name">Установка ортодонтического мини-винта</span><span class="ord-add-price">8 800 сом</span></div>
+      <div class="ord-add-row"><span class="ord-add-name">Коррекция брекет-системы</span><span class="ord-add-price">от 2 500 сом</span></div>
+      <div class="ord-add-row"><span class="ord-add-name">Ретейнер и каппа после лечения</span><span class="ord-add-price">от 4 000 сом</span></div>
     </div>
-    <div class="impl-steps">
-      <div class="impl-step reveal reveal-delay-1">
-        <div class="step-num">01</div>
-        <div class="step-title">Консультация</div>
-        <div class="step-desc">Фото, слепки или 3D-скан, анализ прикуса и план лечения.</div>
-      </div>
-      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="impl-step reveal reveal-delay-2">
-        <div class="step-num">02</div>
-        <div class="step-title">Установка</div>
-        <div class="step-desc">Фиксируем замки на зубы специальным клеем. Безболезненно, 1.5–2 часа.</div>
-      </div>
-      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="impl-step reveal reveal-delay-3">
-        <div class="step-num">03</div>
-        <div class="step-title">Коррекции</div>
-        <div class="step-desc">Каждые 4–6 недель меняем дугу. Зубы постепенно перемещаются.</div>
-      </div>
-      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="impl-step reveal reveal-delay-4">
-        <div class="step-num">04</div>
-        <div class="step-title">Ретейнер</div>
-        <div class="step-desc">Снимаем брекеты и ставим ретейнер, который фиксирует результат навсегда.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sp-pricing brc-pricing-v2">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal">Цены</div>
-      <h2 class="section-title reveal reveal-delay-1">Стоимость ортодонтического лечения</h2>
-    </div>
-
-    
-    <div class="brc-main-systems reveal reveal-delay-1">
-      <div class="brc-sys-card">
-        <div class="brc-sys-badge-top">Самый надёжный</div>
-        <div class="brc-sys-icon"><i class="fas fa-cog"></i></div>
-        <div class="brc-sys-name">Металлические брекеты</div>
-        <div class="brc-sys-desc">Классика ортодонтии. Максимальная эффективность при любой сложности случая.</div>
-        <div class="brc-sys-price">от <span>60 000</span> сом</div>
-      </div>
-      <div class="brc-sys-card brc-sys-card--popular">
-        <div class="brc-sys-badge-top brc-sys-badge-top--green">Популярный</div>
-        <div class="brc-sys-icon"><i class="fas fa-star"></i></div>
-        <div class="brc-sys-name">Самолигирующие брекеты</div>
-        <div class="brc-sys-desc">Без лигатур: меньше трения, быстрее результат, реже визиты на коррекцию.</div>
-        <div class="brc-sys-price">от <span>65 000</span> сом</div>
-      </div>
-      <div class="brc-sys-card">
-        <div class="brc-sys-badge-top">Незаметные</div>
-        <div class="brc-sys-icon"><i class="fas fa-magic"></i></div>
-        <div class="brc-sys-name">Элайнеры</div>
-        <div class="brc-sys-desc">Прозрачные съёмные капы. Комфортно, эстетично, без ограничений в питании.</div>
-        <div class="brc-sys-price">от <span>300 000</span> сом</div>
-      </div>
-    </div>
-
-    
-    <div class="brc-add-services reveal reveal-delay-2">
-      <div class="brc-add-title">Дополнительные услуги</div>
-      <div class="brc-add-grid">
-        <div class="brc-add-row">
-          <span class="brc-add-name">Ортодонтический мини-винт</span>
-          <span class="brc-add-dots"></span>
-          <span class="brc-add-price">8 800 сом</span>
-        </div>
-        <div class="brc-add-row">
-          <span class="brc-add-name">Коррекция брекет-системы</span>
-          <span class="brc-add-dots"></span>
-          <span class="brc-add-price">от 2 500 сом</span>
-        </div>
-        <div class="brc-add-row">
-          <span class="brc-add-name">Пластинка</span>
-          <span class="brc-add-dots"></span>
-          <span class="brc-add-price">8 000 сом</span>
-        </div>
-        <div class="brc-add-row">
-          <span class="brc-add-name">Несъёмные ортодонтические конструкции</span>
-          <span class="brc-add-dots"></span>
-          <span class="brc-add-price">от 14 000 сом</span>
-        </div>
-        <div class="brc-add-row">
-          <span class="brc-add-name">Ретейнер (1 челюсть)</span>
-          <span class="brc-add-dots"></span>
-          <span class="brc-add-price">5 000 сом</span>
-        </div>
-        <div class="brc-add-row">
-          <span class="brc-add-name">Каппа после снятия брекетов</span>
-          <span class="brc-add-dots"></span>
-          <span class="brc-add-price">4 000 сом</span>
-        </div>
-      </div>
-    </div>
-
-    
-    <p class="brc-price-note reveal reveal-delay-3">
+    <div class="ord-price-note reveal delay-3">
       <i class="fas fa-info-circle"></i>
-      Окончательная стоимость лечения определяется после консультации врача-ортодонта и диагностики, так как зависит от сложности клинического случая и выбранной системы лечения.
-    </p>
-
+      <span>Окончательная стоимость определяется на консультации после диагностики. Цена зависит от сложности случая и выбранной системы лечения.</span>
+    </div>
   </div>
 </section>
-
-<section class="impl-faq-section">
+<section class="ord-process">
+  <div class="container">
+    <div class="section-head centered">
+      <div class="section-label reveal">Этапы лечения</div>
+      <h2 class="section-title reveal delay-1">От консультации до идеальной улыбки</h2>
+      <p class="section-sub reveal delay-2">Каждый этап чётко выстроен, чтобы вы знали что происходит и когда ждать результат</p>
+    </div>
+    <div class="ord-steps reveal delay-1">
+      <div class="ord-step">
+        <div class="ord-step-num">01</div>
+        <div class="ord-step-icon"><i class="fas fa-search"></i></div>
+        <div class="ord-step-title">Консультация</div>
+        <div class="ord-step-desc">Фото, слепки или 3D-скан. Анализ прикуса, план лечения и подбор системы. Открыто обсуждаем сроки и стоимость.</div>
+      </div>
+      <div class="ord-step">
+        <div class="ord-step-num">02</div>
+        <div class="ord-step-icon"><i class="fas fa-teeth"></i></div>
+        <div class="ord-step-title">Установка</div>
+        <div class="ord-step-desc">Брекеты фиксируются на зубы специальным клеем. Процедура безболезненная, занимает 1.5–2 часа.</div>
+      </div>
+      <div class="ord-step">
+        <div class="ord-step-num">03</div>
+        <div class="ord-step-icon"><i class="fas fa-sync-alt"></i></div>
+        <div class="ord-step-title">Коррекции</div>
+        <div class="ord-step-desc">Каждые 4–6 недель меняем дугу. Зубы постепенно занимают нужное положение.</div>
+      </div>
+      <div class="ord-step">
+        <div class="ord-step-num">04</div>
+        <div class="ord-step-icon"><i class="fas fa-award"></i></div>
+        <div class="ord-step-title">Ретейнер</div>
+        <div class="ord-step-desc">Снимаем брекеты и фиксируем результат ретейнером. Зубы больше не вернутся на место.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ord-faq">
   <div class="container">
     <div class="section-head centered">
       <div class="section-label reveal">FAQ</div>
-      <h2 class="section-title reveal reveal-delay-1">Частые вопросы</h2>
+      <h2 class="section-title reveal delay-1">Частые вопросы</h2>
     </div>
-    <div class="impl-faq-list">
-      <div class="impl-faq-item reveal reveal-delay-1">
-        <button class="impl-faq-q">Больно ли носить брекеты? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Установка безболезненна. Первые 3–5 дней после установки и коррекции возможна ноющая боль при жевании, это нормально. Снимается обычными обезболивающими.</div>
+    <div class="ord-faq-list">
+      <div class="ord-faq-item reveal delay-1">
+        <button class="ord-faq-q">Больно ли носить брекеты? <span class="faq-ico"><i class="fas fa-plus"></i></span></button>
+        <div class="ord-faq-a">Установка безболезненна. Первые 3–5 дней после установки и каждой коррекции возможен лёгкий дискомфорт при жевании — это нормальная реакция зубов. Снимается обычными обезболивающими.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-2">
-        <button class="impl-faq-q">Можно ли носить брекеты взрослым? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Да, ограничений по возрасту нет. У взрослых лечение может занять чуть больше времени, но результат тот же. Многие наши пациенты — люди 30–45 лет.</div>
+      <div class="ord-faq-item reveal delay-2">
+        <button class="ord-faq-q">Можно ли носить брекеты взрослым? <span class="faq-ico"><i class="fas fa-plus"></i></span></button>
+        <div class="ord-faq-a">Да, ограничений по возрасту нет. У взрослых лечение может занять чуть больше времени, но результат тот же. Многие наши пациенты — люди 30–50 лет.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-3">
-        <button class="impl-faq-q">Какие брекеты лучше? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">С медицинской точки зрения одинаково эффективны. Металлические дешевле и прочнее, керамические и сапфировые незаметнее. Ортодонт поможет выбрать на консультации.</div>
+      <div class="ord-faq-item reveal delay-3">
+        <button class="ord-faq-q">Как долго длится лечение? <span class="faq-ico"><i class="fas fa-plus"></i></span></button>
+        <div class="ord-faq-a">В среднем 1.5–2.5 года. Зависит от сложности случая, возраста и выбранной системы. Ортодонт назовёт примерные сроки уже на первом приёме.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-1">
-        <button class="impl-faq-q">Что будет после снятия брекетов? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Устанавливается ретейнер: тонкая проволока на внутренней поверхности зубов. Фиксирует результат и носится постоянно. Без ретейнера зубы могут вернуться в исходное положение.</div>
+      <div class="ord-faq-item reveal delay-1">
+        <button class="ord-faq-q">Металлические или самолигирующие — что лучше? <span class="faq-ico"><i class="fas fa-plus"></i></span></button>
+        <div class="ord-faq-a">С медицинской точки зрения оба варианта эффективны. Самолигирующие создают меньше трения и реже требуют коррекций. Металлические доступнее по цене. Выбор зависит от случая и предпочтений.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-2">
-        <button class="impl-faq-q">Как ухаживать за зубами с брекетами? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Чистить зубы после каждого приёма пищи ортодонтической щёткой и ёршиками. Рекомендуется ирригатор. Избегать твёрдой и липкой пищи.</div>
+      <div class="ord-faq-item reveal delay-2">
+        <button class="ord-faq-q">Что такое ретейнер и нужно ли носить постоянно? <span class="faq-ico"><i class="fas fa-plus"></i></span></button>
+        <div class="ord-faq-a">Ретейнер — тонкая проволока на внутренней поверхности зубов. Невидима, не мешает речи. Без ретейнера зубы постепенно возвращаются назад, поэтому носится постоянно.</div>
+      </div>
+      <div class="ord-faq-item reveal delay-3">
+        <button class="ord-faq-q">Как ухаживать за зубами с брекетами? <span class="faq-ico"><i class="fas fa-plus"></i></span></button>
+        <div class="ord-faq-a">Чистить зубы после каждого приёма пищи ортодонтической щёткой и ёршиками. Рекомендуется ирригатор. Избегать твёрдой (орехи, сухари) и липкой (карамель, жвачка) пищи.</div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="impl-cta">
+<section class="ord-cta">
   <div class="container">
-    <div class="sp-cta-inner reveal">
-      <div class="section-label label-light" style="justify-content:center;">Записаться</div>
+    <div class="ord-cta-inner reveal">
       <h2>Запишитесь к ортодонту</h2>
-      <p>Напишите нам, ответим в WhatsApp и назначим удобное время.<br>Расскажем что подойдёт, сколько займёт и сколько будет стоить.</p>
-      <div class="sp-cta-badges">
-        <span><i class="fas fa-check"></i> Без очередей</span>
-        <span><i class="fas fa-check"></i> Опытный ортодонт</span>
-        <span><i class="fas fa-check"></i> Ответ за 15 минут</span>
-      </div>
-      <div class="sp-cta-btns">
-        <a href="index.html#appointment" class="btn-green"><i class="fab fa-whatsapp"></i> Записаться в WhatsApp</a>
-        <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
+      <p>Напишите нам — ответим в WhatsApp и назначим удобное время. Расскажем что подойдёт именно вам, сколько займёт и сколько будет стоить.</p>
+      <div class="ord-cta-btns">
+        <a href="https://wa.me/996550228030" target="_blank" class="btn-cta-wa"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+        <a href="tel:+996550228030" class="btn-cta-phone"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
       </div>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-inner container">
     <div class="footer-top">
@@ -312,7 +356,6 @@
         <div class="footer-socials">
           <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-          
         </div>
       </div>
       <div class="footer-col">
@@ -346,9 +389,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Atlant Dental. Все права защищены.</span>
-    </div>
+    <div class="footer-bottom"><span>© 2025 Atlant Dental. Все права защищены.</span></div>
   </div>
 </footer>
 <script>
@@ -358,12 +399,20 @@
   const mobileMenu = document.getElementById('mobileMenu');
   function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
   document.getElementById('closeMenu').addEventListener('click', closeMobile);
-  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.add('no-scroll'); });
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
-  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  }), { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-  document.querySelectorAll('.impl-faq-q').forEach(btn => {
+  document.querySelectorAll('.ord-faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
-      document.querySelectorAl
+      document.querySelectorAll('.ord-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
