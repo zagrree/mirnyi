@@ -1542,6 +1542,31 @@ footer { background: var(--gray-900); }
 .sp-installment strong { font-size: 14px; font-weight: 600; color: var(--gray-900); display: block; margin-bottom: 2px; }
 .sp-installment span { font-size: 13px; color: var(--gray-500); }
 
+/* SUBPAGE: BRC PRICING (used by implants + legacy pages) */
+.brc-main-systems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+.brc-sys-card { background: #fff; border: 1px solid var(--gray-100); border-radius: 18px; padding: 24px 20px; display: flex; flex-direction: column; position: relative; transition: box-shadow 0.25s, transform 0.25s; }
+.brc-sys-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.brc-sys-card--popular { border-color: var(--primary); box-shadow: 0 4px 20px rgba(16,185,129,0.10); }
+.brc-sys-badge-top { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray-500); background: var(--gray-100); border-radius: 100px; padding: 3px 10px; display: inline-block; margin-bottom: 14px; }
+.brc-sys-badge-top--green { background: rgba(16,185,129,0.12); color: var(--primary); }
+.brc-sys-icon { font-size: 22px; color: var(--primary); margin-bottom: 12px; }
+.brc-sys-name { font-size: 16px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+.brc-sys-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; flex: 1; margin-bottom: 16px; }
+.brc-sys-price { font-size: 14px; color: var(--gray-500); border-top: 1px solid var(--gray-100); padding-top: 14px; }
+.brc-sys-price span { font-size: 22px; font-weight: 700; color: var(--gray-900); }
+.brc-add-services { background: #fff; border: 1px solid var(--gray-100); border-radius: 18px; overflow: hidden; margin-bottom: 20px; }
+.brc-add-title { padding: 18px 24px; border-bottom: 1px solid var(--gray-100); font-size: 14px; font-weight: 600; color: var(--gray-900); }
+.brc-add-grid { display: flex; flex-direction: column; }
+.brc-add-row { display: flex; align-items: center; gap: 8px; padding: 13px 24px; border-bottom: 1px solid var(--gray-50); font-size: 14px; transition: background 0.15s; }
+.brc-add-row:last-child { border-bottom: none; }
+.brc-add-row:hover { background: var(--gray-50); }
+.brc-add-name { color: var(--gray-700); flex-shrink: 0; }
+.brc-add-dots { flex: 1; border-bottom: 1px dashed var(--gray-200); margin: 0 8px; }
+.brc-add-price { font-weight: 600; color: var(--gray-900); white-space: nowrap; }
+.brc-price-note { display: flex; align-items: flex-start; gap: 10px; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.15); border-radius: 12px; padding: 14px 18px; font-size: 13px; color: var(--gray-500); line-height: 1.6; margin-top: 4px; }
+.brc-price-note i { color: var(--primary); font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+@media (max-width: 768px) { .brc-main-systems { grid-template-columns: 1fr; } }
+
 /* SUBPAGE: PRICE TABLE */
 .sp-price-table { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 20px; }
 .sp-price-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 18px; border-bottom: 1px solid var(--gray-100); font-size: 14px; }
@@ -1849,39 +1874,46 @@ footer { background: var(--gray-900); }
   .nav-inner { padding: 0 14px; }
 
   /* Hero */
-  #hero { padding: 84px 0 44px; }
-  .hero-title { font-size: clamp(26px, 7.5vw, 32px); margin-bottom: 14px; }
+  #hero { min-height: 100svh; }
+  .hero-content { padding: 0 14px; }
+  .hero-title { font-size: clamp(28px, 9vw, 38px); }
+  .hero-sub { font-size: 14px; }
   .hero-btns { flex-direction: column; align-items: stretch; }
-  .hero-btns .btn-green,
-  .hero-btns .btn-hero-outline { justify-content: center; }
-  .hstat-main .hero-stat-num { font-size: 24px; }
-  .hstat-sm .hero-stat-num { font-size: 16px; }
-  .hstat-main { padding: 10px 12px; }
-  .hstat-sm { padding: 8px 10px; }
+  .hero-btns a { justify-content: center; }
+  .hero-stats { flex-wrap: wrap; gap: 14px; }
 
   /* Services */
-  .svc2-grid { grid-template-columns: 1fr; }
-  .svc2-card { border-right: none !important; padding: 18px 16px; }
-  .svc2-card:nth-last-child(1),
-  .svc2-card:nth-last-child(2) { border-bottom: 1px solid var(--gray-200); }
-  .svc2-card:last-child { border-bottom: none; }
-  .svc2-desc { display: none; } /* hide long desc on tiny screens, show name+price only */
+  .services-grid { grid-template-columns: 1fr; gap: 12px; }
 
-  /* Sedation */
-  .sed-cards-grid { grid-template-columns: 1fr; }
-  .sed-question { font-size: clamp(22px, 7vw, 30px); }
-  .sed-subtitle { font-size: 13px; }
-  .sed-for-list li { font-size: 13px; }
-  .sed-photo-img { aspect-ratio: 4/3; }
-  .sed-photo-badge { left: 14px; bottom: 14px; padding: 9px 12px 9px 10px; gap: 8px; }
-  .sed-badge-icon { width: 30px; height: 30px; font-size: 13px; }
-  .sed-badge-text strong { font-size: 12px; }
-  .sed-badge-text span { font-size: 10px; }
-  .sed-ls-num { font-size: 18px; }
+  /* Nav */
+  .burger { display: flex; margin-left: auto; margin-right: 0; }
 
-  /* Doctors */
-  .doc2-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .doc2-card { padding: 14px 10px 12px; }
+  /* Contacts */
+  .contact-cards { grid-template-columns: 1fr; }
+  .hours-row { font-size: 12px; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; gap: 20px; }
+  .footer-inner { padding: 32px 14px 18px; }
+
+  /* Subpages */
+  .sp-hero { padding: 80px 0 40px; }
+  .sp-hero-inner { padding: 0 14px; }
+  .sp-hero-title { font-size: clamp(24px, 7vw, 32px); line-height: 1.18; }
+  .sp-hero-sub { font-size: 13px; line-height: 1.65; }
+  .sp-back { font-size: 12px; margin-bottom: 16px; }
+  .sp-hero-stats { gap: 18px; flex-wrap: wrap; padding-top: 18px; }
+  .sp-stat-num { font-size: 20px; }
+  .sp-stat-lbl { font-size: 11px; }
+  .sp-cards { grid-template-columns: 1fr; }
+  .sp-who-grid { grid-template-columns: 1fr; }
+  .sp-price-grid { grid-template-columns: 1fr; }
+  .sp-type-grid { grid-template-columns: 1fr; }
+  .sp-about-grid { gap: 24px; }
+  .sp-installment { flex-direction: column; gap: 10px; padding: 16px; }
+  .sp-cta-inner { padding: 0 4px; }
+}
+4px 10px 12px; }
   .doc2-ava { width: 72px; height: 72px; }
   .doc2-name { font-size: 13px; }
   .doc2-spec { font-size: 9px; }
