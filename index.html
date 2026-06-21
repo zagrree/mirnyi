@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="icon" href="images/logo.png" type="image/png"/>
+  <link rel="icon" href="images/Truelogo.png" type="image/png"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -17,7 +17,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#hero" class="logo">
-      <img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/>
+      <img src="images/Truelogo.png" alt="Atlant Dental Clinic" class="logo-img"/>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Услуги</a></li>
@@ -47,21 +47,15 @@
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-bg">
-    <!-- corner green gradient wash -->
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0) 45%,rgba(16,185,129,0.06) 100%);pointer-events:none;z-index:0;"></div>
-    <!-- organic background blobs -->
-    <div class="hero-shape" style="width:720px;height:680px;top:-260px;right:-160px;opacity:0.22;border-radius:62% 38% 68% 32% / 46% 56% 44% 54%;"></div>
-    <div class="hero-shape" style="width:480px;height:420px;bottom:-180px;left:-120px;opacity:0.16;border-radius:38% 62% 48% 52% / 58% 42% 58% 42%;"></div>
-    <div class="hero-shape" style="width:260px;height:290px;top:38%;left:32%;opacity:0.11;filter:blur(60px);border-radius:56% 44% 62% 38% / 48% 58% 42% 52%;"></div>
-    <!-- large circle arcs -->
-    <div class="hero-arc" style="width:600px;height:600px;top:-120px;right:-220px;"></div>
-    <div class="hero-arc" style="width:400px;height:400px;top:-20px;right:-120px;border-color:rgba(16,185,129,0.20);"></div>
-    <!-- floating organic rings -->
-    <div class="hero-ring" style="width:300px;height:278px;top:5%;right:-10px;border-radius:64% 36% 56% 44% / 54% 46% 54% 46%;"></div>
-    <div class="hero-ring hero-ring-2" style="width:155px;height:165px;top:22%;right:19%;border-radius:48% 52% 72% 28% / 40% 60% 40% 60%;"></div>
-    <!-- leaf petal accents -->
-    <div class="deco-petal" style="width:100px;height:112px;top:62%;right:28%;"></div>
-    <div class="deco-petal" style="width:56px;height:64px;top:18%;right:42%;opacity:0.55;transform:rotate(40deg);"></div>
+    <!-- subtle corner wash -->
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0) 40%,rgba(16,185,129,0.05) 100%);pointer-events:none;z-index:0;"></div>
+    <!-- decorative logo watermark -->
+    <div class="hero-deco-logo-wrap">
+      <div class="hero-deco-logo">
+        <img src="images/Truelogo.png" alt="" aria-hidden="true" class="hero-deco-logo-img"/>
+        <div class="hero-deco-logo-veil"></div>
+      </div>
+    </div>
   </div>
   <div class="container">
     <div class="hero-inner">
@@ -121,11 +115,10 @@
             </div>
             <p class="hv-review-text">«Уже более 10 лет лечу зубы только в клинике Атлант. Самая надёжная клиника в Бишкеке, доверяю только им.»</p>
           </div>
-         
-
-      </div>
-    </div>
-  </div>
+        </div><!-- /hv-stack -->
+      </div><!-- /hero-right -->
+    </div><!-- /hero-inner -->
+  </div><!-- /container -->
 </section>
 
 <!-- ═══ SERVICES ═══ -->
@@ -134,7 +127,7 @@
     <div class="idx-head reveal">
       <div>
         <h2>Услуги</h2>
-        <div class="idx-head-sub">Полный спектр стоматологии в одном месте</div>
+        <div class="idx-head-sub">Основной спектр стоматологии в одном месте</div>
       </div>
       <a href="#appointment" class="idx-head-link">Записаться <i class="fas fa-arrow-right"></i></a>
     </div>
@@ -149,15 +142,7 @@
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="diagnostics.html" class="svc2-card reveal delay-2" style="--card-img:url('images/KT.jpg')">
-        <div class="svc2-icon" style="background:#eff6ff;color:#3b82f6"><i class="fas fa-x-ray"></i></div>
-        <div class="svc2-body">
-          <div class="svc2-name">Диагностика и КТ</div>
-          <div class="svc2-desc">КТ-томограф в клинике: снимок и расшифровка в тот же день. Используем данные КТ для точного позиционирования импланта и планирования хирургии. Без направления к другому специалисту.</div>
-          <div class="svc2-price">от 300 сом</div>
-        </div>
-        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
-      </a>
+
       <a href="braces.html" class="svc2-card reveal delay-3" style="--card-img:url('images/Ortodont.jpg')">
         <div class="svc2-icon" style="background:#fef9f0;color:#f59e0b"><i class="fas fa-teeth"></i></div>
         <div class="svc2-body">
@@ -181,16 +166,26 @@
         <div class="svc2-body">
           <div class="svc2-name">Лечение и хирургия</div>
           <div class="svc2-desc">Кариес за 40–60 минут. Каналы под контролем КТ, без пломбирования на глаз. Удаление восьмёрок: несложный случай за 15 минут. Начинаем только когда анестезия полностью подействовала.</div>
-          <div class="svc2-price">от 1 800 сом</div>
+          <div class="svc2-price">от 3 500 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
-      <a href="dentclean.html" class="svc2-card reveal delay-3" style="--card-img:url('images/Child.jpg')">
+      <a href="dentclean.html" class="svc2-card reveal delay-3" style="--card-img:url('images/Child.jpg'); --card-pos: 70% center">
         <div class="svc2-icon" style="background:#f0f9ff;color:#0ea5e9"><i class="fas fa-child"></i></div>
         <div class="svc2-body">
           <div class="svc2-name">Детская стоматология</div>
-          <div class="svc2-desc">Первый приём без лечения: просто знакомство с инструментами. Если ребёнок боится, надеваем маску с закисью азота. Расслабляется за 2–3 минуты и не воспринимает кресло как что-то страшное.</div>
+          <div class="svc2-desc">Первый приём без лечения: просто знакомство с инструментами. Если ребёнок боится, надеваем маску с Севораном. Засыпает за 1–2 минуты и не воспринимает кресло как что-то страшное.</div>
           <div class="svc2-price">от 4 300 сом</div>
+        </div>
+        <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
+      </a>
+
+      <a href="caries.html" class="svc2-card reveal delay-1" style="--card-img:url('images/Caries.jpg')">
+        <div class="svc2-icon" style="background:#f0fdfa;color:#0d9488"><i class="fas fa-fill-drip"></i></div>
+        <div class="svc2-body">
+          <div class="svc2-name">Лечение кариеса</div>
+          <div class="svc2-desc">Лечение кариеса, художественная реставрация зубов, герметизация фиссур и восстановление анатомической формы зуба современными материалами.</div>
+          <div class="svc2-price">от 3 800 сом</div>
         </div>
         <div class="svc2-arrow"><i class="fas fa-arrow-right"></i></div>
       </a>
@@ -199,79 +194,151 @@
 </section>
 
 
-<!-- ═══ SEDATION ═══ -->
-<section id="sedation" class="sed-section">
-  <!-- organic wave transition from white services section above -->
-  <div class="brand-wave" aria-hidden="true"><svg viewBox="0 0 1440 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L0,30 C200,50 440,8 720,28 C1000,48 1240,6 1440,30 L1440,0 Z" fill="#ffffff"/></svg></div>
-  <div class="sed-bg-blob sed-blob-1"></div>
-  <div class="sed-bg-blob sed-blob-2"></div>
-  <div class="sed-bg-blob sed-blob-3"></div>
+<!-- ═══ KT / DIAGNOSTICS ═══ -->
+<section id="kt" class="kt-section">
+
   <div class="container">
-    <div class="sed-popup-wrap" id="sedPopup">
-      <div class="sed-left">
-<h2 class="sed-question sed-a2">Боитесь<br><em>стоматологов?</em></h2>
-        <p class="sed-subtitle sed-a3">Мы решаем это с помощью <strong>закиси азота</strong>. Это безопасный газ, который применяют и детям, и взрослым. Вы дышите через маску, расслабляетесь и перестаёте чувствовать тревогу. Лечение проходит спокойно, без боли и стресса.</p>
-        <ul class="sed-for-list sed-a4">
-          <li><i class="fas fa-check-circle"></i> Детям: без слёз и уговоров, с 3 лет</li>
-          <li><i class="fas fa-check-circle"></i> Взрослым с дентофобией</li>
-          <li><i class="fas fa-check-circle"></i> Несколько зубов за один визит</li>
-          <li><i class="fas fa-check-circle"></i> Повышенный рвотный рефлекс</li>
-          <li><i class="fas fa-check-circle"></i> Сложные и длительные процедуры</li>
+    <div class="kt-inner">
+
+      <!-- text -->
+      <div class="reveal">
+        <span class="kt-eyebrow">Диагностика</span>
+        <h2 class="kt-heading">КТ-томограф<br><em>прямо в клинике</em></h2>
+        <p class="kt-sub">Снимок делаем прямо в клинике, ехать никуда не надо. Расшифровку врача получаете в тот же день. Используем данные КТ для каждого случая имплантации и сложного лечения.</p>
+        <ul class="kt-features">
+          <li class="kt-feature"><i class="fas fa-check"></i> Снимок за 14 секунд</li>
+          <li class="kt-feature"><i class="fas fa-check"></i> 3D-модель для планирования имплантов</li>
+          <li class="kt-feature"><i class="fas fa-check"></i> Расшифровка врача в тот же день</li>
+          <li class="kt-feature"><i class="fas fa-check"></i> Без направления к другому специалисту</li>
         </ul>
-        <a href="#appointment" class="btn-sed sed-a5">
-          <i class="fas fa-wind"></i> Записаться с седацией
-          <i class="fas fa-arrow-right btn-sed-arrow"></i>
-        </a>
-        <div class="sed-left-stats sed-a5">
-          <div class="sed-ls"><span class="sed-ls-num">98%</span><span class="sed-ls-lbl">без боли</span></div>
-          <div class="sed-ls-div"></div>
-          <div class="sed-ls"><span class="sed-ls-num">3–4ч</span><span class="sed-ls-lbl">весь сеанс</span></div>
-          <div class="sed-ls-div"></div>
-          <div class="sed-ls"><span class="sed-ls-num">100%</span><span class="sed-ls-lbl">безопасно</span></div>
+        <div class="kt-prices">
+          <div class="kt-price-row">
+            <span class="kt-price-name">2 челюсти с записью на флешку / диск</span>
+            <span class="kt-price-dots"></span>
+            <span class="kt-price-val">4 000 сом</span>
+          </div>
+          <div class="kt-price-row">
+            <span class="kt-price-name">Без записи на флешку</span>
+            <span class="kt-price-dots"></span>
+            <span class="kt-price-val">2 500 сом</span>
+          </div>
         </div>
       </div>
-      <div class="sed-right">
-        <div class="sed-photo-wrap reveal">
 
-          <!-- organic brand blobs behind photo -->
-          <div class="sed-deco-blob sed-deco-1"></div>
-          <div class="sed-deco-blob sed-deco-2"></div>
+      <!-- photo -->
+      <div class="kt-photo-col reveal reveal-delay-1">
+        <div class="kt-photo-blob kt-blob-1"></div>
+        <div class="kt-photo-blob kt-blob-2"></div>
+        <div class="kt-img-frame">
+          <img src="images/КТ.jpg" alt="КТ-томограф в Atlant Dental" loading="lazy"/>
+        </div>
+      </div>
 
-          <div class="sed-photo-frame">
-            <!-- замени на Sedation.webp когда добавишь фото с маской -->
-            <img
-              src="images/sedation.jpg"
-              alt="Пациент с маской для седации закисью азота"
-              loading="lazy"
-              width="640" height="800"
-              class="sed-photo-img">
+    </div>
+  </div>
+</section>
 
-            <!-- soft brand-green colour wash (10% opacity) -->
-            <div class="sed-photo-wash"></div>
+<!-- ═══ SEDATION ═══ -->
+<section id="sedation" class="sed-section" style="position:relative;overflow:hidden;">
+  <div class="sed-bg-blob sed-blob-1"></div>
+  <div class="sed-bg-blob sed-blob-2"></div>
 
-            <!-- bottom gradient overlay for badge readability -->
-            <div class="sed-photo-gradient"></div>
+  <!-- Декоративные узоры Седация -->
+  <!-- Полумесяц 1 -->
+  <svg class="sed-deco-pat" style="top:8%;left:2%;width:68px;opacity:0.13;transform:rotate(-20deg)" viewBox="0 0 64 64" fill="none"><path d="M40 8C26 8 16 19 16 32s10 24 24 24c-16 0-28-11-28-24S24 8 40 8z" fill="#10b981"/></svg>
+  <!-- Полумесяц 2 -->
+  <svg class="sed-deco-pat" style="bottom:10%;right:4%;width:50px;opacity:0.10;transform:rotate(140deg)" viewBox="0 0 64 64" fill="none"><path d="M40 8C26 8 16 19 16 32s10 24 24 24c-16 0-28-11-28-24S24 8 40 8z" fill="#10b981"/></svg>
+  <!-- Полумесяц 3 малый -->
+  <svg class="sed-deco-pat" style="top:60%;left:47%;width:30px;opacity:0.09;transform:rotate(60deg)" viewBox="0 0 64 64" fill="none"><path d="M40 8C26 8 16 19 16 32s10 24 24 24c-16 0-28-11-28-24S24 8 40 8z" fill="#10b981"/></svg>
 
-            <!-- floating trust badge (bottom-left) -->
-            <div class="sed-photo-badge">
-              <div class="sed-badge-icon"><i class="fas fa-shield-alt"></i></div>
-              <div class="sed-badge-text">
-                <strong>98% пациентов без боли</strong>
-                <span>Безопасно с 3 лет</span>
-              </div>
-            </div>
+  <!-- ZZZ большие -->
+  <svg class="sed-deco-pat" style="top:5%;right:36%;width:76px;opacity:0.12" viewBox="0 0 80 40" fill="none">
+    <text x="0" y="30" font-family="Arial Black,sans-serif" font-weight="900" font-size="26" fill="#10b981">Z</text>
+    <text x="22" y="24" font-family="Arial Black,sans-serif" font-weight="900" font-size="20" fill="#10b981">Z</text>
+    <text x="40" y="18" font-family="Arial Black,sans-serif" font-weight="900" font-size="15" fill="#10b981">Z</text>
+  </svg>
+  <!-- ZZZ малые -->
+  <svg class="sed-deco-pat" style="bottom:7%;left:40%;width:54px;opacity:0.09;transform:rotate(-10deg)" viewBox="0 0 80 40" fill="none">
+    <text x="0" y="30" font-family="Arial Black,sans-serif" font-weight="900" font-size="22" fill="#10b981">Z</text>
+    <text x="18" y="24" font-family="Arial Black,sans-serif" font-weight="900" font-size="17" fill="#10b981">Z</text>
+    <text x="33" y="18" font-family="Arial Black,sans-serif" font-weight="900" font-size="12" fill="#10b981">Z</text>
+  </svg>
 
-            <!-- floating stat chips (inside frame) -->
-            <div class="sed-chip sed-chip-tr">
-              <span class="sed-chip-num">100%</span>
-              <span class="sed-chip-lbl">безопасно</span>
-            </div>
-            <div class="sed-chip sed-chip-br">
-              <span class="sed-chip-num">3–4ч</span>
-              <span class="sed-chip-lbl">весь сеанс</span>
+  <!-- Смайлик сна 1 -->
+  <svg class="sed-deco-pat" style="bottom:14%;left:4%;width:56px;opacity:0.13" viewBox="0 0 52 52" fill="none">
+    <circle cx="26" cy="26" r="24" stroke="#10b981" stroke-width="3"/>
+    <path d="M16 22 Q18 19 20 22" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M32 22 Q34 19 36 22" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M18 32 Q26 40 34 32" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>
+  <!-- Смайлик сна 2 маленький -->
+  <svg class="sed-deco-pat" style="top:18%;right:2%;width:40px;opacity:0.11" viewBox="0 0 52 52" fill="none">
+    <circle cx="26" cy="26" r="24" stroke="#10b981" stroke-width="3"/>
+    <path d="M16 22 Q18 19 20 22" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M32 22 Q34 19 36 22" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M18 32 Q26 40 34 32" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>
+
+  <!-- Плюс 1 -->
+  <svg class="sed-deco-pat" style="top:33%;left:1%;width:26px;opacity:0.13;transform:rotate(15deg)" viewBox="0 0 28 28" fill="none"><rect x="11" y="0" width="6" height="28" rx="3" fill="#10b981"/><rect x="0" y="11" width="28" height="6" rx="3" fill="#10b981"/></svg>
+  <!-- Плюс 2 -->
+  <svg class="sed-deco-pat" style="top:12%;right:12%;width:20px;opacity:0.11;transform:rotate(-10deg)" viewBox="0 0 28 28" fill="none"><rect x="11" y="0" width="6" height="28" rx="3" fill="#10b981"/><rect x="0" y="11" width="28" height="6" rx="3" fill="#10b981"/></svg>
+  <!-- Плюс 3 -->
+  <svg class="sed-deco-pat" style="bottom:22%;right:28%;width:18px;opacity:0.10" viewBox="0 0 28 28" fill="none"><rect x="11" y="0" width="6" height="28" rx="3" fill="#10b981"/><rect x="0" y="11" width="28" height="6" rx="3" fill="#10b981"/></svg>
+
+  <!-- Искра 1 -->
+  <svg class="sed-deco-pat" style="top:4%;left:20%;width:28px;opacity:0.14" viewBox="0 0 30 30" fill="none"><path d="M15 0 L16.8 12.5 L30 15 L16.8 17.5 L15 30 L13.2 17.5 L0 15 L13.2 12.5 Z" fill="#10b981"/></svg>
+  <!-- Искра 2 -->
+  <svg class="sed-deco-pat" style="bottom:6%;right:18%;width:22px;opacity:0.11" viewBox="0 0 30 30" fill="none"><path d="M15 0 L16.8 12.5 L30 15 L16.8 17.5 L15 30 L13.2 17.5 L0 15 L13.2 12.5 Z" fill="#10b981"/></svg>
+  <!-- Искра 3 -->
+  <svg class="sed-deco-pat" style="top:68%;left:28%;width:15px;opacity:0.10" viewBox="0 0 30 30" fill="none"><path d="M15 0 L16.8 12.5 L30 15 L16.8 17.5 L15 30 L13.2 17.5 L0 15 L13.2 12.5 Z" fill="#10b981"/></svg>
+
+  <!-- Пунктирный круг -->
+  <svg class="sed-deco-pat" style="top:44%;right:1%;width:42px;opacity:0.09" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#10b981" stroke-width="3" stroke-dasharray="6 4"/></svg>
+  <!-- Точки -->
+  <svg class="sed-deco-pat" style="top:78%;left:10%;width:13px;opacity:0.12" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#10b981"/></svg>
+  <svg class="sed-deco-pat" style="top:22%;left:36%;width:9px;opacity:0.10" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#10b981"/></svg>
+
+  <div class="container">
+    <div class="sed-popup-wrap reveal">
+      <div class="sed-left">
+        <div class="section-label">Седация</div>
+        <h2 class="sed-question">Лечение зубов<br><em>без страха и боли</em></h2>
+        <p class="sed-subtitle">Севоран — это газ, который вдыхается через маску. <strong>Засыпаете за 1–2 минуты</strong>, просыпаетесь с готовой работой. Подходит взрослым и детям от 3 лет.</p>
+        <ul class="sed-for-list">
+          <li><i class="fas fa-check"></i> Выраженный страх перед стоматологом</li>
+          <li><i class="fas fa-check"></i> Дети, которые не могут сидеть спокойно</li>
+          <li><i class="fas fa-check"></i> Сложные операции и длительные процедуры</li>
+          <li><i class="fas fa-check"></i> Сильный рвотный рефлекс</li>
+          <li><i class="fas fa-check"></i> Множественное лечение за один визит</li>
+        </ul>
+
+        <div class="sed-left-stats">
+          <span class="sed-ls"><span class="sed-ls-num">98%</span>&nbsp;<span class="sed-ls-lbl">без боли</span></span>
+          <span class="sed-ls-div">·</span>
+          <span class="sed-ls"><span class="sed-ls-num">3–4 ч</span>&nbsp;<span class="sed-ls-lbl">сеанс</span></span>
+          <span class="sed-ls-div">·</span>
+          <span class="sed-ls"><span class="sed-ls-num">100%</span>&nbsp;<span class="sed-ls-lbl">безопасно</span></span>
+        </div>
+      </div>
+      <div class="sed-photo-wrap reveal reveal-delay-1" id="sedPopup">
+        <div class="sed-deco-blob sed-deco-1"></div>
+        <div class="sed-deco-blob sed-deco-2"></div>
+        <div class="sed-photo-frame">
+          <img src="images/Sevoran.jpg" alt="Седация Севоран в Atlant Dental" class="sed-photo-img" loading="lazy"/>
+          <div class="sed-photo-wash"></div>
+          <div class="sed-photo-gradient"></div>
+          <div class="sed-photo-badge">
+            <div class="sed-badge-icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="sed-badge-text">
+              <strong>Севоран</strong>
+              <span>Сертифицированный препарат</span>
             </div>
           </div>
-
+          <div class="sed-chip sed-chip-tr">
+            <span class="sed-chip-num">98%</span>
+            <span class="sed-chip-lbl">без боли</span>
+          </div>
         </div>
       </div>
     </div>
@@ -286,52 +353,50 @@
     <div class="idx-head reveal">
       <div>
         <h2>Врачи клиники</h2>
-        <div class="idx-head-sub">Квалифицированные специалисты с многолетним опытом</div>
+        <div class="idx-head-sub">Наша команда: 7 врачей разных специализаций</div>
       </div>
     </div>
     <div class="doc2-grid">
       <div class="doc2-card reveal delay-1">
-        <div class="doc2-ava"><img src="images/Kubat.jpg" alt="Сагынбеков Кубат"></div>
+        <div class="doc2-ava"><img src="images/Kubat.jpg" alt="Сагынбеков Кубат Эркинбекович"></div>
         <div class="doc2-spec">Хирург-имплантолог</div>
-        <div class="doc2-name">Сагынбеков Кубат</div>
+        <div class="doc2-name">Сагынбеков Кубат<span class="doc2-patronymic">Эркинбекович</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-2">
-        <div class="doc2-ava"><img src="images/Nurbek.jpg" alt="Нурбек Таалайбекович"></div>
+        <div class="doc2-ava"><img src="images/Nurbek.jpg" alt="Таалайбеков Нурбек Таалайбекович"></div>
         <div class="doc2-spec">Хирург-имплантолог</div>
-        <div class="doc2-name">Нурбек Таалайбекович</div>
-        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 10+ лет</div>
+        <div class="doc2-name">Таалайбеков Нурбек<span class="doc2-patronymic">Таалайбекович</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-3">
-        <div class="doc2-ava"><img src="images/Alisher.jpg" alt="Миналиев Алишер"></div>
+        <div class="doc2-ava"><img src="images/Alisher.jpg" alt="Миналиев Алишер Бакытович"></div>
         <div class="doc2-spec">Врач-ортодонт</div>
-        <div class="doc2-name">Миналиев Алишер</div>
+        <div class="doc2-name">Миналиев Алишер<span class="doc2-patronymic">Бакытович</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-4">
-        <div class="doc2-ava"><img src="images/Bekzat.jpg" alt="Асылбеков Бекзат"></div>
+        <div class="doc2-ava"><img src="images/Bekzat.jpg" alt="Асылбеков Бекзат Асылбекович"></div>
         <div class="doc2-spec">Стоматолог-терапевт, ортопед</div>
-        <div class="doc2-name">Асылбеков Бекзат</div>
+        <div class="doc2-name">Асылбеков Бекзат<span class="doc2-patronymic">Асылбекович</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-1">
-        <div class="doc2-ava"><img src="images/Renat.jpg" alt="Машалаев Ринат"></div>
+        <div class="doc2-ava"><img src="images/Renat.jpg" alt="Машалаев Ринат Хакимович"></div>
         <div class="doc2-spec">Стоматолог-терапевт</div>
-        <div class="doc2-name">Машалаев Ринат</div>
-        <div class="doc2-exp"><i class="fas fa-clock"></i> Стаж 10+ лет</div>
+        <div class="doc2-name">Машалаев Ринат<span class="doc2-patronymic">Хакимович</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-2">
-        <div class="doc2-ava"><img src="images/Akmaral.jpg" alt="Дуйшобаева Акмарал"></div>
+        <div class="doc2-ava"><img src="images/Akmaral.jpg" alt="Дюшебаева Акмарал Нурлановна"></div>
         <div class="doc2-spec">Детский и взрослый стоматолог-терапевт</div>
-        <div class="doc2-name">Дуйшобаева Акмарал</div>
+        <div class="doc2-name">Дюшебаева Акмарал<span class="doc2-patronymic">Нурлановна</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
       <div class="doc2-card reveal delay-3">
-        <div class="doc2-ava"><img src="images/Gulzhan.jpg" alt="Гульжан Шайкидиновна"></div>
+        <div class="doc2-ava"><img src="images/Gulzhan.jpg" alt="Тыналиева Гульжан Шайкидиновна"></div>
         <div class="doc2-spec">Стоматолог-терапевт</div>
-        <div class="doc2-name">Гульжан Шайкидиновна</div>
+        <div class="doc2-name">Тыналиева Гульжан<span class="doc2-patronymic">Шайкидиновна</span></div>
         <a href="#appointment" class="doc2-btn">Записаться</a>
       </div>
     </div>
@@ -394,7 +459,7 @@
     <div class="appt-wrap">
       <div>
 <h2 class="section-title reveal delay-1">Запишитесь<br>на приём</h2>
-        <p class="section-sub reveal delay-2">Оставьте заявку, ответим в WhatsApp в течение 15 минут.</p>
+        <p class="section-sub reveal delay-2">Оставьте номер, напишем в WhatsApp и подберём удобное время.</p>
         <div class="appt-features">
           <div class="appt-feat reveal delay-1">
             <div class="appt-feat-icon"><i class="fab fa-whatsapp"></i></div>
@@ -413,7 +478,7 @@
       <div class="appt-form reveal delay-2">
         <div class="form-header">
           <h3>Заявка на приём</h3>
-          <p>Заполните форму — мы напишем вам в WhatsApp</p>
+          <p>Заполните форму, и мы свяжемся с вами в WhatsApp</p>
         </div>
         <div class="form-row">
           <div class="form-group">
@@ -444,18 +509,19 @@
             <select id="f-service">
               <option value="">Выберите услугу</option>
               <option>Имплантация</option>
-              <option>Брекеты</option>
-              <option>Лечение зубов</option>
-              <option>Чистка зубов</option>
-              <option>Виниры</option>
-              <option>Отбеливание</option>
+              <option>Брекеты / ортодонтия</option>
+              <option>Виниры / эстетика</option>
+              <option>Лечение и хирургия</option>
+              <option>Лечение кариеса</option>
+              <option>Детская стоматология</option>
               <option>Седация</option>
+              <option>КТ-диагностика</option>
               <option>Другое</option>
             </select>
           </div>
           <div class="form-group full">
             <label>Опишите проблему</label>
-            <textarea id="f-problem" placeholder="Расскажите о вашей ситуации..."></textarea>
+            <textarea id="f-problem" placeholder="Что беспокоит или что хотите сделать?"></textarea>
           </div>
         </div>
         <div id="form-error" style="display:none;color:#e53e3e;font-size:13px;margin-bottom:12px;padding:10px 14px;background:#fff5f5;border-radius:8px;border:1px solid #fed7d7;">
@@ -466,7 +532,7 @@
         </button>
         <div class="form-note">
           <i class="fas fa-lock" style="font-size:11px;color:var(--gray-400)"></i>
-          Ваши данные защищены и не передаются третьим лицам
+          Данные используются только для записи
         </div>
       </div>
     </div>
@@ -525,7 +591,7 @@
         <a href="#hero" class="logo">
           <img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/>
         </a>
-        <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
+        <p>Atlant Dental Clinic в Бишкеке. Работаем каждый день, принимаем взрослых и детей.</p>
         <div class="footer-hours"><i class="fas fa-clock"></i> Пн–Вс 09:00–19:00</div>
         <div class="footer-socials">
           <a href="https://www.instagram.com/atlant.kg" target="_blank" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
@@ -537,11 +603,11 @@
         <div class="footer-col-title">Услуги</div>
         <ul class="footer-links">
           <li><a href="implants.html"><i class="fas fa-chevron-right"></i> Имплантация</a></li>
-          <li><a href="diagnostics.html"><i class="fas fa-chevron-right"></i> Диагностика и КТ</a></li>
           <li><a href="braces.html"><i class="fas fa-chevron-right"></i> Брекеты</a></li>
-          <li><a href="dentheal.html"><i class="fas fa-chevron-right"></i> Лечение зубов</a></li>
-          <li><a href="dentclean.html"><i class="fas fa-chevron-right"></i> Чистка зубов</a></li>
           <li><a href="veneers.html"><i class="fas fa-chevron-right"></i> Виниры</a></li>
+          <li><a href="dentheal.html"><i class="fas fa-chevron-right"></i> Лечение зубов</a></li>
+          <li><a href="caries.html"><i class="fas fa-chevron-right"></i> Лечение кариеса</a></li>
+          <li><a href="dentclean.html"><i class="fas fa-chevron-right"></i> Детская стоматология</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -572,181 +638,4 @@
 </footer>
 
 <!-- ═══ SCROLL TOAST ═══ -->
-<a href="https://wa.me/996550228030" target="_blank" class="scroll-toast scroll-toast--wa" id="reviewToast">
-  <div class="scroll-toast-icon scroll-toast-icon--wa"><i class="fab fa-whatsapp"></i></div>
-  <div>
-    <strong>Написать в WhatsApp</strong>
-    <span>Ответим в течение 15 минут</span>
-  </div>
-  <button class="scroll-toast-close" id="toastClose" onclick="event.preventDefault();event.stopPropagation();document.getElementById('reviewToast').classList.remove('show');"><i class="fas fa-times"></i></button>
-</a>
-
-
-<!-- ═══ NOTIFICATION ═══ -->
-<div id="notif">
-  <div class="notif-icon"><i class="fas fa-check"></i></div>
-  <div class="notif-text">
-    <strong>Заявка отправлена!</strong>
-    <span>Администратор свяжется с вами в WhatsApp</span>
-  </div>
-</div>
-
-<script>
-  const ADMIN_PHONE = '996221100809';
-  const WORKER_URL  = 'https://atlant-form.crycrazydiamond.workers.dev';
-
-  // ─── NAVBAR ───
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
-
-  // ─── BURGER ───
-  const burger     = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  document.getElementById('closeMenu').addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); });
-  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
-  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); mobileMenu.classList.remove('active'); }));
-
-  // ─── REVEAL ───
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
-  // Fallback: immediately reveal anything already in viewport
-  setTimeout(() => { revealEls.forEach(el => { const r = el.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible'); }); }, 100);
-
-  // ─── SEDATION POPUP ───
-  const sedPopup = document.getElementById('sedPopup');
-  if (sedPopup) {
-    const sedObs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { sedPopup.classList.add('sed-active'); sedObs.unobserve(sedPopup); }
-    }, { threshold: 0.15 });
-    sedObs.observe(sedPopup);
-  }
-
-  // ─── COUNTERS ───
-  function animateCounter(el) {
-    const target = +el.dataset.target;
-    const duration = 1500;
-    const start = performance.now();
-    const update = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.floor(progress * target);
-      if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(update);
-  }
-  const counterObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ animateCounter(e.target); counterObs.unobserve(e.target); } }), { threshold: 0, rootMargin: '0px 0px -20px 0px' });
-  document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
-  // Fallback: animate counters already in viewport on load
-  setTimeout(() => {
-    document.querySelectorAll('[data-target]').forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0 && el.textContent === '0') animateCounter(el);
-    });
-  }, 300);
-
-  // ─── SLIDER ───
-  const track      = document.getElementById('sliderTrack');
-  const sliderWrap = track ? track.parentElement : null;
-  const dotsContainer = document.getElementById('sliderDots');
-  let current = 0;
-  if (track) {
-    const cards = track.querySelectorAll('.review-card');
-    const getVisible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-    const total = () => Math.ceil(cards.length / getVisible());
-    function buildDots() {
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < total(); i++) {
-        const d = document.createElement('div');
-        d.className = 'dot' + (i === current ? ' active' : '');
-        d.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(d);
-      }
-    }
-    function goTo(idx) {
-      current = Math.max(0, Math.min(idx, total() - 1));
-      const vis = getVisible(), gap = 24;
-      const cardW = (sliderWrap.offsetWidth - gap * (vis - 1)) / vis;
-      track.style.transform = `translateX(-${current * vis * (cardW + gap)}px)`;
-      buildDots();
-    }
-    document.getElementById('sliderPrev').addEventListener('click', () => goTo(current - 1));
-    document.getElementById('sliderNext').addEventListener('click', () => goTo(current + 1));
-    buildDots();
-    window.addEventListener('resize', () => { current = 0; goTo(0); });
-    setInterval(() => goTo(current < total() - 1 ? current + 1 : 0), 5000);
-  }
-
-  // ─── FORM ───
-  function showError(msg) {
-    const box = document.getElementById('form-error');
-    document.getElementById('form-error-text').textContent = msg;
-    box.style.display = 'block';
-    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-  function hideError() { document.getElementById('form-error').style.display = 'none'; }
-  function setBtnLoading(on) {
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = on;
-    btn.innerHTML = on
-      ? '<i class="fas fa-spinner fa-spin"></i> Отправляем...'
-      : '<i class="fab fa-whatsapp"></i> Отправить заявку в WhatsApp';
-  }
-  function showSuccess() {
-    const notif = document.getElementById('notif');
-    notif.classList.add('show');
-    setTimeout(() => notif.classList.remove('show'), 4000);
-    ['f-name','f-phone','f-date','f-time','f-service','f-problem'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
-  }
-
-  // ─── WA TOAST ───
-  let toastShown = false;
-  window.addEventListener('scroll', () => {
-    if (!toastShown && window.scrollY > window.innerHeight * 0.6) {
-      toastShown = true;
-      document.getElementById('reviewToast').classList.add('show');
-    }
-  });
-
-  document.getElementById('submitBtn').addEventListener('click', async () => {
-    hideError();
-    const name    = document.getElementById('f-name').value.trim();
-    const phone   = document.getElementById('f-phone').value.trim();
-    const date    = document.getElementById('f-date').value;
-    const time    = document.getElementById('f-time').value;
-    const service = document.getElementById('f-service').value;
-    const problem = document.getElementById('f-problem').value.trim();
-
-    if (!name)  { showError('Пожалуйста, введите ваше имя.'); return; }
-    if (!phone) { showError('Пожалуйста, введите номер телефона.'); return; }
-
-    const message = [
-      '🦷 *Новая заявка с сайта Atlant Dental*', '',
-      `👤 *Имя:* ${name}`,
-      `📞 *Телефон:* ${phone}`,
-      date    ? `📅 *Дата:* ${date}`       : '',
-      time    ? `🕐 *Время:* ${time}`       : '',
-      service ? `🏥 *Услуга:* ${service}`   : '',
-      problem ? `📝 *Проблема:* ${problem}` : '',
-      '', '📍 _Сайт: atlant.kg_'
-    ].filter(Boolean).join('\n');
-
-    setBtnLoading(true);
-    try {
-      const res = await fetch(WORKER_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chatId: `${ADMIN_PHONE}@c.us`, message })
-      });
-      const data = await res.json();
-      data.idMessage ? showSuccess() : showError('Не удалось отправить. Позвоните: 0 (550) 22-80-30');
-    } catch(err) {
-      console.error(err);
-      showError('Ошибка соединения. Позвоните: 0 (550) 22-80-30');
-    } finally {
-      setBtnLoading(false);
-    }
-  });
-</script>
-</body>
-</html>
+<a href="htt

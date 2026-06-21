@@ -3,18 +3,140 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Чистка зубов — Atlant Dental Clinic</title>
+  <title>Детская стоматология — Atlant Dental Clinic</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── CHILD PAGE SPECIFIC ── */
+    .ch-why { padding: 72px 0 64px; background: #fff; }
+    .ch-why-head { margin-bottom: 44px; }
+    .ch-why-head h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--gray-900); margin: 8px 0 0; }
+    .ch-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray-100);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .ch-why-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 24px 22px;
+      border-right: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .ch-why-item:nth-child(3n) { border-right: none; }
+    .ch-why-item:nth-child(4), .ch-why-item:nth-child(5), .ch-why-item:nth-child(6) { border-bottom: none; }
+    .ch-why-icon {
+      width: 36px; height: 36px; border-radius: 9px; flex-shrink: 0;
+      background: var(--primary-soft); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; margin-top: 2px;
+    }
+    .ch-why-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px; }
+    .ch-why-text span { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ── STEPS ── */
+    .ch-steps { padding: 72px 0; background: var(--gray-50); }
+    .ch-steps-head { margin-bottom: 44px; }
+    .ch-steps-head h2 { font-size: clamp(22px, 2.8vw, 34px); font-weight: 600; color: var(--gray-900); margin: 8px 0 0; }
+    .ch-steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .ch-steps-row::before {
+      content: '';
+      position: absolute;
+      top: 22px; left: calc(12.5% + 18px); right: calc(12.5% + 18px);
+      height: 1px;
+      background: var(--gray-200);
+      z-index: 0;
+    }
+    .ch-step { padding: 0 20px; position: relative; z-index: 1; }
+    .ch-step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--primary); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700;
+      margin: 0 auto 16px;
+      position: relative; z-index: 1;
+    }
+    .ch-step-body { text-align: center; }
+    .ch-step-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 6px; }
+    .ch-step-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ── SEDATION INFO ── */
+    .ch-sed { padding: 72px 0; background: #fff; }
+    .ch-sed-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .ch-sed-img {
+      border-radius: 16px 16px 40px 16px;
+      overflow: hidden;
+      max-height: 320px;
+      background: var(--gray-100);
+      position: relative;
+    }
+    .ch-sed-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .ch-sed-img-wash { position: absolute; inset: 0; background: rgba(16,185,129,0.07); pointer-events: none; }
+    .ch-sed-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--primary); display: block; margin-bottom: 10px; }
+    .ch-sed-title { font-family: var(--font-head); font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; color: var(--gray-900); line-height: 1.25; margin-bottom: 14px; }
+    .ch-sed-title em { color: var(--primary); font-style: italic; }
+    .ch-sed-desc { font-size: 14px; color: var(--gray-600); line-height: 1.75; margin-bottom: 20px; }
+    .ch-sed-list { list-style: none; margin: 0 0 24px; padding: 0; }
+    .ch-sed-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 13.5px; color: var(--gray-700); line-height: 1.5;
+    }
+    .ch-sed-list li:first-child { border-top: 1px solid var(--gray-100); }
+    .ch-sed-list li i { color: var(--primary); font-size: 10px; flex-shrink: 0; margin-top: 4px; }
+
+
+    /* ── DECORATIVE PATTERNS ── */
+    .ch-deco { position: absolute; pointer-events: none; z-index: 0; opacity: 0.055; color: var(--primary); }
+    .ch-deco svg { display: block; }
+    .dc-hero { position: relative; overflow: hidden; }
+    .ch-why { position: relative; overflow: hidden; }
+    .ch-steps { position: relative; overflow: hidden; }
+    .ch-sed { position: relative; overflow: hidden; }
+    .oe-section { position: relative; overflow: hidden; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .ch-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .ch-why-item:nth-child(3n) { border-right: 1px solid var(--gray-100); }
+      .ch-why-item:nth-child(2n) { border-right: none; }
+      .ch-why-item:nth-child(5), .ch-why-item:nth-child(6) { border-bottom: none; }
+      .ch-steps-row { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .ch-steps-row::before { display: none; }
+      .ch-sed-inner { grid-template-columns: 1fr; gap: 28px; }
+      .ch-sed-img { max-height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .ch-why-grid { grid-template-columns: 1fr; }
+      .ch-why-item { border-right: none; }
+      .ch-why-item:nth-child(6) { border-bottom: 0; }
+      .ch-steps-row { grid-template-columns: 1fr; gap: 28px; }
+      .ch-step { padding: 0; }
+      .ch-step-num { margin-left: 0; }
+      .ch-step-body { text-align: left; }
+    }
+  </style>
 </head>
 <body>
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
+    <a href="index.html" class="logo"><img src="images/Truelogo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
     <ul class="nav-links">
       <li><a href="index.html#services">Услуги</a></li>
       <li><a href="index.html#consultation">Консультация</a></li>
@@ -29,8 +151,6 @@
     <div class="burger" id="burger"><span></span><span></span><span></span></div>
   </div>
 </nav>
-
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
   <a href="index.html#services" class="mob-link">Услуги</a>
@@ -44,89 +164,218 @@
 
 <!-- HERO -->
 <section class="sp-hero dc-hero">
+  <div class="ch-deco" style="top:-30px;right:-20px;opacity:0.14;"><svg width="140" height="160" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="ch-deco" style="bottom:10px;left:-10px;opacity:0.12;transform:rotate(-20deg);"><svg width="140" height="160" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="ch-deco" style="top:40px;left:38%;opacity:0.18;"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="bottom:30px;right:22%;opacity:0.16;transform:rotate(15deg);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="top:20px;right:28%;opacity:0.22;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+  <div class="ch-deco" style="bottom:50px;left:30%;opacity:0.18;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+
   <div class="sp-hero-inner">
     <a href="index.html#services" class="sp-back"><i class="fas fa-arrow-left"></i> Все услуги</a>
-    <h1 class="sp-hero-title">Профессиональная<br><em>чистка зубов</em></h1>
-    <p class="sp-hero-sub">Ультразвук + Air Flow — убираем камень, налёт и потемнения. Зубы снова белые и здоровые за один визит.</p>
+    <h1 class="sp-hero-title">Детская стоматология<br><em>без страха и слёз</em></h1>
+    <p class="sp-hero-sub">Лечим молочные и постоянные зубы, делаем профилактику. Первый приём — просто знакомство, без лечения. Если ребёнок боится — есть седация Севораном.</p>
     <div class="sp-hero-btns">
-      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться</a>
+      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
       <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
     </div>
-    <div class="sp-hero-stats">
-      <div class="sp-stat"><div class="sp-stat-num">60 мин</div><div class="sp-stat-lbl">Длительность</div></div>
-      <div class="sp-stat"><div class="sp-stat-num">2 раза</div><div class="sp-stat-lbl">В год рекомендуется</div></div>
-      <div class="sp-stat"><div class="sp-stat-num">0 боли</div><div class="sp-stat-lbl">Комфортно</div></div>
+  </div>
+</section>
+
+<!-- WHY ATLANT -->
+<section class="ch-why">
+  <div class="ch-deco" style="top:-40px;right:-30px;opacity:0.14;transform:rotate(15deg);"><svg width="140" height="160" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="ch-deco" style="bottom:-20px;left:5%;opacity:0.12;"><svg width="70" height="80" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2.5"/></svg></div>
+  <div class="ch-deco" style="top:20%;right:8%;opacity:0.18;"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="top:60%;left:2%;opacity:0.18;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="top:10%;left:20%;opacity:0.16;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+  <div class="ch-deco" style="bottom:15%;right:18%;opacity:0.18;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+  <div class="ch-deco" style="top:50%;left:50%;opacity:0.14;"><svg width="70" height="70" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="12" stroke="currentColor" stroke-width="1.5"/></svg></div>
+
+  <div class="container">
+    <div class="ch-why-head reveal">
+      <div class="section-label">Преимущества</div>
+      <h2>Почему родители выбирают Atlant</h2>
+    </div>
+    <div class="ch-why-grid">
+      <div class="ch-why-item reveal delay-1">
+        <div class="ch-why-icon"><i class="fas fa-baby"></i></div>
+        <div class="ch-why-text">
+          <strong>С раннего возраста</strong>
+          <span>Принимаем детей с 2 лет. Первый приём — знакомство с врачом без лечения и страха.</span>
+        </div>
+      </div>
+      <div class="ch-why-item reveal delay-2">
+        <div class="ch-why-icon"><i class="fas fa-heart"></i></div>
+        <div class="ch-why-text">
+          <strong>Спокойная адаптация</strong>
+          <span>Не торопим. Даём ребёнку время привыкнуть к обстановке и врачу перед лечением.</span>
+        </div>
+      </div>
+      <div class="ch-why-item reveal delay-3">
+        <div class="ch-why-icon"><i class="fas fa-xray"></i></div>
+        <div class="ch-why-text">
+          <strong>Современная диагностика</strong>
+          <span>КТ-томограф прямо в клинике — точная картина зубов без лишних поездок.</span>
+        </div>
+      </div>
+      <div class="ch-why-item reveal delay-1">
+        <div class="ch-why-icon"><i class="fas fa-tooth"></i></div>
+        <div class="ch-why-text">
+          <strong>Молочные и постоянные зубы</strong>
+          <span>Лечим все виды зубов: реставрация, пульпит, коронки на молочные зубы.</span>
+        </div>
+      </div>
+      <div class="ch-why-item reveal delay-2">
+        <div class="ch-why-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="ch-why-text">
+          <strong>Комфортная атмосфера</strong>
+          <span>Кресло, инструменты и команда — всё настроено на то, чтобы ребёнок не боялся.</span>
+        </div>
+      </div>
+      <div class="ch-why-item reveal delay-3">
+        <div class="ch-why-icon"><i class="fas fa-wind"></i></div>
+        <div class="ch-why-text">
+          <strong>Седация Севораном</strong>
+          <span>Для тревожных детей и сложных процедур — ребёнок засыпает за минуту, просыпается спокойно.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ВИДЫ ЧИСТКИ -->
-<section class="sp-services">
+<!-- STEPS -->
+<section class="ch-steps">
+  <div class="ch-deco" style="top:-30px;left:-20px;opacity:0.14;transform:rotate(-10deg);"><svg width="70" height="80" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2.5"/></svg></div>
+  <div class="ch-deco" style="bottom:-20px;right:-20px;opacity:0.14;transform:rotate(20deg);"><svg width="140" height="160" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="ch-deco" style="top:15%;right:5%;opacity:0.16;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="bottom:20%;left:5%;opacity:0.18;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="top:40%;right:20%;opacity:0.18;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+
   <div class="container">
-    <div class="section-head">
-      <div class="section-label reveal">Что включает</div>
-      <h2 class="section-title reveal reveal-delay-1">Виды чистки</h2>
-      <p class="section-sub reveal reveal-delay-2">Профессиональная чистка — основа здоровья полости рта</p>
+    <div class="ch-steps-head reveal">
+      <div class="section-label">Первый визит</div>
+      <h2>Как проходит первый приём</h2>
     </div>
-    <div class="sp-cards reveal reveal-delay-1">
-      <div class="sp-card">
-        <div class="sp-card-icon"><i class="fas fa-wave-square"></i></div>
-        <div class="sp-card-title">Ультразвуковая чистка</div>
-        <div class="sp-card-desc">Удаляем зубной камень и твёрдые отложения ультразвуковым скалером без вреда для эмали.</div>
-        <div class="sp-card-price">от 2 000 сом</div>
+    <div class="ch-steps-row">
+      <div class="ch-step reveal delay-1">
+        <div class="ch-step-num">1</div>
+        <div class="ch-step-body">
+          <div class="ch-step-title">Знакомство с врачом</div>
+          <div class="ch-step-desc">Врач знакомится с ребёнком, показывает инструменты, даёт потрогать зеркало. Никакого лечения в первый раз.</div>
+        </div>
       </div>
-      <div class="sp-card">
-        <div class="sp-card-icon"><i class="fas fa-wind"></i></div>
-        <div class="sp-card-title">Air Flow</div>
-        <div class="sp-card-desc">Струйная полировка содой под давлением — убирает пигментный налёт от кофе, чая, никотина.</div>
-        <div class="sp-card-price">от 1 500 сом</div>
+      <div class="ch-step reveal delay-2">
+        <div class="ch-step-num">2</div>
+        <div class="ch-step-body">
+          <div class="ch-step-title">Осмотр и диагностика</div>
+          <div class="ch-step-desc">Осматриваем зубы, при необходимости делаем снимок. Всё объясняем ребёнку понятными словами.</div>
+        </div>
       </div>
-      <div class="sp-card">
-        <div class="sp-card-icon"><i class="fas fa-star"></i></div>
-        <div class="sp-card-title">Комплексная чистка</div>
-        <div class="sp-card-desc">Ультразвук + Air Flow + полировка пастой + фторирование. Полный результат за 1 визит.</div>
-        <div class="sp-card-price">от 3 500 сом</div>
+      <div class="ch-step reveal delay-3">
+        <div class="ch-step-num">3</div>
+        <div class="ch-step-body">
+          <div class="ch-step-title">План лечения</div>
+          <div class="ch-step-desc">Рассказываем родителям что нужно сделать, в какой последовательности и сколько это стоит.</div>
+        </div>
       </div>
-      <div class="sp-card">
-        <div class="sp-card-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="sp-card-title">Фторирование</div>
-        <div class="sp-card-desc">Нанесение фторлака после чистки — укрепляет эмаль и защищает от кариеса на 6 месяцев.</div>
-        <div class="sp-card-price">от 800 сом</div>
+      <div class="ch-step reveal delay-4">
+        <div class="ch-step-num">4</div>
+        <div class="ch-step-body">
+          <div class="ch-step-title">Лечение в комфорте</div>
+          <div class="ch-step-desc">Лечим поэтапно, в удобном темпе. При необходимости подключаем Севоран — ребёнок спит, мы работаем.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ПРОЦЕСС -->
-<section class="impl-process">
+<!-- PRICING -->
+<section class="oe-section" id="pricing">
+  <div class="ch-deco" style="top:-20px;right:5%;opacity:0.14;transform:rotate(10deg);"><svg width="70" height="80" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2.5"/></svg></div>
+  <div class="ch-deco" style="bottom:-10px;left:3%;opacity:0.14;transform:rotate(-15deg);"><svg width="70" height="80" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2.5"/></svg></div>
+  <div class="ch-deco" style="top:30%;left:2%;opacity:0.16;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="bottom:30%;right:3%;opacity:0.16;"><svg width="70" height="70" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="12" stroke="currentColor" stroke-width="1.5"/></svg></div>
+  <div class="ch-deco" style="top:10%;left:40%;opacity:0.18;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+
   <div class="container">
-    <div class="section-head centered">
-      <div class="section-label reveal">Как проходит</div>
-      <h2 class="section-title reveal reveal-delay-1">Процесс чистки</h2>
+    <div class="oe-prices reveal">
+      <div class="oe-prices-head">Стоимость детского лечения</div>
+      <div class="dh-price-grid">
+        <div class="dh-price-card reveal delay-1">
+          <span class="dh-price-val">500 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Консультация детского стоматолога</span>
+        </div>
+        <div class="dh-price-card reveal delay-2">
+          <span class="dh-price-val">300 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Рентген-снимок</span>
+        </div>
+        <div class="dh-price-card reveal delay-3">
+          <span class="dh-price-val">4 300 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Реставрация молочного жевательного зуба</span>
+        </div>
+        <div class="dh-price-card reveal delay-1">
+          <span class="dh-price-val">5 300 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Реставрация переднего молочного зуба</span>
+        </div>
+        <div class="dh-price-card reveal delay-2">
+          <span class="dh-price-val">5 300 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Реставрация постоянного жевательного зуба</span>
+        </div>
+        <div class="dh-price-card reveal delay-3">
+          <span class="dh-price-val">6 800 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Лечение пульпита молочного зуба</span>
+        </div>
+        <div class="dh-price-card reveal delay-1">
+          <span class="dh-price-val">5 300 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Коронка на молочный зуб</span>
+        </div>
+      </div>
+      <div class="dh-price-note">
+        <i class="fas fa-info-circle"></i>
+        Окончательная стоимость определяется после осмотра. Если ребёнок нуждается в нескольких процедурах, составляем план с расчётом стоимости заранее.
+      </div>
     </div>
-    <div class="impl-steps">
-      <div class="impl-step reveal reveal-delay-1">
-        <div class="step-num">01</div>
-        <div class="step-title">Осмотр</div>
-        <div class="step-desc">Оцениваем состояние зубов и дёсен, выбираем подходящий метод чистки.</div>
+  </div>
+</section>
+
+<!-- SEDATION INFO -->
+<section class="ch-sed oe-section--alt">
+  <div class="ch-deco" style="top:-30px;left:-20px;opacity:0.14;transform:rotate(-20deg);"><svg width="140" height="160" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2"/></svg></div>
+  <div class="ch-deco" style="top:20%;right:2%;opacity:0.16;"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+  <div class="ch-deco" style="bottom:10%;right:5%;opacity:0.14;"><svg width="70" height="80" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30 4C18 4 8 12 8 24C8 30 10 35 12 40L14 55C14 58 16 60 18 60C20 60 22 58 22 55V48C22 44 26 42 30 42C34 42 38 44 38 48V55C38 58 40 60 42 60C44 60 46 58 46 55L48 40C50 35 52 30 52 24C52 12 42 4 30 4Z" stroke="currentColor" stroke-width="2.5"/></svg></div>
+  <div class="ch-deco" style="bottom:25%;left:3%;opacity:0.18;"><svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+  <div class="ch-deco" style="top:10%;left:45%;opacity:0.16;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.2H22L15.8 13.6L18.2 20.8L12 16.4L5.8 20.8L8.2 13.6L2 9.2H9.6L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+
+  <div class="container">
+    <div class="ch-sed-inner">
+      <div class="reveal">
+        <div class="oe-img-frame ch-sed-img">
+          <img src="images/Child.jpg" alt="Детская седация в Atlant Dental" loading="lazy" style="object-position: 70% center;"/>
+          <div class="ch-sed-img-wash"></div>
+        </div>
       </div>
-      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="impl-step reveal reveal-delay-2">
-        <div class="step-num">02</div>
-        <div class="step-title">Ультразвук</div>
-        <div class="step-desc">Удаляем зубной камень и твёрдые отложения выше и ниже линии дёсен.</div>
-      </div>
-      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="impl-step reveal reveal-delay-3">
-        <div class="step-num">03</div>
-        <div class="step-title">Air Flow</div>
-        <div class="step-desc">Убираем пигментный налёт — зубы светлеют на 1–2 тона.</div>
-      </div>
-      <div class="impl-step-arrow"><i class="fas fa-chevron-right"></i></div>
-      <div class="impl-step reveal reveal-delay-4">
-        <div class="step-num">04</div>
-        <div class="step-title">Полировка и защита</div>
-        <div class="step-desc">Полируем пастой, наносим фторлак для защиты эмали.</div>
+      <div class="reveal reveal-delay-1">
+        <span class="ch-sed-eyebrow">Безопасная седация</span>
+        <h2 class="ch-sed-title">Лечение с Севораном —<br><em>ребёнок не боится</em></h2>
+        <p class="ch-sed-desc">Севоран — современный ингаляционный анестетик. Ребёнок надевает маску, вдыхает лёгкий сладковатый газ и засыпает за 1–2 минуты. Во время сна мы спокойно делаем всё необходимое.</p>
+        <ul class="ch-sed-list">
+          <li><i class="fas fa-check"></i> Ребёнок остаётся под постоянным наблюдением врача</li>
+          <li><i class="fas fa-check"></i> Просыпается спокойно, без капризов и стресса</li>
+          <li><i class="fas fa-check"></i> Через 10–15 минут можно идти домой или гулять</li>
+          <li><i class="fas fa-check"></i> Препарат сертифицирован, применяется с 2 лет</li>
+          <li><i class="fas fa-check"></i> Не вызывает привыкания и побочных эффектов</li>
+        </ul>
+        <a href="index.html#appointment" class="btn-green" style="display:inline-flex;gap:8px;align-items:center;">
+          <i class="fas fa-calendar-check"></i> Записаться на консультацию
+        </a>
       </div>
     </div>
   </div>
@@ -135,26 +384,47 @@
 <!-- FAQ -->
 <section class="impl-faq-section">
   <div class="container">
-    <div class="section-head centered">
-      <div class="section-label reveal">FAQ</div>
-      <h2 class="section-title reveal reveal-delay-1">Частые вопросы</h2>
+    <div class="idx-head reveal" style="margin-bottom:32px;">
+      <div>
+        <div class="section-label">Вопросы родителей</div>
+        <h2>Часто задают</h2>
+      </div>
     </div>
-    <div class="impl-faq-list">
-      <div class="impl-faq-item reveal reveal-delay-1">
-        <button class="impl-faq-q">Больно ли делать чистку? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Чистка безболезненна для большинства пациентов. При чувствительных дёснах наносим гель-анестетик.</div>
+    <div class="impl-faq-list reveal">
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          С какого возраста можно приходить?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Принимаем детей с 2 лет. Первый визит — это всегда знакомство: врач показывает инструменты, даёт потрогать зеркало и щётку. Никакого лечения, только доброжелательное общение. Это помогает ребёнку воспринимать стоматолога без страха.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-2">
-        <button class="impl-faq-q">Как часто нужна профессиональная чистка? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Рекомендуем 1–2 раза в год. При брекетах или склонности к камню — каждые 3–4 месяца.</div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Больно ли лечить зубы?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Нет. Используем современные детские анестетики с минимальной дозировкой. Перед уколом обезболиваем дёсны гелем, поэтому ребёнок практически не ощущает иглы. Начинаем работу только тогда, когда убеждаемся, что анестезия подействовала полностью.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-3">
-        <button class="impl-faq-q">Чистка отбеливает зубы? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Air Flow убирает пигментный налёт и осветляет зубы на 1–2 тона. Для более сильного эффекта — процедура отбеливания Zoom.</div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Что делать, если ребёнок боится стоматолога?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Не нужно заставлять и уговаривать — это только усиливает страх. Приходите на знакомство без лечения. Наши врачи умеют работать с тревожными детьми: терпеливо объясняют, не спешат. Если ребёнок категорически отказывается — предложим лечение под седацией Севораном, когда он спокойно спит.</div>
       </div>
-      <div class="impl-faq-item reveal reveal-delay-1">
-        <button class="impl-faq-q">Можно ли делать чистку с брекетами? <i class="fas fa-plus"></i></button>
-        <div class="impl-faq-a">Да, и даже нужно — рекомендуем раз в 3–4 месяца при ношении брекетов, так как очищать зубы самостоятельно сложнее.</div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Когда нужны коронки на молочные зубы?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Металлические коронки на молочные зубы ставятся, когда зуб сильно разрушен и обычная пломба не удержится — например, после лечения пульпита или глубокого кариеса. Коронка защищает остаток зуба до его естественной смены и помогает сохранить место для постоянного зуба.</div>
+      </div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Нужно ли лечить молочные зубы?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Да, обязательно. Кариес молочного зуба может перейти в пульпит и периодонтит, вызвать боль и воспаление, повредить зачаток постоянного зуба. Кроме того, больной молочный зуб влияет на жевание, речь и положение соседних зубов. Раннее лечение — это всегда быстрее, дешевле и безболезненнее.</div>
       </div>
     </div>
   </div>
@@ -164,44 +434,40 @@
 <section class="impl-cta">
   <div class="container">
     <div class="sp-cta-inner reveal">
-      <div class="section-label label-light" style="justify-content:center;">60 минут</div>
-      <h2>Здоровые зубы начинаются с чистки</h2>
-      <p>Запишитесь на профессиональную чистку — результат заметен сразу после процедуры.</p>
-      <div class="sp-cta-badges">
-        <span><i class="fas fa-check"></i> Без боли</span>
-        <span><i class="fas fa-check"></i> Результат за 60 минут</span>
-        <span><i class="fas fa-check"></i> Ответ за 15 минут</span>
-      </div>
+      <div class="section-label label-light" style="justify-content:center;">Записаться</div>
+      <h2>Запишите ребёнка на первый приём</h2>
+      <p>Первый визит — знакомство с врачом. Без боли, без страха, без лечения. Просто приходите.</p>
       <div class="sp-cta-btns">
-        <a href="index.html#appointment" class="btn-green"><i class="fab fa-whatsapp"></i> Записаться в WhatsApp</a>
+        <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
         <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
       </div>
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner container">
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
-        <p>Современная стоматология с заботой о вашей улыбке. Работаем с 2012 года.</p>
+        <p>Atlant Dental Clinic в Бишкеке. Работаем каждый день, принимаем взрослых и детей.</p>
         <div class="footer-hours"><i class="fas fa-clock"></i> Ежедневно 09:00 – 19:00</div>
         <div class="footer-socials">
           <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-telegram"></i></a>
+          
         </div>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Услуги</div>
         <ul class="footer-links">
           <li><a href="implants.html">Имплантация</a></li>
-          <li><a href="diagnostics.html">Диагностика и КТ</a></li>
           <li><a href="braces.html">Брекеты</a></li>
+          <li><a href="caries.html">Лечение кариеса</a></li>
           <li><a href="dentheal.html">Лечение зубов</a></li>
-          <li><a href="dentclean.html">Чистка зубов</a></li>
-          <li><a href="veneers.html">Виниры</a></li>
+          <li><a href="dentclean.html">Детская стоматология</a></li>
+          <li><a href="veneers.html">Ортопедия и эстетика</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -225,10 +491,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Atlant Dental. Все права защищены.</span>
+      <span>&#169; 2025 Atlant Dental. Все права защищены.</span>
     </div>
   </div>
 </footer>
+
 <script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
@@ -238,11 +505,12 @@
   document.getElementById('closeMenu').addEventListener('click', closeMobile);
   burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
-  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  // FAQ accordion
   document.querySelectorAll('.impl-faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.parentElement;
+      const item = btn.closest('.impl-faq-item');
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.impl-faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
@@ -251,3 +519,4 @@
 </script>
 </body>
 </html>
+                                      

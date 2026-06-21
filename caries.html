@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лечение кариеса и реставрация зубов — Atlant Dental Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── CARIES PAGE ── */
+    .cr-symptoms { padding: 68px 0; background: #fff; }
+    .cr-symptoms-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .cr-sym-img {
+      border-radius: 16px 44px 16px 16px;
+      overflow: hidden;
+      max-height: 340px;
+      background: var(--gray-100);
+      position: relative;
+    }
+    .cr-sym-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .cr-sym-img-wash { position: absolute; inset: 0; background: rgba(16,185,129,0.07); pointer-events: none; }
+    .cr-sym-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--primary); display: block; margin-bottom: 10px; }
+    .cr-sym-title { font-family: var(--font-head); font-size: clamp(20px, 2.4vw, 28px); font-weight: 600; color: var(--gray-900); line-height: 1.3; margin-bottom: 6px; }
+    .cr-sym-sub { font-size: 14px; color: var(--gray-500); line-height: 1.7; margin-bottom: 20px; }
+    .cr-sym-list { list-style: none; margin: 0; padding: 0; }
+    .cr-sym-list li {
+      display: flex; align-items: center; gap: 11px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 14px; color: var(--gray-700);
+    }
+    .cr-sym-list li:first-child { border-top: 1px solid var(--gray-100); }
+    .cr-sym-list li i { color: var(--primary); font-size: 10px; flex-shrink: 0; }
+
+    /* ── STEPS ── */
+    .cr-steps { padding: 72px 0; background: var(--gray-50); }
+    .cr-steps-head { text-align: center; margin-bottom: 48px; }
+    .cr-steps-head h2 { font-size: clamp(22px, 2.8vw, 34px); font-weight: 600; color: var(--gray-900); margin: 8px 0 0; }
+    .cr-steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .cr-steps-row::before {
+      content: '';
+      position: absolute;
+      top: 22px; left: calc(12.5% + 18px); right: calc(12.5% + 18px);
+      height: 1px; background: var(--gray-200); z-index: 0;
+    }
+    .cr-step { position: relative; z-index: 1; text-align: center; padding: 0 12px; }
+    .cr-step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--primary); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700;
+      margin: 0 auto 16px;
+    }
+    .cr-step-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 6px; }
+    .cr-step-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ── ADVANTAGES ── */
+    .cr-adv { padding: 68px 0; background: #fff; }
+    .cr-adv-head { margin-bottom: 36px; }
+    .cr-adv-head h2 { font-size: clamp(22px, 2.6vw, 32px); font-weight: 600; color: var(--gray-900); margin: 8px 0 0; }
+    .cr-adv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .cr-adv-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 22px 20px;
+      border-right: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .cr-adv-item:nth-child(3n) { border-right: none; }
+    .cr-adv-item:nth-last-child(-n+3) { border-bottom: none; }
+    .cr-adv-icon {
+      width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
+      background: var(--primary-soft); color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; margin-top: 2px;
+    }
+    .cr-adv-text strong { display: block; font-size: 13.5px; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
+    .cr-adv-text span { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+
+    @media (max-width: 900px) {
+      .cr-symptoms-inner { grid-template-columns: 1fr; gap: 28px; }
+      .cr-sym-img { max-height: 220px; }
+      .cr-steps-row { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .cr-steps-row::before { display: none; }
+      .cr-adv-grid { grid-template-columns: repeat(2, 1fr); }
+      .cr-adv-item:nth-child(3n) { border-right: 1px solid var(--gray-100); }
+      .cr-adv-item:nth-child(2n) { border-right: none; }
+    }
+    @media (max-width: 600px) {
+      .cr-steps-row { grid-template-columns: 1fr; gap: 24px; }
+      .cr-adv-grid { grid-template-columns: 1fr; }
+      .cr-adv-item { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="images/Truelogo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="index.html#consultation">Консультация</a></li>
+      <li><a href="index.html#sedation">Седация</a></li>
+      <li><a href="index.html#doctors">Врачи</a></li>
+      <li><a href="index.html#contacts">Контакты</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-hours"><i class="fas fa-clock"></i> 09:00–19:00 · Без выходных</div>
+      <a href="index.html#appointment" class="btn-nav">Записаться</a>
+    </div>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="index.html#services" class="mob-link">Услуги</a>
+  <a href="index.html#consultation" class="mob-link">Консультация</a>
+  <a href="index.html#sedation" class="mob-link">Седация</a>
+  <a href="index.html#doctors" class="mob-link">Врачи</a>
+  <a href="index.html#contacts" class="mob-link">Контакты</a>
+  <a href="index.html#appointment" class="mob-link mob-cta">Записаться на приём</a>
+  <div class="mob-hours"><i class="fas fa-clock"></i> Работаем ежедневно 09:00 – 19:00</div>
+</div>
+
+<!-- HERO -->
+<section class="sp-hero dc-hero">
+  <div class="sp-hero-inner">
+    <a href="index.html#services" class="sp-back"><i class="fas fa-arrow-left"></i> Все услуги</a>
+    <h1 class="sp-hero-title">Лечение кариеса<br>и <em>восстановление зубов</em></h1>
+    <p class="sp-hero-sub">Лечим кариес любой стадии за один визит. Восстанавливаем зуб композитом, подобранным под ваш оттенок эмали. Удаляем только поражённые ткани — здоровое не трогаем.</p>
+    <div class="sp-hero-btns">
+      <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
+      <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
+    </div>
+  </div>
+</section>
+
+<!-- SYMPTOMS -->
+<section class="cr-symptoms">
+  <div class="container">
+    <div class="cr-symptoms-inner">
+      <div class="reveal">
+        <div class="oe-img-frame cr-sym-img">
+          <img src="images/Caries.jpg" alt="Лечение кариеса в Atlant Dental" loading="lazy"/>
+          <div class="cr-sym-img-wash"></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="cr-sym-eyebrow">Симптомы</span>
+        <h2 class="cr-sym-title">Когда стоит обратиться к стоматологу</h2>
+        <p class="cr-sym-sub">Кариес на ранней стадии не болит — но лечится за один визит и стоит значительно дешевле. Не ждите острой боли.</p>
+        <ul class="cr-sym-list">
+          <li><i class="fas fa-circle"></i> Появилась чувствительность зуба</li>
+          <li><i class="fas fa-circle"></i> Зуб реагирует на холодное или сладкое</li>
+          <li><i class="fas fa-circle"></i> Появилась тёмная точка или пятно на зубе</li>
+          <li><i class="fas fa-circle"></i> Откололся кусочек зуба</li>
+          <li><i class="fas fa-circle"></i> Выпала пломба или часть реставрации</li>
+          <li><i class="fas fa-circle"></i> Появилась боль при жевании</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="cr-steps">
+  <div class="container">
+    <div class="cr-steps-head reveal">
+      <div class="section-label" style="justify-content:center;">Процесс лечения</div>
+      <h2>Как проходит лечение кариеса</h2>
+    </div>
+    <div class="cr-steps-row">
+      <div class="cr-step reveal delay-1">
+        <div class="cr-step-num">1</div>
+        <div class="cr-step-title">Осмотр и диагностика</div>
+        <div class="cr-step-desc">Визуальный осмотр, при необходимости — прицельный снимок. Определяем глубину и стадию кариеса.</div>
+      </div>
+      <div class="cr-step reveal delay-2">
+        <div class="cr-step-num">2</div>
+        <div class="cr-step-title">Очистка тканей</div>
+        <div class="cr-step-desc">Под анестезией удаляем только поражённые ткани. Здоровая эмаль и дентин остаются нетронутыми.</div>
+      </div>
+      <div class="cr-step reveal delay-3">
+        <div class="cr-step-num">3</div>
+        <div class="cr-step-title">Восстановление зуба</div>
+        <div class="cr-step-desc">Послойно наносим композит, подобранный под оттенок вашей эмали. Восстанавливаем анатомическую форму.</div>
+      </div>
+      <div class="cr-step reveal delay-4">
+        <div class="cr-step-num">4</div>
+        <div class="cr-step-title">Полировка и прикус</div>
+        <div class="cr-step-desc">Шлифуем и полируем реставрацию. Проверяем окклюзию — зуб сразу готов к нагрузке.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="oe-section" id="pricing">
+  <div class="container">
+    <div class="oe-prices reveal">
+      <div class="oe-prices-head">Стоимость лечения</div>
+      <div class="dh-price-grid">
+        <div class="dh-price-card reveal delay-1">
+          <span class="dh-price-val">3 800 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Герметизация зубов</span>
+        </div>
+        <div class="dh-price-card reveal delay-2">
+          <span class="dh-price-val">5 300 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Художественная реставрация жевательной поверхности</span>
+        </div>
+        <div class="dh-price-card reveal delay-3">
+          <span class="dh-price-val">5 800 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Реставрация с восстановлением одного контакта</span>
+        </div>
+        <div class="dh-price-card reveal delay-1">
+          <span class="dh-price-val">7 800 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Реставрация с восстановлением двух контактных поверхностей</span>
+        </div>
+        <div class="dh-price-card reveal delay-2">
+          <span class="dh-price-val">8 800 сом</span>
+          <span class="dh-price-divider"></span>
+          <span class="dh-price-name">Реставрация при значительном разрушении зуба</span>
+        </div>
+      </div>
+      <div class="dh-price-note">
+        <i class="fas fa-info-circle"></i>
+        Окончательная стоимость определяется после осмотра. Простой кариес лечится за один визит — без повторных посещений и скрытых доплат.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="cr-adv">
+  <div class="container">
+    <div class="cr-adv-head reveal">
+      <div class="section-label">Почему выбирают Atlant</div>
+      <h2>Почему выбирают нас</h2>
+    </div>
+    <div class="cr-adv-grid">
+      <div class="cr-adv-item reveal delay-1">
+        <div class="cr-adv-icon"><i class="fas fa-flask"></i></div>
+        <div class="cr-adv-text">
+          <strong>Современные материалы</strong>
+          <span>Используем сертифицированные композиты ведущих производителей — прочные и долговечные.</span>
+        </div>
+      </div>
+      <div class="cr-adv-item reveal delay-2">
+        <div class="cr-adv-icon"><i class="fas fa-tooth"></i></div>
+        <div class="cr-adv-text">
+          <strong>Естественная форма зуба</strong>
+          <span>Восстанавливаем анатомию зуба — реставрацию не отличить от натурального зуба.</span>
+        </div>
+      </div>
+      <div class="cr-adv-item reveal delay-3">
+        <div class="cr-adv-icon"><i class="fas fa-palette"></i></div>
+        <div class="cr-adv-text">
+          <strong>Подбор цвета эмали</strong>
+          <span>Цвет реставрации подбирается индивидуально под оттенок ваших зубов — невидимый шов.</span>
+        </div>
+      </div>
+      <div class="cr-adv-item reveal delay-1">
+        <div class="cr-adv-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="cr-adv-text">
+          <strong>Сохранение здоровых тканей</strong>
+          <span>Удаляем только кариозные ткани. Здоровая эмаль и дентин не затрагиваются.</span>
+        </div>
+      </div>
+      <div class="cr-adv-item reveal delay-2">
+        <div class="cr-adv-icon"><i class="fas fa-star"></i></div>
+        <div class="cr-adv-text">
+          <strong>Долговечный результат</strong>
+          <span>Качественная реставрация служит 7–10 лет при правильном уходе и регулярных осмотрах.</span>
+        </div>
+      </div>
+      <div class="cr-adv-item reveal delay-3">
+        <div class="cr-adv-icon"><i class="fas fa-clock"></i></div>
+        <div class="cr-adv-text">
+          <strong>Лечение за один визит</strong>
+          <span>Кариес любой стадии лечим за одно посещение — от осмотра до готовой реставрации.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="impl-faq-section" style="background: var(--gray-50);">
+  <div class="container">
+    <div class="idx-head reveal" style="margin-bottom:32px;">
+      <div>
+        <div class="section-label">Вопросы пациентов</div>
+        <h2>Часто задают</h2>
+      </div>
+    </div>
+    <div class="impl-faq-list reveal">
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Больно ли лечить кариес?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Нет. Используем современные анестетики, которые полностью блокируют болевые ощущения. Перед инъекцией обезболиваем дёсны гелем, поэтому укол практически не ощущается. К лечению приступаем только после того, как убедились, что анестезия подействовала.</div>
+      </div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Сколько длится лечение кариеса?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Простой и средний кариес лечится за 40–60 минут. Глубокий кариес с наложением лечебной прокладки может занять до 90 минут. В любом случае — один визит, выходите с готовым зубом.</div>
+      </div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Можно ли вылечить зуб за один приём?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Да, в большинстве случаев кариес и художественная реставрация выполняются за один визит. Исключение — если под кариесом обнаружен пульпит или периодонтит: тогда потребуется лечение каналов, которое занимает несколько посещений.</div>
+      </div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Чем художественная реставрация отличается от обычной пломбы?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Обычная пломба — это заполнение полости материалом. Художественная реставрация — это послойное восстановление формы, цвета и прозрачности зуба с учётом его анатомии. Врач работает как скульптор: создаёт бугры, фиссуры и контакты с соседними зубами. Результат неотличим от натурального зуба.</div>
+      </div>
+      <div class="impl-faq-item">
+        <button class="impl-faq-q">
+          Когда нужна реставрация, а когда коронка?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="impl-faq-a">Реставрация подходит, если разрушено менее 50% коронковой части зуба. Если зуб разрушен более чем наполовину или прошёл лечение каналов — лучше поставить коронку: она равномерно распределяет нагрузку и защищает корень. Врач оценит ситуацию и предложит оптимальный вариант после осмотра.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="impl-cta">
+  <div class="container">
+    <div class="sp-cta-inner reveal">
+      <div class="section-label label-light" style="justify-content:center;">Записаться</div>
+      <h2>Вылечим кариес за один визит</h2>
+      <p>Записывайтесь на осмотр — расскажем что нужно сделать и сколько это стоит до начала лечения.</p>
+      <div class="sp-cta-btns">
+        <a href="index.html#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
+        <a href="tel:+996550228030" class="btn-white-outline"><i class="fas fa-phone"></i> 0 (550) 22-80-30</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Atlant Dental Clinic" class="logo-img"/></a>
+        <p>Atlant Dental Clinic в Бишкеке. Работаем каждый день, принимаем взрослых и детей.</p>
+        <div class="footer-hours"><i class="fas fa-clock"></i> Ежедневно 09:00 – 19:00</div>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/atlant.kg" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/996550228030" target="_blank" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Услуги</div>
+        <ul class="footer-links">
+          <li><a href="implants.html">Имплантация</a></li>
+          <li><a href="braces.html">Брекеты</a></li>
+          <li><a href="caries.html">Лечение кариеса</a></li>
+          <li><a href="dentheal.html">Лечение зубов и хирургия</a></li>
+          <li><a href="dentclean.html">Детская стоматология</a></li>
+          <li><a href="veneers.html">Ортопедия и эстетика</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Клиника</div>
+        <ul class="footer-links">
+          <li><a href="index.html#advantages">О нас</a></li>
+          <li><a href="index.html#doctors">Врачи</a></li>
+          <li><a href="index.html#testimonials">Отзывы</a></li>
+          <li><a href="index.html#contacts">Контакты</a></li>
+          <li><a href="index.html#appointment">Запись</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <ul class="footer-links">
+          <li><a href="tel:+996550228030">0 (550) 22-80-30</a></li>
+          <li><a href="https://wa.me/996550228030" target="_blank">WhatsApp</a></li>
+          <li><a href="#">7-й микрорайон, 37/1</a></li>
+          <li><a href="#">Ежедневно 09:00–19:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 Atlant Dental. Все права защищены.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); }
+  document.getElementById('closeMenu').addEventListener('click', closeMobile);
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  document.querySelectorAll('.impl-faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.impl-faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.impl-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
+                                       
