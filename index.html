@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="icon" href="images/Truelogo.png" type="image/png"/>
+  <link rel="icon" href="images/Megalogo.png" type="image/png"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -67,19 +67,26 @@
           <a href="#services" class="btn-hero-outline">Наши услуги →</a>
         </div>
         <div class="hero-stats reveal delay-4">
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-target="10">0</span><span class="hero-stat-suf">+</span>
-            <span class="hero-stat-lbl">лет на рынке</span>
+          <div class="hstat-card hstat-main">
+            <div class="hstat-icon-wrap"><i class="fas fa-tooth"></i></div>
+            <div class="hstat-val">
+              <span class="hero-stat-num" data-target="5000">0</span><span class="hero-stat-suf">+</span>
+            </div>
+            <div class="hstat-lbl">пациентов<br>прошли лечение</div>
           </div>
-          <div class="hero-stat-div"></div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-target="5000">0</span><span class="hero-stat-suf">+</span>
-            <span class="hero-stat-lbl">пациентов</span>
+          <div class="hstat-card hstat-sm">
+            <div class="hstat-icon-wrap"><i class="fas fa-award"></i></div>
+            <div class="hstat-val">
+              <span class="hero-stat-num" data-target="10">0</span><span class="hero-stat-suf">+</span>
+            </div>
+            <div class="hstat-lbl">лет на рынке</div>
           </div>
-          <div class="hero-stat-div"></div>
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-target="8">0</span><span class="hero-stat-suf"></span>
-            <span class="hero-stat-lbl">специалистов</span>
+          <div class="hstat-card hstat-sm hstat-accent">
+            <div class="hstat-icon-wrap"><i class="fas fa-user-md"></i></div>
+            <div class="hstat-val">
+              <span class="hero-stat-num" data-target="8">0</span><span class="hero-stat-suf"></span>
+            </div>
+            <div class="hstat-lbl">специалистов</div>
           </div>
         </div>
       </div>
@@ -304,7 +311,7 @@
       <div class="sed-left">
         <div class="section-label">Седация</div>
         <h2 class="sed-question">Лечение зубов<br><em>без страха и боли</em></h2>
-        <p class="sed-subtitle">Севоран — это газ, который вдыхается через маску. <strong>Засыпаете за 1–2 минуты</strong>, просыпаетесь с готовой работой. Подходит взрослым и детям от 3 лет.</p>
+        <p class="sed-subtitle">Севоран — это газ, который вдыхается через маску. <strong>Засыпаете за 1–2 минуты</strong>, просыпаетесь с готовой работой. Подходит взрослым и детям от 3 лет. Седацию проводит группа квалифицированных анестезиологов.</p>
         <ul class="sed-for-list">
           <li><i class="fas fa-check"></i> Выраженный страх перед стоматологом</li>
           <li><i class="fas fa-check"></i> Дети, которые не могут сидеть спокойно</li>
@@ -637,5 +644,78 @@
   </div>
 </footer>
 
-<!-- ═══ SCROLL TOAST ═══ -->
-<a href="htt
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  document.getElementById('closeMenu').addEventListener('click', closeMobile);
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
+
+  // Hide logo + btn when hero is visible
+  const heroEl = document.getElementById('hero');
+  if (heroEl) {
+    const heroObs = new IntersectionObserver(entries => {
+      navbar.classList.toggle('logo-hidden', entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+    heroObs.observe(heroEl);
+  }
+
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Counter animation
+  const countObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.target;
+    const duration = 1400;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current);
+      if (current >= target) clearInterval(timer);
+    }, 16);
+    countObs.unobserve(el);
+  }), { threshold: 0.3 });
+  document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => countObs.observe(el));
+
+  // Review slider
+  const track = document.querySelector('.reviews-track');
+  if (track) {
+    let idx = 0;
+    const cards = track.querySelectorAll('.review-card');
+    function goTo(n) {
+      idx = (n + cards.length) % cards.length;
+      track.scrollTo({ left: cards[idx].offsetLeft - 16, behavior: 'smooth' });
+    }
+    const prev = document.querySelector('.rev-prev');
+    const next = document.querySelector('.rev-next');
+    if (prev) prev.addEventListener('click', () => goTo(idx - 1));
+    if (next) next.addEventListener('click', () => goTo(idx + 1));
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.impl-faq-q, .faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.impl-faq-item, .faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Sedation popup
+  const sedPopup = document.getElementById('sedPopup');
+  if (sedPopup) {
+    sedPopup.addEventListener('click', () => sedPopup.classList.toggle('expanded'));
+  }
+</script>
+</body>
+</html>
