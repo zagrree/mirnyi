@@ -296,14 +296,11 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0.55;
+  opacity: 0.82;
   display: block;
 }
 .hero-deco-logo-veil {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0) 20%, rgba(255,255,255,0.15) 100%);
-  pointer-events: none;
+  display: none;
 }
 @keyframes heroDrift {
   0%   { transform: translateY(-50%); }
@@ -1142,10 +1139,9 @@ nav.scrolled {
   position: relative; overflow: hidden;
 }
 
-.slider-wrap { overflow: hidden; margin: 0 -4px; margin-top: 36px; }
-.slider-track { display: flex; gap: 16px; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); padding: 4px; }
+.slider-wrap { overflow: hidden; margin-top: 36px; }
+.slider-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc(33.333% - 16px); gap: 24px; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
 .review-card {
-  flex: 0 0 calc(33.333% - 12px);
   min-width: 0;
   background: #fff;
   border: 1px solid var(--gray-200);
