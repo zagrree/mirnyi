@@ -53,51 +53,56 @@
   </div>
 </section>
 
+<style>
+@media(max-width:768px){.impl-compare-grid{grid-template-columns:1fr !important;gap:24px !important;}}
+</style>
 <section class="sp-about-section">
   <div class="container">
-    <div class="sp-about-grid">
-      <div>
-        <div class="section-label reveal">Что такое имплантация</div>
-        <h2 class="section-title reveal reveal-delay-1">Чем имплант<br>отличается от протеза</h2>
-        <p class="section-sub reveal reveal-delay-2">Имплант — это титановый стержень, который вживляется в кость вместо корня. Сверху ставится коронка. Снаружи это выглядит и ощущается как обычный зуб.</p>
-        <div class="sp-about-list reveal reveal-delay-3">
-          <div class="sp-about-item">
-            <div class="sp-about-icon"><i class="fas fa-bone"></i></div>
-            <div><strong>Сохраняет кость</strong><span>Нагружает челюстную кость как натуральный зуб, предотвращая её убыль.</span></div>
-          </div>
-          <div class="sp-about-item">
-            <div class="sp-about-icon"><i class="fas fa-teeth"></i></div>
-            <div><strong>Не затрагивает соседние зубы</strong><span>В отличие от мостов, соседние зубы не обтачиваются.</span></div>
-          </div>
-          <div class="sp-about-item">
-            <div class="sp-about-icon"><i class="fas fa-infinity"></i></div>
-            <div><strong>Служит десятилетиями</strong><span>При правильном уходе имплантат стоит 20–30 лет и дольше.</span></div>
-          </div>
-          <div class="sp-about-item">
-            <div class="sp-about-icon"><i class="fas fa-utensils"></i></div>
-            <div><strong>Полноценная жизнь</strong><span>Можно жевать, улыбаться и говорить без ограничений.</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-2">
+    <div class="section-head" style="margin-bottom:40px;">
+      <div class="section-label reveal">Что такое имплантация</div>
+      <h2 class="section-title reveal delay-1">Чем имплант<br>отличается от протеза</h2>
+      <p class="section-sub reveal delay-2" style="max-width:560px;">Имплант — это титановый стержень, который вживляется в кость вместо корня. Сверху ставится коронка. Снаружи это выглядит и ощущается как обычный зуб.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 3fr;gap:36px;align-items:center;">
+      <div class="reveal delay-1">
         <div class="sp-compare">
           <div class="sp-compare-card sp-compare-good">
             <div class="sp-compare-head"><i class="fas fa-check"></i> Имплантат</div>
             <ul>
               <li>✓ Выглядит как настоящий зуб</li>
               <li>✓ Не снимается</li>
-              <li>✓ Сохраняет кость</li>
-              <li>✓ Срок службы 20+ лет</li>
+              <li>✓ Сохраняет костную ткань</li>
+              <li>✓ Служит более 20 лет</li>
             </ul>
           </div>
           <div class="sp-compare-card sp-compare-bad">
             <div class="sp-compare-head"><i class="fas fa-times"></i> Протез / мост</div>
             <ul>
-              <li>— Заметен при улыбке</li>
-              <li>— Снимается на ночь</li>
-              <li>— Кость убывает</li>
-              <li>— Замена каждые 5–7 лет</li>
+              <li>— Требует обточки соседних зубов</li>
+              <li>— Не предотвращает убыль кости</li>
+              <li>— Может потребовать замены через несколько лет</li>
+              <li>— Не всегда ощущается как свой зуб</li>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div class="reveal delay-2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <div style="text-align:center;margin-bottom:8px;">
+              <span style="font-size:12px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;">До</span>
+            </div>
+            <div style="border-radius:20px;overflow:hidden;box-shadow:0 6px 32px rgba(0,0,0,0.10);border:3px solid #fff;line-height:0;">
+              <img src="images/impala1.png" alt="До имплантации" style="width:100%;height:auto;display:block;"/>
+            </div>
+          </div>
+          <div>
+            <div style="text-align:center;margin-bottom:8px;">
+              <span style="font-size:12px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.08em;">После</span>
+            </div>
+            <div style="border-radius:20px;overflow:hidden;box-shadow:0 6px 32px rgba(0,0,0,0.10);border:3px solid #fff;line-height:0;">
+              <img src="images/impala2.png" alt="После имплантации" style="width:100%;height:auto;display:block;"/>
+            </div>
           </div>
         </div>
       </div>

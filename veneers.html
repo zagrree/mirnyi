@@ -9,6 +9,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
+<style>
+  @keyframes vn-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  @keyframes vn-side-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+  .vn-ortho-wrap{display:grid;grid-template-columns:200px 1fr 200px;align-items:center;gap:32px;}
+  .vn-ortho-center{text-align:center;}
+  .vn-ortho-img{border-radius:20px;overflow:hidden;line-height:0;box-shadow:0 8px 28px rgba(0,0,0,0.12);will-change:transform;}
+  .vn-ortho-img img{width:100%;height:130px;object-fit:cover;display:block;}
+  .vn-ortho-img--left{animation:vn-side-float 7s ease-in-out infinite;}
+  .vn-ortho-img--right{animation:vn-side-float 7s ease-in-out infinite;animation-delay:1s;}
+  .vn-ortho-cap{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;text-align:center;margin-top:8px;}
+  .vn-ortho-cap--before{color:var(--gray-400);}
+  .vn-ortho-cap--after{color:var(--primary);}
+  @media(max-width:900px){
+    .vn-ortho-wrap{grid-template-columns:150px 1fr 150px;gap:20px;}
+    .vn-ortho-img img{height:100px;}
+  }
+  @media(max-width:600px){
+    .vn-ortho-wrap{grid-template-columns:1fr;grid-template-rows:auto auto auto;}
+    .vn-ortho-center{order:1;}
+    .vn-ortho-imgs-row{order:0;display:flex;gap:12px;justify-content:center;}
+    .vn-ortho-img{flex:1;max-width:160px;}
+    .vn-ortho-img img{height:80px;}
+    .vn-ortho-img--left,.vn-ortho-img--right{position:static;}
+  }
+  @keyframes vn-float-card{0%,100%{transform:translateY(0) rotate(1deg);}50%{transform:translateY(-7px) rotate(1deg);}}
+  .vn-photos{position:relative;padding-bottom:90px;}
+  .vn-photo-main{border-radius:26px;overflow:hidden;border:3px solid #fff;line-height:0;box-shadow:0 20px 60px rgba(0,0,0,0.16),0 6px 20px rgba(0,0,0,0.08);animation:vn-float 5s ease-in-out infinite;will-change:transform;}
+  .vn-photo-main img{width:100%;height:360px;object-fit:cover;display:block;}
+  .vn-photo-after{position:absolute;bottom:0;left:-20px;width:56%;background:#fff;border-radius:22px;padding:8px 8px 6px;border:3px solid #fff;box-shadow:0 16px 48px rgba(0,0,0,0.16),0 4px 16px rgba(16,185,129,0.10);animation:vn-float-card 5s ease-in-out infinite;animation-delay:0.6s;will-change:transform;transform:rotate(1deg);}
+  .vn-photo-after img{width:100%;border-radius:16px;display:block;}
+  .vn-photo-badge{font-size:11px;font-weight:700;color:var(--primary);margin-bottom:6px;padding:0 2px;display:flex;align-items:center;gap:5px;}
+  .vn-caption{font-size:11.5px;color:var(--gray-400);margin-top:14px;text-align:center;letter-spacing:.01em;}
+  @media(max-width:768px){
+    .vn-photo-main img{height:260px;}
+    .vn-photo-after{left:0;width:50%;}
+    .vn-photos{padding-bottom:80px;}
+  }
+</style>
 </head>
 <body>
 <nav id="navbar">
@@ -53,29 +91,29 @@
 
 <section class="oe-section" id="ortho">
   <div class="container">
-    <div class="oe-intro reveal">
-      <div class="oe-intro-text">
-        <div class="section-label">Ортопедическое лечение</div>
-        <h2 class="oe-title">Восстановление<br><em>зубов</em></h2>
-        <p class="oe-desc">Разрушенный или отсутствующий зуб восстанавливаем коронкой или виниром. Слепок снимаем цифровым сканером, конструкцию изготавливают в лаборатории — подгонка точная, посещений немного.</p>
-        <ul class="oe-features">
-          <li><i class="fas fa-check"></i> Металлокерамические коронки</li>
-          <li><i class="fas fa-check"></i> Коронки из диоксида циркония</li>
-          <li><i class="fas fa-check"></i> Временные коронки</li>
-          <li><i class="fas fa-check"></i> Керамические виниры EMAX</li>
-          <li><i class="fas fa-check"></i> Цифровое сканирование</li>
-          <li><i class="fas fa-check"></i> Снятие слепков</li>
-        </ul>
-      </div>
-      <div class="oe-intro-img reveal reveal-delay-1">
-        <div class="oe-img-frame">
-          <img src="images/Xray.jpg" alt="Рентген зубов" loading="lazy"/>
+    <div class="reveal">
+      <!-- Desktop: [img] [title] [img] -->
+      <div class="vn-ortho-wrap">
+        <div>
+          <div class="vn-ortho-img vn-ortho-img--left">
+            <img src="images/built1.png" alt="До восстановления зуба"/>
+          </div>
+          <p class="vn-ortho-cap vn-ortho-cap--before">До</p>
+        </div>
+        <div class="vn-ortho-center">
+          <h2 class="oe-title" style="font-size:clamp(28px,3.5vw,48px);margin:0 0 16px;">Восстановление <em>зубов</em></h2>
+          <p class="oe-desc" style="margin:0;font-size:15px;">Разрушенный или отсутствующий зуб восстанавливаем коронкой или виниром. Слепок снимаем цифровым сканером, конструкцию изготавливают в лаборатории — подгонка точная, посещений немного.</p>
+        </div>
+        <div>
+          <div class="vn-ortho-img vn-ortho-img--right">
+            <img src="images/built2.png" alt="После восстановления зуба"/>
+          </div>
+          <p class="vn-ortho-cap vn-ortho-cap--after">После</p>
         </div>
       </div>
     </div>
 
     <div class="oe-prices reveal reveal-delay-1">
-      <div class="oe-prices-head">Стоимость</div>
       <div class="dh-price-grid">
         <div class="dh-price-card">
           <span class="dh-price-val">от 7 000 сом</span>
@@ -119,10 +157,15 @@
 <section class="oe-section oe-section--alt" id="aesthetic">
   <div class="container">
     <div class="oe-intro oe-intro--rev reveal">
-      <div class="oe-intro-img reveal reveal-delay-1">
-        <div class="oe-img-frame">
-          <img src="images/Aesthetic.jpg" alt="Эстетическая реставрация зубов" loading="lazy"/>
+      <div class="vn-photos reveal reveal-delay-1">
+        <div class="vn-photo-main">
+          <img src="images/look1.png" alt="До эстетического лечения" loading="lazy"/>
         </div>
+        <div class="vn-photo-after">
+          <div class="vn-photo-badge"><i class="fas fa-check"></i> Результат лечения</div>
+          <img src="images/look2.png" alt="После эстетического лечения" loading="lazy"/>
+        </div>
+        <p class="vn-caption">До и после эстетического лечения · Atlant Dental Clinic</p>
       </div>
       <div class="oe-intro-text">
         <div class="section-label">Эстетическая стоматология</div>
@@ -139,7 +182,6 @@
     </div>
 
     <div class="oe-prices reveal reveal-delay-1">
-      <div class="oe-prices-head">Стоимость</div>
       <div class="dh-price-grid">
         <div class="dh-price-card">
           <span class="dh-price-val">от 7 800 сом</span>
@@ -228,26 +270,29 @@
         <ul class="footer-links">
           <li><a href="tel:+996550228030">0 (550) 22-80-30</a></li>
           <li><a href="https://wa.me/996550228030" target="_blank">WhatsApp</a></li>
-          <li><a href="#">7-й микрорайон, 37/1</a></li>
-          <li><a href="#">Ежедневно 09:00–19:00</a></li>
+          <li><a href="#">7-й микрорайон, 12</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&#169; 2025 Atlant Dental. Все права защищены.</span>
+      <span>© 2025 Atlant Dental Clinic</span>
+      <span>Все цены указаны в сомах KGS</span>
     </div>
   </div>
 </footer>
+
 <script>
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
+  function closeMobile(){ burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
   document.getElementById('closeMenu').addEventListener('click', closeMobile);
-  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.add('no-scroll'); });
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
-  const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } }), { threshold: 0.1 });
+  const revealObs = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  }), { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 </script>
 </body>

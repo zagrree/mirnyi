@@ -673,18 +673,29 @@
   document.querySelectorAll('.hero-stat-num[data-target]').forEach(el => countObs.observe(el));
 
   // Review slider
-  const track = document.querySelector('.reviews-track');
+  const track = document.getElementById('sliderTrack');
   if (track) {
     let idx = 0;
-    const cards = track.querySelectorAll('.review-card');
+    const cards = Array.from(track.querySelectorAll('.review-card'));
+    const dotsWrap = document.getElementById('sliderDots');
+    const maxIdx = cards.length - 1;
+
+    cards.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    });
+
     function goTo(n) {
-      idx = (n + cards.length) % cards.length;
-      track.scrollTo({ left: cards[idx].offsetLeft - 16, behavior: 'smooth' });
+      idx = Math.max(0, Math.min(n, maxIdx));
+      const cardW = cards[0].offsetWidth + 24;
+      track.style.transform = `translateX(-${idx * cardW}px)`;
+      dotsWrap.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
     }
-    const prev = document.querySelector('.rev-prev');
-    const next = document.querySelector('.rev-next');
-    if (prev) prev.addEventListener('click', () => goTo(idx - 1));
-    if (next) next.addEventListener('click', () => goTo(idx + 1));
+
+    document.getElementById('sliderPrev').addEventListener('click', () => goTo(idx - 1));
+    document.getElementById('sliderNext').addEventListener('click', () => goTo(idx + 1));
   }
 
   // FAQ accordion
