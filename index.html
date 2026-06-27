@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<nav id="navbar">
+<nav id="navbar" class="logo-hidden">
   <div class="nav-inner">
     <a href="#hero" class="logo">
       <img src="images/Truelogo.png" alt="Atlant Dental Clinic" class="logo-img"/>
@@ -57,7 +57,10 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-left">
-<h1 class="hero-title reveal delay-1">Восстанавливаем здоровье<br>и эстетику <em>улыбки!</em></h1>
+        <h1 class="hero-title reveal delay-1">
+          <span class="hero-title-line">Восстанавливаем здоровье</span>
+          <span class="hero-title-line">и эстетику <em>улыбки!</em></span>
+        </h1>
         <p class="hero-desc reveal delay-2">Имплантация, ортодонтия, виниры и лечение зубов в Бишкеке. Диагностика на современном КТ, понятный план лечения и комплексный подход без лишних процедур.</p>
         <div class="hero-btns reveal delay-3">
           <a href="#appointment" class="btn-green"><i class="fas fa-calendar-check"></i> Записаться на приём</a>
@@ -88,39 +91,7 @@
         </div>
       </div>
 
-      <div class="hero-right reveal delay-2">
-        <div class="hv-stack">
-          
-          <div class="hv-card hv-rating">
-            <div class="hv-rating-top">
-              <div class="hv-label">Рейтинг клиники</div>
-              <span class="hv-pill">99+ отзывов</span>
-            </div>
-            <div class="hv-rating-row">
-              <span class="hv-score">4.5</span>
-              <div>
-                <div class="hv-stars">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="hv-city">2ГИС · Бишкек</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="hv-card hv-review">
-            <div class="hv-review-head">
-              <div class="hv-ava">А</div>
-              <div>
-                <div class="hv-reviewer">Наргиза Ш.</div>
-                <div class="hv-rev-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              </div>
-              <div class="hv-ago">02.04.2026</div>
-            </div>
-            <p class="hv-review-text">«Уже более 10 лет лечу зубы только в клинике Атлант. Самая надёжная клиника в Бишкеке, доверяю только им.»</p>
-          </div>
-        </div>
-      </div>
+      <div class="hero-right"></div>
     </div>
   </div>
 </section>
@@ -303,7 +274,7 @@
     <div class="sed-popup-wrap reveal">
       <div class="sed-left">
         <div class="section-label">Седация</div>
-        <h2 class="sed-question">Лечение зубов<br><em>без страха и боли</em></h2>
+        <h2 class="sed-question">Боитесь <em>стоматологов?</em></h2>
         <p class="sed-subtitle">Севоран — это газ, который вдыхается через маску. <strong>Засыпаете за 1–2 минуты</strong>, просыпаетесь с готовой работой. Подходит взрослым и детям от 3 лет. Седацию проводит группа квалифицированных анестезиологов.</p>
         <ul class="sed-for-list">
           <li><i class="fas fa-check"></i> Выраженный страх перед стоматологом</li>
@@ -313,13 +284,6 @@
           <li><i class="fas fa-check"></i> Множественное лечение за один визит</li>
         </ul>
 
-        <div class="sed-left-stats">
-          <span class="sed-ls"><span class="sed-ls-num">98%</span>&nbsp;<span class="sed-ls-lbl">без боли</span></span>
-          <span class="sed-ls-div">·</span>
-          <span class="sed-ls"><span class="sed-ls-num">3–4 ч</span>&nbsp;<span class="sed-ls-lbl">сеанс</span></span>
-          <span class="sed-ls-div">·</span>
-          <span class="sed-ls"><span class="sed-ls-num">100%</span>&nbsp;<span class="sed-ls-lbl">безопасно</span></span>
-        </div>
       </div>
       <div class="sed-photo-wrap reveal reveal-delay-1" id="sedPopup">
         <div class="sed-deco-blob sed-deco-1"></div>
@@ -334,10 +298,6 @@
               <strong>Севоран</strong>
               <span>Сертифицированный препарат</span>
             </div>
-          </div>
-          <div class="sed-chip sed-chip-tr">
-            <span class="sed-chip-num">98%</span>
-            <span class="sed-chip-lbl">без боли</span>
           </div>
         </div>
       </div>
@@ -633,7 +593,6 @@
 
 <script>
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
   function closeMobile() { burger.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }
@@ -641,14 +600,18 @@
   burger.addEventListener('click', () => { burger.classList.toggle('active'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
   document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMobile));
 
-  // Hide logo + btn when hero is visible
+  // Keep the logo and appointment button hidden until the hero is left behind
   const heroEl = document.getElementById('hero');
-  if (heroEl) {
-    const heroObs = new IntersectionObserver(entries => {
-      navbar.classList.toggle('logo-hidden', entries[0].isIntersecting);
-    }, { threshold: 0.1 });
-    heroObs.observe(heroEl);
-  }
+  const updateNavbar = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    if (heroEl) {
+      const heroBottom = heroEl.getBoundingClientRect().bottom;
+      navbar.classList.toggle('logo-hidden', heroBottom > navbar.offsetHeight);
+    }
+  };
+  updateNavbar();
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  window.addEventListener('resize', updateNavbar);
 
   const revealObs = new IntersectionObserver(entries => entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }

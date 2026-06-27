@@ -67,48 +67,135 @@
     .cr-step-title { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 6px; }
     .cr-step-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
 
-    /* ── ADVANTAGES ── */
-    .cr-adv { padding: 68px 0; background: #fff; }
-    .cr-adv-head { margin-bottom: 36px; }
-    .cr-adv-head h2 { font-size: clamp(22px, 2.6vw, 32px); font-weight: 600; color: var(--gray-900); margin: 8px 0 0; }
-    .cr-adv-grid {
+    /* ── TREATMENT RESULT ── */
+    .cr-result { padding: 56px 0; background: #fff; }
+    .cr-result-card {
+      max-width: 1060px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
+      grid-template-columns: minmax(0, 1fr) 430px;
+      gap: 30px;
+      align-items: center;
+      padding: 26px;
+      background: var(--gray-50);
       border: 1px solid var(--gray-100);
-      border-radius: 14px;
-      overflow: hidden;
+      border-radius: 20px;
     }
-    .cr-adv-item {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 22px 20px;
-      border-right: 1px solid var(--gray-100);
-      border-bottom: 1px solid var(--gray-100);
+    .cr-result-copy { padding: 2px 4px; }
+    .cr-result-copy .section-label { margin-bottom: 8px; }
+    .cr-result-title {
+      font-family: var(--font-head);
+      font-size: clamp(24px, 2.7vw, 34px);
+      font-weight: 600;
+      line-height: 1.22;
+      color: var(--gray-900);
+      margin-bottom: 10px;
     }
-    .cr-adv-item:nth-child(3n) { border-right: none; }
-    .cr-adv-item:nth-last-child(-n+3) { border-bottom: none; }
-    .cr-adv-icon {
-      width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
-      background: var(--primary-soft); color: var(--primary);
+    .cr-result-intro {
+      max-width: 520px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--gray-500);
+    }
+    .cr-result-facts {
+      margin-top: 18px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .cr-result-fact {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .cr-result-fact i {
+      width: 28px; height: 28px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 13px; margin-top: 2px;
+      border-radius: 8px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 11px;
     }
-    .cr-adv-text strong { display: block; font-size: 13.5px; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
-    .cr-adv-text span { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+    .cr-result-fact strong {
+      display: block;
+      font-size: 12.5px;
+      line-height: 1.35;
+      color: var(--gray-900);
+      margin-bottom: 2px;
+    }
+    .cr-result-fact span {
+      display: block;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--gray-500);
+    }
+    .cr-result-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--gray-400);
+    }
+    .cr-result-note i { color: var(--primary); margin-top: 2px; }
+    .cr-result-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .cr-result-figure {
+      margin: 0;
+      padding: 6px;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(17,24,39,0.07);
+    }
+    .cr-result-image {
+      aspect-ratio: 212 / 376;
+      overflow: hidden;
+      border-radius: 11px;
+      background: var(--gray-100);
+    }
+    .cr-result-image img {
+      width: 100%; height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .cr-result-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 4px 2px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .cr-result-caption i { font-size: 9px; }
+    .cr-result-figure--after { border-color: rgba(16,185,129,0.28); }
+    .cr-result-figure--after .cr-result-caption { color: var(--primary); }
 
     @media (max-width: 900px) {
       .cr-symptoms-inner { grid-template-columns: 1fr; gap: 28px; }
       .cr-sym-img { max-height: 220px; }
       .cr-steps-row { grid-template-columns: repeat(2, 1fr); gap: 28px; }
       .cr-steps-row::before { display: none; }
-      .cr-adv-grid { grid-template-columns: repeat(2, 1fr); }
-      .cr-adv-item:nth-child(3n) { border-right: 1px solid var(--gray-100); }
-      .cr-adv-item:nth-child(2n) { border-right: none; }
+      .cr-result-card { grid-template-columns: 1fr; max-width: 700px; gap: 24px; }
+      .cr-result-photos { max-width: 430px; width: 100%; margin: 0 auto; }
     }
     @media (max-width: 600px) {
       .cr-steps-row { grid-template-columns: 1fr; gap: 24px; }
-      .cr-adv-grid { grid-template-columns: 1fr; }
-      .cr-adv-item { border-right: none; }
+      .cr-result { padding: 44px 0; }
+      .cr-result-card { padding: 18px; border-radius: 16px; }
+      .cr-result-photos { gap: 8px; }
+      .cr-result-figure { padding: 4px; border-radius: 12px; }
+      .cr-result-image { border-radius: 8px; }
+      .cr-result-caption { font-size: 9px; padding-top: 6px; }
     }
   </style>
 </head>
@@ -250,54 +337,54 @@
   </div>
 </section>
 
-<section class="cr-adv">
+<section class="cr-result">
   <div class="container">
-    <div class="cr-adv-head reveal">
-      <div class="section-label">Почему выбирают Atlant</div>
-      <h2>Почему выбирают нас</h2>
-    </div>
-    <div class="cr-adv-grid">
-      <div class="cr-adv-item reveal delay-1">
-        <div class="cr-adv-icon"><i class="fas fa-flask"></i></div>
-        <div class="cr-adv-text">
-          <strong>Современные материалы</strong>
-          <span>Используем сертифицированные композиты ведущих производителей — прочные и долговечные.</span>
+    <div class="cr-result-card">
+      <div class="cr-result-copy reveal">
+        <div class="section-label">Результаты лечения</div>
+        <h2 class="cr-result-title">Лечение кариеса: до и после</h2>
+        <p class="cr-result-intro">На фотографиях — восстановление жевательных зубов с кариозными дефектами. Задача лечения — убрать поражённые ткани и вернуть зубам рабочую анатомию.</p>
+
+        <div class="cr-result-facts">
+          <div class="cr-result-fact">
+            <i class="fas fa-magnifying-glass"></i>
+            <div>
+              <strong>Исходное состояние</strong>
+              <span>Кариозные поражения в области фиссур и жевательных поверхностей.</span>
+            </div>
+          </div>
+          <div class="cr-result-fact">
+            <i class="fas fa-tooth"></i>
+            <div>
+              <strong>Что выполнено</strong>
+              <span>Удалены поражённые ткани, дефекты восстановлены композитным материалом.</span>
+            </div>
+          </div>
+          <div class="cr-result-fact">
+            <i class="fas fa-check"></i>
+            <div>
+              <strong>Результат</strong>
+              <span>Восстановлены форма, жевательный рельеф и целостность поверхности зубов.</span>
+            </div>
+          </div>
         </div>
+
+        <p class="cr-result-note"><i class="fas fa-circle-info"></i><span>Фотографии показывают конкретный клинический случай. Объём лечения определяется врачом после осмотра и диагностики.</span></p>
       </div>
-      <div class="cr-adv-item reveal delay-2">
-        <div class="cr-adv-icon"><i class="fas fa-tooth"></i></div>
-        <div class="cr-adv-text">
-          <strong>Естественная форма зуба</strong>
-          <span>Восстанавливаем анатомию зуба — реставрацию не отличить от натурального зуба.</span>
-        </div>
-      </div>
-      <div class="cr-adv-item reveal delay-3">
-        <div class="cr-adv-icon"><i class="fas fa-palette"></i></div>
-        <div class="cr-adv-text">
-          <strong>Подбор цвета эмали</strong>
-          <span>Цвет реставрации подбирается индивидуально под оттенок ваших зубов — невидимый шов.</span>
-        </div>
-      </div>
-      <div class="cr-adv-item reveal delay-1">
-        <div class="cr-adv-icon"><i class="fas fa-shield-halved"></i></div>
-        <div class="cr-adv-text">
-          <strong>Сохранение здоровых тканей</strong>
-          <span>Удаляем только кариозные ткани. Здоровая эмаль и дентин не затрагиваются.</span>
-        </div>
-      </div>
-      <div class="cr-adv-item reveal delay-2">
-        <div class="cr-adv-icon"><i class="fas fa-star"></i></div>
-        <div class="cr-adv-text">
-          <strong>Долговечный результат</strong>
-          <span>Качественная реставрация служит 7–10 лет при правильном уходе и регулярных осмотрах.</span>
-        </div>
-      </div>
-      <div class="cr-adv-item reveal delay-3">
-        <div class="cr-adv-icon"><i class="fas fa-clock"></i></div>
-        <div class="cr-adv-text">
-          <strong>Лечение за один визит</strong>
-          <span>Кариес любой стадии лечим за одно посещение — от осмотра до готовой реставрации.</span>
-        </div>
+
+      <div class="cr-result-photos reveal reveal-delay-1">
+        <figure class="cr-result-figure">
+          <div class="cr-result-image">
+            <img src="images/minin1.png" alt="Жевательные зубы с кариозными поражениями до лечения" loading="lazy"/>
+          </div>
+          <figcaption class="cr-result-caption"><span>До лечения</span><i class="fas fa-circle"></i></figcaption>
+        </figure>
+        <figure class="cr-result-figure cr-result-figure--after">
+          <div class="cr-result-image">
+            <img src="images/minin2.png" alt="Жевательные зубы после лечения кариеса и реставрации" loading="lazy"/>
+          </div>
+          <figcaption class="cr-result-caption"><span>После лечения</span><i class="fas fa-check"></i></figcaption>
+        </figure>
       </div>
     </div>
   </div>
