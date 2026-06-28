@@ -278,7 +278,7 @@ nav.scrolled {
 }
 .hero-deco-logo {
   position: absolute;
-  right: -3%;
+  right: 300px !important;
   top: 54%; /* shifted down to leave buffer above */
   transform: translateY(-50%);
   width: 700px;
