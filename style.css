@@ -291,6 +291,8 @@ nav.scrolled {
     drop-shadow(2px 4px 6px rgba(0,0,0,0.18))
     drop-shadow(0 16px 40px rgba(0,0,0,0.14))
     drop-shadow(0 40px 80px rgba(0,0,0,0.10));
+   display: none !important;
+
 }
 .hero-deco-logo-img {
   width: 100%;
